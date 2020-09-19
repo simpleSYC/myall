@@ -1,4 +1,19 @@
-
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNjmQnhNhtKS3Fl-S01bPLapvqtjFN7kE",
+    authDomain: "myall-proekt.firebaseapp.com",
+    databaseURL: "https://myall-proekt.firebaseio.com",
+    projectId: "myall-proekt",
+    storageBucket: "myall-proekt.appspot.com",
+    messagingSenderId: "53126128195",
+    appId: "1:53126128195:web:c5605a60494f511b8b6af6",
+    measurementId: "G-2YRGN7EEZN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -27,8 +42,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function login(){
 
-  var userEmail = document.getElementById("email_field").value;
-  var userPass = document.getElementById("password_field").value;
+  var userEmail = document.getElementById("email_field_1").value;
+  var userPass = document.getElementById("password_field_1").value;
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
