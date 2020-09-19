@@ -56,3 +56,11 @@ input, button {
   border: 1px solid #5d8ffc;
   cursor: pointer;
 }
+
+
+.TITlink{
+display: ruby-base;
+font-size: x-large;
+font-weight: bold;
+}
+

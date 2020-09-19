@@ -1,3 +1,5 @@
+
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -43,3 +45,39 @@ function login(){
 function logout(){
   firebase.auth().signOut();
 }
+
+
+
+function SUP(a){
+if(a){
+	document.getElementById("Lin").style.display = "none";
+    document.getElementById("Sup").style.display = "block";}else{
+	document.getElementById("Lin").style.display = "block";
+    document.getElementById("Sup").style.display = "none";}
+
+}
+
+function SingUP(){
+  var email = document.getElementById("email_field_2").value;
+  var password = document.getElementById("password_field_2").value;
+	
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+}
+
+
+
+
+
+
+function Imenik (a){
+b="https://myall.sytes.net/";
+if(a.value.length>0){d="";}else{d="1kinger";}	
+document.getElementById("TitLINK").innerHTML=b+d+a.value;}
+
+
+
