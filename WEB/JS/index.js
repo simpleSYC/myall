@@ -65,6 +65,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     var user = firebase.auth().currentUser;
 
+KOJeOVOJ(user.email);
+
     if(user != null){
 
       var email_id = user.email;
@@ -74,7 +76,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	   
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 	  
-	  KOJeOVOJ(email_id);
+	  
 
     }
 
