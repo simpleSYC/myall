@@ -22,6 +22,9 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
 
 var MyallBase = firebase.database().ref();
 
+var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":""},"PROFIL":{"FOTO":"","IME":"","RANK":"","REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""}},"Peyment":{"L0":"","L1":"","L2":"","L3":""},"Social":{"L0":"pop","L1":"","L2":"","L3":""}}
+
+
 var USERdef;
 var mailID;
 var CC,DD;
@@ -139,7 +142,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
-firebase.database().ref().child("URLuser").child(USerko).set("jak ke bidam empti obj");
+firebase.database().ref().child("URLuser").child(USerko).set(LERo);
+
+firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("PROFIL").set("jak ke bidam empti obj");
 
 }
 
