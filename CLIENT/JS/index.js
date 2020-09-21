@@ -22,13 +22,25 @@ var MyallBase = firebase.database().ref();
 
 var USER=window.location.href.slice(24); document.getElementById("demo").innerHTML ="https//myall.sytes.net/"+USER;
 
+START(USER);
 
-function CEKuser(a){
-	if(MyallBase.child(USER).hasChildren()){
-		console.log("ovaj postoi  user ",USER);return true;}else{
-		console.log("ovaj user  go nema",USER);return false;}
+function START(a){LINKtxt_1="URLuser/"+a;
+MyallBase.child(LINKtxt_1);
+MyallBase.once("value")
+  .then(function(snapshot) {
+	  
+	  if(snapshot.hasChildren()){console.log("ovaj postoi  user ",a);
+		   document.getElementById("demo22").innerHTML=DAJval("Social","L0");
+	  }else{                     console.log("ovaj user  go nema",a);
+		  document.getElementById("demo22").innerHTML="da si naprae akaunt";	
+	  }
+	  
+	
+  });	
+  
 	
 }
+
 
 var toBACK="";
 
@@ -43,19 +55,6 @@ MyallBase.once("value")
   
 	return toBACK["URLuser"][USER][a][b];
 }
-
-function Start(){
-
-if(CEKuser(USER)){ 
- document.getElementById("demo22").innerHTML=DAJval("Social","L0");
-	
-}else{
-document.getElementById("demo22").innerHTML="da si naprae akaunt";	
-}
-
-
-}
-
 
 
 
