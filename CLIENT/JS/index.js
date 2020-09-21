@@ -36,23 +36,28 @@ function CEKuser(a){
 
 var toBACK="rane";
 
-function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
+function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
 	 
  toBACK=toBACK["URLuser"][USER][a][b];
-	
+UPDATE(ELEM,toBACK);	
 	
   });	
   
 }
 Start();
+
+var IME=document.getElementById("demo22");
+
+function UPDATE(a,b){a.innerHTML=b;}
+
 function Start(){
 
-if(CEKuser(USER)){ DAJval("Social","L0");
- document.getElementById("demo22").innerHTML=toBACK;
+if(CEKuser(USER)){ DAJval("Social","L0",IME);
+ //innerHTML=toBACK;
 	
 }else{
 document.getElementById("demo22").innerHTML="da si naprae akaunt";	
