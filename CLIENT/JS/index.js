@@ -32,13 +32,13 @@ function CEKuser(a){
 
 var toBACK,LINKtxt;
 
-function DAJval(a,b){URLink="URLuser"; LINKtxt=URLink+"/"+USER+"/"+a+"/"+b;  
+function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
   });	
-	return toBACK.URLink.USER.a.b;
+	return toBACK;
 }
 
 if(CEKuser(USER)){
