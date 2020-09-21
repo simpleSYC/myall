@@ -17,8 +17,38 @@
 
 
 
-var defaultDatabase = firebase.database();
+var MyallBase = firebase.database().ref();
+
+
+var USER=window.location.href.slice(24); document.getElementById("demo").innerHTML ="https//myall.sytes.net/"+USER;
+
 
 function CEKuser(a){
+	if(MyallBase.child(USER)!=null){
+		console.log("ovaj postoi  user ",USER);return true;}else{
+		console.log("ovaj user  go nema",USER);return false;}
 	
 }
+
+function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b; var toBACK;
+MyallBase.child(LINKtxt);
+MyallBase.once("value")
+  .then(function(snapshot) {
+     toBACK = snapshot.val();
+  });	
+	return toBACK;
+}
+
+if(CEKuser(USER)){
+ document.getElementById("demo22").innerHTML=DAJval("Social","L0");
+	
+}else{
+document.getElementById("demo22").innerHTML="da si naprae akaunt";	
+}
+
+
+
+
+
+
+
