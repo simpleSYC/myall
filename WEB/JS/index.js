@@ -43,8 +43,11 @@ MyallBase.once("value")
  
  
 	if(DD!=undefined){
-		console.log("ovaj postoi  user ",mailID);DD=true;}else{
-		console.log("ovaj user  go nema",mailID);DD=false;}
+		console.log("ovaj postoi  user ",mailID);
+		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net/" + DD;
+
+		}else{
+		console.log("ovaj user  go nema",mailID);}
 		
 	
   });	
@@ -71,12 +74,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
-
-KOJeOVOJ(email_id);	  
+  
 	  document.getElementById("NVG").style="display:block;";
 	   
-	   
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+
+KOJeOVOJ(email_id);	// go pozdravuva akkauntot	   
 	  
 	  
 
