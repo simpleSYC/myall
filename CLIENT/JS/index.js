@@ -41,6 +41,7 @@ MyallBase.once("value")
 	return toBACK["URLuser"][USER][a][b];
 }
 
+
 function Start(){
 
 if(CEKuser(USER)){
@@ -54,6 +55,7 @@ document.getElementById("demo22").innerHTML="da si naprae akaunt";
 
 }
 
+setTimeout(function(){Start();}, 3000);
 
 
 
