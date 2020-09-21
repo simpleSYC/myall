@@ -58,7 +58,7 @@ MyallBase.once("value")
 
 firebase.auth().onAuthStateChanged(function(user) {
 	
-KOJeOVOJ(user.email);
+///////KOJeOVOJ(user.email);
 
   if (user) {
     // User is signed in.
