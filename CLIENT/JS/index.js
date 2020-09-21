@@ -44,7 +44,8 @@ MyallBase.once("value")
 function Start(){
 
 if(CEKuser(USER)){
- document.getElementById("demo22").innerHTML=DAJval("Social","L0");
+a=DAJval("Social","L0");
+ document.getElementById("demo22").innerHTML=a;
 	
 }else{
 document.getElementById("demo22").innerHTML="da si naprae akaunt";	
