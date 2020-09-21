@@ -24,7 +24,7 @@ var USER=window.location.href.slice(24); document.getElementById("demo").innerHT
 
 
 function CEKuser(a){
-	if(MyallBase.child(USER)!=null){
+	if(MyallBase.child(USER).hasChildren()){
 		console.log("ovaj postoi  user ",USER);return true;}else{
 		console.log("ovaj user  go nema",USER);return false;}
 	
@@ -47,8 +47,7 @@ MyallBase.once("value")
 function Start(){
 
 if(CEKuser(USER)){ 
-setTimeout(
-document.getElementById("demo22").innerHTML=DAJval("Social","L0"), 3000);
+ document.getElementById("demo22").innerHTML=DAJval("Social","L0");
 	
 }else{
 document.getElementById("demo22").innerHTML="da si naprae akaunt";	
