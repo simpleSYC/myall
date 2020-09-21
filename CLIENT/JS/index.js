@@ -15,6 +15,7 @@
   
   
 
+var IME=document.getElementById("demo22");
 
 
 var MyallBase = firebase.database().ref();
@@ -51,7 +52,6 @@ UPDATE(ELEM,toBACK);
 }
 Start();
 
-var IME=document.getElementById("demo22");
 
 
 
