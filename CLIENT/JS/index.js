@@ -18,6 +18,7 @@
 
 
 
+var Base = firebase.database();
 
 function CEKuser(a){
 	
