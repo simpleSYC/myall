@@ -28,7 +28,7 @@ function START(){
 }
 
 function CEKuser(a){
-	if(MyallBase.child(USER).hasChildren()){
+	if(MyallBase.child(USER)!=null){
 		console.log("ovaj postoi  user ",USER);return true;}else{
 		console.log("ovaj user  go nema",USER);return false;}
 	
