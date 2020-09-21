@@ -38,7 +38,7 @@ MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
   });	
-	return toBACK;
+	return toBACK["URLuser"][USER][a][b];
 }
 
 if(CEKuser(USER)){
