@@ -22,6 +22,10 @@ var IME=document.getElementById("demo22");
 
 
 
+
+
+
+
 var  USERlinkceto="aaa";
 var CC,DD;
 function CEKuser(){
@@ -44,9 +48,18 @@ MyallBase.once("value")
  
  if(DD){ DAJval("Social","L0",IME);
  //innerHTML=toBACK;
+ 
+ 
+document.getElementById("user_div").style="display:block;";
+ 
+document.getElementsByClassName("containerX")[0].style="opacity:1;";
 	
 }else{
 IME.innerHTML="da si naprae akaunt";	
+
+//document.getElementById("user_div").style="display:block;";
+
+//document.getElementsByClassName("containerX")[0].style="opacity:1;";
 }
  
 	
