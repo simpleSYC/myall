@@ -115,6 +115,11 @@ function login(){
 
 function logout(){
   firebase.auth().signOut();
+  
+document.getElementById("email_field_1").innerHTML="";
+document.getElementById("password_field_1").innerHTML="";
+document.getElementById("email_field_2").innerHTML="";
+document.getElementById("password_field_2").innerHTML="";
   SUP(false);
   
 	    document.getElementById("NVG").style="display:none;";
