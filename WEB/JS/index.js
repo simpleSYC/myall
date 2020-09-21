@@ -17,7 +17,7 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+///  firebase.analytics();
   
 
 var MyallBase = firebase.database().ref();
