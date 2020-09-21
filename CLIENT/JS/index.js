@@ -17,8 +17,7 @@
 
 
 
-
-var Base = firebase.database();
+var defaultDatabase = firebase.database();
 
 function CEKuser(a){
 	
