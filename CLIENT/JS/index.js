@@ -38,9 +38,9 @@ MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
 	 
-	return toBACK["URLuser"][USER][a][b];
 	
   });	
+	return toBACK["URLuser"][USER][a][b];
 }
 
 function Start(){
