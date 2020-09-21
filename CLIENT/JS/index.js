@@ -47,14 +47,14 @@ MyallBase.once("value")
 	
   });	
 }
-
+var DM2=document.getElementById("demo22");
 function Start(){
 
 if(CEKuser(USER)){ 
- DAJval("Social","L0",document.getElementById("demo22"));
+ DAJval("Social","L0",DM2);
 	
 }else{
-document.getElementById("demo22").innerHTML="da si naprae akaunt";	
+	DM2.innerHTML="da si naprae akaunt";	
 }
 
 
