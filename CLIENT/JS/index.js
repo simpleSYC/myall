@@ -22,39 +22,44 @@ var MyallBase = firebase.database().ref();
 
 var USER=window.location.href.slice(24); document.getElementById("demo").innerHTML ="https//myall.sytes.net/"+USER;
 
-START(USER);
-
-function START(a){LINKtxt_1="URLuser/"+a;
-MyallBase.child(LINKtxt_1);
-MyallBase.once("value")
-  .then(function(snapshot) {
-	  
-	  if(snapshot.hasChildren()){console.log("ovaj postoi  user ",a);
-		   document.getElementById("demo22").innerHTML=DAJval("Social","L0");
-	  }else{                     console.log("ovaj user  go nema",a);
-		  document.getElementById("demo22").innerHTML="da si naprae akaunt";	
-	  }
-	  
+function START(){
 	
-  });	
-  
+
+}
+
+function CEKuser(a){
+	if(MyallBase.child(USER).hasChildren()){
+		console.log("ovaj postoi  user ",USER);return true;}else{
+		console.log("ovaj user  go nema",USER);return false;}
 	
 }
 
+var toBACK;ELEMENT;
 
-var toBACK="";
-
-function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
+function DAJval(a,b,ELEMENT){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
 	 
+	ELEMENT.innerHTML=toBACK["URLuser"][USER][a][b];
+
 	
   });	
-  
-	return toBACK["URLuser"][USER][a][b];
 }
+
+function Start(){
+
+if(CEKuser(USER)){ 
+ DAJval("Social","L0",document.getElementById("demo22"));
+	
+}else{
+document.getElementById("demo22").innerHTML="da si naprae akaunt";	
+}
+
+
+}
+
 
 
 
