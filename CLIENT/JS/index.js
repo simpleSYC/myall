@@ -41,12 +41,11 @@ MyallBase.once("value")
 	return toBACK["URLuser"][USER][a][b];
 }
 
-Start();Start();
 function Start(){
 
 if(CEKuser(USER)){
-a=DAJval("Social","L0");
- document.getElementById("demo22").innerHTML=a;
+
+ document.getElementById("demo22").innerHTML=DAJval("Social","L0");
 	
 }else{
 document.getElementById("demo22").innerHTML="da si naprae akaunt";	
