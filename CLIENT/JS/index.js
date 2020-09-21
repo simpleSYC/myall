@@ -36,9 +36,9 @@ MyallBase.once("value")
 	 
  DD=CC["URLuser"][USER];
  
-	if(DD!=null){
-		console.log("ovaj postoi  user ",USER);return true;}else{
-		console.log("ovaj user  go nema",USER);return false;}
+	if(DD!=undefined){
+		console.log("ovaj postoi  user ",USER);DD=true;}else{
+		console.log("ovaj user  go nema",USER);DD=false;}
  
 	
   });	
@@ -66,8 +66,9 @@ Start();
 
 
 function Start(){
+	CEKuser();
 
-if(CEKuser()){ DAJval("Social","L0",IME);
+if(DD){ DAJval("Social","L0",IME);
  //innerHTML=toBACK;
 	
 }else{
