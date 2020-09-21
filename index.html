@@ -1,7 +1,7 @@
-<!doctype html><html><head>
+<html><head>
   <title>myall</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
@@ -10,50 +10,34 @@
   
   
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-	
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	
 	
 </head>
 <body>
-
-  <div id="login_div" class="main-div">
-  
-  
-    <h3 id="TiTle">Firebase Web login Example</h3>
 	
-<div id="Lin" >	
-	
-    <input type="email" placeholder="Email..." id="email_field_1" />
-    <input type="password" placeholder="Password..." id="password_field_1" />
-<div>
-    <button onclick="login();">Login to Account</button> <hr>
-    <button onclick="SUP(true)">Sing Up</button> 
-</div>
-
-</div>
-
-<div id="Sup" style="display:none;">
-
- <p id="TitLINK" class="TITlink">https://myall.sytes.net/1kinger</p>
- <input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this);" />
-    <input type="email" placeholder="Email..." id="email_field_2" />
-    <input type="password" placeholder="Password..." id="password_field_2" />
-<div>	
-	    <button onclick="SingUP();">Sing Up</button> <hr>
-		<button onclick="SUP(false)">back</button> 
-</div>
-</div>
-
-
-  </div>
-
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">Welcome to myall all-in linker. You're currently logged in.</p>
-	
+
+
+
+    <button onclick="logout()" style="position: absolute;top: 0px;left: 0px;width: auto;margin: 20px;">prewie</button>
+    <button onclick="logout()" style="position: absolute;top: 0px;right: 0px;width: auto;margin: 20px;">save</button>
+    <button onclick="logout()" style="position: absolute;bottom: 0px;right: 0px;width: auto;margin: 20px;" >Logout</button>
+
+<div style="position: absolute;bottom: 0px;left: 0px;margin: 20px;font-size: x-large;font-weight: bold;margin-bottom: -15px;">
+<span>Wiget Status </span><br>
+<label class="switch" onclick="Aktiv(this);">
+  <input type="checkbox" checked>
+  <span class="slider round"></span>
+</label><br><span id="STatusTxT" style="color:green;">Activ</span></div>
+
+  </div>
+
+
 <!--   -->	
-		<div class="container">
+<div id="NVG">		<div class="containerX">
 		<svg class="menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 792 792">
 			<defs>
 				<path class="path-1" d="M45 67.9c0 2.3 1.9 4.1 4.2 4.1a4.1 4.1 0 1 0 0-8.3 4.1 4.1 0 0 0-4.1 4.2zm6 0c0 1-.8 1.7-1.8 1.7s-1.8-.7-1.8-1.7.8-1.8 1.8-1.8 1.8.7 1.8 1.8z"/>
@@ -176,47 +160,40 @@
 			</g>
 		</svg>
 	</div>
-	
-	
+</div>	
 <!--   -->	
 	
+  <div id="login_div" class="main-div">
+  
+  
+    <h3 id="TiTle">Firebase Web login Example</h3>
 	
+<div id="Lin" >	
 	
+    <input type="email" placeholder="Email..." id="email_field_1" />
+    <input type="password" placeholder="Password..." id="password_field_1" />
+<div>
+    <button onclick="login();">Login to Account</button> <hr>
+    <button onclick="SUP(true)">Sing Up</button> 
+</div>
+
+</div>
+
 	
-	
+<div id="Sup" style="display:none;">
+
+ <p id="TitLINK" class="TITlink">https://myall.sytes.net/1kinger</p>
+ <input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this);" />
+    <input type="email" placeholder="Email..." id="email_field_2" />
+    <input type="password" placeholder="Password..." id="password_field_2" />
+<div>	
+	    <button onclick="SingUP();">Sing Up</button> <hr>
+		<button onclick="SUP(false)">back</button> 
+</div>
+</div>
 
 
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

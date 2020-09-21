@@ -1,4 +1,9 @@
-  // Your web app's Firebase configuration
+$(document).ready(function(){
+document.getElementById("NVG").style="display:none;";
+document.getElementsByClassName("containerX")[0].style="opacity:1;";
+});
+
+ // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyBNjmQnhNhtKS3Fl-S01bPLapvqtjFN7kE",
@@ -15,6 +20,8 @@
   firebase.analytics();
   
 
+		
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -27,7 +34,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
+	  
+	  document.getElementById("NVG").style="display:block;";
+	   
+	   
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+	  
 
     }
 
@@ -59,6 +71,8 @@ function login(){
 
 function logout(){
   firebase.auth().signOut();
+  
+	    document.getElementById("NVG").style="display:none;";
 }
 
 
@@ -87,7 +101,16 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
 
 
 
+function Aktiv(a){ b=a.children[0];
+if(b.checked==true){
+document.getElementById("STatusTxT").innerHTML="Akctiv";
+document.getElementById("STatusTxT").style="color:green;";
+a.children[1].style="background-color:#2196F3;";}else{
+document.getElementById("STatusTxT").style="color:red;";
+document.getElementById("STatusTxT").innerHTML="Deactiv";
+a.children[1].style="background-color:red;";}
 
+}
 
 function Imenik (a){
 b="https://myall.sytes.net/";
@@ -95,4 +118,4 @@ if(a.value.length>0){d="";}else{d="1kinger";}
 document.getElementById("TitLINK").innerHTML=b+d+a.value;}
 
 
-
+var defaultDatabase = firebase.database();
