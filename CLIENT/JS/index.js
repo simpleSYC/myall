@@ -28,33 +28,34 @@ function START(){
 }
 
 function CEKuser(a){
-	if(MyallBase.child(USER)!=null){
+	if(MyallBase.child(USER).hasChildren()){
 		console.log("ovaj postoi  user ",USER);return true;}else{
 		console.log("ovaj user  go nema",USER);return false;}
 	
 }
 
-var toBACK;ELEMENT;
+var toBACK="rane";
 
-function DAJval(a,b,ELEMENT){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
+function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
 	 
-	ELEMENT.innerHTML=toBACK["URLuser"][USER][a][b];
-
+ toBACK=toBACK["URLuser"][USER][a][b];
+	
 	
   });	
+  
 }
-var DM2=document.getElementById("demo22");
+
 function Start(){
 
-if(CEKuser(USER)){ 
- DAJval("Social","L0",DM2);
+if(CEKuser(USER)){ DAJval("Social","L0");
+ document.getElementById("demo22").innerHTML=toBACK;
 	
 }else{
-	DM2.innerHTML="da si naprae akaunt";	
+document.getElementById("demo22").innerHTML="da si naprae akaunt";	
 }
 
 
