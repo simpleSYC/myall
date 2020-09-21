@@ -144,7 +144,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
 firebase.database().ref().child("URLuser").child(USerko).set(LERo);
 
-firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("PROFIL").set("jak ke bidam empti obj");
+firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("REG").child("email").set(email);
 
 }
 
