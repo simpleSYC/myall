@@ -112,6 +112,7 @@ function login(){
 
 function logout(){
   firebase.auth().signOut();
+  SUP(false);
   
 	    document.getElementById("NVG").style="display:none;";
 }
@@ -138,6 +139,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
+firebase.database().ref().child("URLuser").child(USerko).set("jak ke bidam empti obj");
 
 }
 
