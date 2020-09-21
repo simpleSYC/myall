@@ -35,7 +35,7 @@ function CEKuser(a){
 }
 
 var toBACK="rane";
-
+function UPDATE(a,b){a.innerHTML=b;}
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
@@ -43,6 +43,7 @@ MyallBase.once("value")
      toBACK = snapshot.val();
 	 
  toBACK=toBACK["URLuser"][USER][a][b];
+ 
 UPDATE(ELEM,toBACK);	
 	
   });	
@@ -52,7 +53,7 @@ Start();
 
 var IME=document.getElementById("demo22");
 
-function UPDATE(a,b){a.innerHTML=b;}
+
 
 function Start(){
 
