@@ -44,7 +44,7 @@ MyallBase.once("value")
  
 	if(DD!=undefined){
 		console.log("ovaj postoi  user ",mailID);
-		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net/" + DD;
+		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD;
 
 		}else{
 		console.log("ovaj user  go nema",mailID);}
