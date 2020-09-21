@@ -30,7 +30,7 @@ function CEKuser(a){
 	
 }
 
-var toBACK=null;
+var toBACK=0;
 
 function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
