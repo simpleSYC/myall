@@ -58,7 +58,6 @@ MyallBase.once("value")
 
 firebase.auth().onAuthStateChanged(function(user) {
 	
-///////KOJeOVOJ(user.email);
 
   if (user) {
     // User is signed in.
@@ -72,7 +71,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
-	  
+
+KOJeOVOJ(email_id);	  
 	  document.getElementById("NVG").style="display:block;";
 	   
 	   
