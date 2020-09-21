@@ -40,6 +40,15 @@ MyallBase.once("value")
 		console.log("ovaj postoi  user ",USER);DD=true;}else{
 		console.log("ovaj user  go nema",USER);DD=false;}
  
+ 
+ 
+ if(DD){ DAJval("Social","L0",IME);
+ //innerHTML=toBACK;
+	
+}else{
+IME.innerHTML="da si naprae akaunt";	
+}
+ 
 	
   });	
 	
@@ -68,12 +77,7 @@ Start();
 function Start(){
 	CEKuser();
 
-if(DD){ DAJval("Social","L0",IME);
- //innerHTML=toBACK;
-	
-}else{
-IME.innerHTML="da si naprae akaunt";	
-}
+
 
 
 }
