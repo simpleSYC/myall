@@ -136,11 +136,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-}
+});
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
 
-
-);
 }
 
 
