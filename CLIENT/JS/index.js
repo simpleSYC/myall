@@ -48,7 +48,7 @@ MyallBase.once("value")
   });	
   
 }
-
+Start();
 function Start(){
 
 if(CEKuser(USER)){ DAJval("Social","L0");
