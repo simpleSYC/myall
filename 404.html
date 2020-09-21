@@ -2,16 +2,22 @@
 <html>
 <body>
 
-<h2>JavaScript</h2>
 
-<h3>The window.location object</h3>
-
-<p id="demo"></p>
+<h2 id="demo"></h2>
 
 <script>
-document.getElementById("demo").innerHTML = 
-"The full URL of this page is:<br>" + window.location.href;
+var USER=window.location.href.slice(24);
+document.getElementById("demo").innerHTML ="https//myall.sytes.net/"+USER;
 </script>
 
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+  <script src="CLIENT/JS/index.js"></script>
+  
+  
 </body>
 </html>
