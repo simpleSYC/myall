@@ -20,6 +20,40 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
   firebase.analytics();
   
 
+var MyallBase = firebase.database().ref();
+
+var USERdef;
+var mailID;
+var CC,DD;
+function KOJeOVOJ(a){
+	
+	
+			
+		mailID=a.slice(0,a.length-4);
+		
+		USERdef="REG@/"+mailID;
+		
+MyallBase.child(USERdef);
+MyallBase.once("value")
+  .then(function(snapshot) {
+     CC = snapshot.val();
+	 
+ DD=CC["REG@"][mailID];
+ 
+ 
+ 
+	if(DD!=undefined){
+		console.log("ovaj postoi  user ",mailID);DD=true;}else{
+		console.log("ovaj user  go nema",mailID);DD=false;}
+		
+	
+  });	
+  
+  
+  
+}
+
+
 		
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -40,6 +74,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 	   
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 	  
+	  KOJeOVOJ(email_id);
 
     }
 
@@ -118,4 +153,3 @@ if(a.value.length>0){d="";}else{d="1kinger";}
 document.getElementById("TitLINK").innerHTML=b+d+a.value;}
 
 
-var defaultDatabase = firebase.database();
