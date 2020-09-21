@@ -61,7 +61,7 @@ MyallBase.once("value")
 
 firebase.auth().onAuthStateChanged(function(user) {
 	
-KOJeOVOJ(email_id);	// go pozdravuva akkauntot	  
+KOJeOVOJ(user.email);	// go pozdravuva akkauntot	  
 
   if (user) {
     // User is signed in.
