@@ -128,7 +128,7 @@ if(a){
 }
 var eMAIL;
 function SingUP(){
-  var email = document.getElementById("email_field_2").value;  a=email.value; eMAIL=a.slice(0,a.length-4);
+  var email = document.getElementById("email_field_2").value;   eMAIL=email.slice(0,email.length-4);
   var password = document.getElementById("password_field_2").value;
 	
 firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
