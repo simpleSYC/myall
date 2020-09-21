@@ -36,9 +36,9 @@ function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
-     toBACK = snapshot.URLuser.USER.val();
+     toBACK = snapshot.val();
   });	
-	return toBACK;
+	return toBACK.URLuser.USER;
 }
 
 if(CEKuser(USER)){
