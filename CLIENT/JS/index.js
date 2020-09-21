@@ -13,25 +13,35 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-  
+//definicija  
+var USER=window.location.href.slice(24);var MyallBase = firebase.database().ref();
+
+var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https//myall.sytes.net/"+USER;
 
 var IME=document.getElementById("demo22");
 
 
-var MyallBase = firebase.database().ref();
 
-
-var USER=window.location.href.slice(24); document.getElementById("demo").innerHTML ="https//myall.sytes.net/"+USER;
-
-function START(){
-	
-
-}
-
-function CEKuser(a){
-	if(MyallBase.child(USER)!=null){
+var  USERlinkceto="aaa";
+var CC,DD;
+function CEKuser(){
+		
+		
+		
+		USERlinkceto="URLuser/"+USER  
+MyallBase.child(USERlinkceto);
+MyallBase.once("value")
+  .then(function(snapshot) {
+     CC = snapshot.val();
+	 
+ DD=CC["URLuser"][USER];
+ 
+	if(DD!=null){
 		console.log("ovaj postoi  user ",USER);return true;}else{
 		console.log("ovaj user  go nema",USER);return false;}
+ 
+	
+  });	
 	
 }
 
@@ -57,11 +67,11 @@ Start();
 
 function Start(){
 
-if(CEKuser(USER)){ DAJval("Social","L0",IME);
+if(CEKuser()){ DAJval("Social","L0",IME);
  //innerHTML=toBACK;
 	
 }else{
-document.getElementById("demo22").innerHTML="da si naprae akaunt";	
+IME.innerHTML="da si naprae akaunt";	
 }
 
 
