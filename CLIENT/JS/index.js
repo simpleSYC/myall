@@ -36,7 +36,7 @@ function DAJval(a,b){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
-     toBACK = snapshot.val();
+     toBACK = snapshot.URLuser.USER.val();
   });	
 	return toBACK;
 }
