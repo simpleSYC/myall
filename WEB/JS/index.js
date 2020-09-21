@@ -128,7 +128,7 @@ if(a){
 }
 
 function SingUP(){
-  var email = document.getElementById("email_field_2").value;
+  var email = document.getElementById("email_field_2").value;  a=email.value; eMAIL=a.slice(0,a.length-4)
   var password = document.getElementById("password_field_2").value;
 	
 firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -136,7 +136,11 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-});
+}
+firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
+
+
+);
 }
 
 
@@ -152,10 +156,12 @@ document.getElementById("STatusTxT").innerHTML="Deactiv";
 a.children[1].style="background-color:red;";}
 
 }
-
+var USerko;
 function Imenik (a){
 b="https://myall.sytes.net/";
 if(a.value.length>0){d="";}else{d="1kinger";}	
-document.getElementById("TitLINK").innerHTML=b+d+a.value;}
+document.getElementById("TitLINK").innerHTML=b+d+a.value;
+USerko=a.value;
+}
 
 
