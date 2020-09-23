@@ -251,7 +251,7 @@ function MESTENJE(a){
 if(a==1){
 	
 
-firebase.database().ref().child("URLuser").child(USerko).child("Activity").child("L0").set(StalazINDEX);
+firebase.database().ref().child("URLuser").child("1kinger").child("Activity").child(R_2).set(StalazINDEX);
 }
 
 }
