@@ -69,6 +69,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
 
     document.getElementById("user_div").style.display = "block";
+    document.getElementById("user_div").style.width = 37+"%";
     document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
@@ -91,6 +92,7 @@ KOJeOVOJ(user.email);	// go pozdravuva akkauntot
     // No user is signed in.
 
     document.getElementById("user_div").style.display = "none";
+    document.getElementById("user_div").style.width = 73+"%";
     document.getElementById("login_div").style.display = "block";
 
   }
@@ -156,16 +158,27 @@ firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("
 
 
 
-function Aktiv(a){ b=a.children[0];
-if(b.checked==true){
-document.getElementById("STatusTxT").innerHTML="Akctiv";
-document.getElementById("STatusTxT").style="color:green;";
+function Aktiv(a,n){ b=a.children[0];
+if(n==0){ELEmentce=document.getElementById("STatusTxT");}
+if(n==1){ELEmentce=document.getElementById("STATS_linkce");}
+
+if(b.checked){
+ELEmentce.innerHTML="Akctiv";
+ELEmentce.style="color:green;";
 a.children[1].style="background-color:#2196F3;";}else{
-document.getElementById("STatusTxT").style="color:red;";
-document.getElementById("STatusTxT").innerHTML="Deactiv";
+ELEmentce.style="color:red;";
+ELEmentce.innerHTML="Deactiv";
 a.children[1].style="background-color:red;";}
 
+if(n==0){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
+if(n==1){if(b.checked){STATS_linkce=true;}else{STATS_linkce=false;}}
+
 }
+
+
+
+
+
 var USerko;
 function Imenik (a){
 b="https://myall.sytes.net/";
@@ -173,5 +186,83 @@ if(a.value.length>0){d="";}else{d="1kinger";}
 document.getElementById("TitLINK").innerHTML=b+d+a.value;
 USerko=a.value;
 }
+
+//////////////////// modalo
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+var DROPdwnBTN=document.getElementById("MENIlink");
+var LOPCI=  document.getElementById("Lopci");
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+	
+LOPCI.style="display: none;";
+  
+  }
+
+  
+}
+
+
+////////////////////////// modelskoto kopce
+function DROPdwnbtn(){
+	if(LOPCI.style.display=="block"){LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}
+}
+var R_0="";var STATS_linkce,R_1,R_2,StalazINDEX;
+var R=[STATS_linkce,R_1,R_2,StalazINDEX];
+/// PAR i par se parametri od setinzi zimanje
+
+function PAR(b){a=b.classList.value;
+if(a.includes("faq-button")){R_1="Activity";}else  //  Activity
+if(a.includes("home-button")){R_1="Social";}else //Social
+if(a.includes("more-button")){R_1="Peyment";}else // Peyment
+if(a.includes("settings-button")){R_1="Contact";}} //Contact
+
+function MDL(a,b) {R_2="L"+b;                         /// be e id na stalaza
+  modal.style.display = "block";
+  document.getElementById("tsto").innerHTML="vie stistnavte na "+a.classList.value;
+}
+
+function par(a){StalazINDEX="malee -"+a;}
+
+//MESTENJE();
+
+function UPDATElinko(){}
+
+
+function MESTENJE(a){
+if(a==1){
+	
+
+firebase.database().ref().child("URLuser").child(USerko).child(R_1).child(R_2).set(email);
+}
+
+}
+
+
+////////////////////////// citanje data
+var da=true;
+GETaccSTATUS(da);
+function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].children[0];	
+	if(da!=SW.checked ){SW.click();}
+}
+
 
 
