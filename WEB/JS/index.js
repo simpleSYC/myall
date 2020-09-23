@@ -251,7 +251,7 @@ function MESTENJE(a){
 if(a==1){
 	
 
-firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set(STATS_linkce,"re testo");
+firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([STATS_linkce,"re testo"]);
 }
 
 }
