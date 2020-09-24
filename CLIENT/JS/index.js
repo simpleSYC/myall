@@ -120,16 +120,16 @@ function updZvzda(a){
 	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
 	if(a==1){
 		ZZ[0].remove();
-		ZZ[1].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:25px;"+"left:2px;";
+		ZZ[1].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:25px;"+"left:2px;";
 		ZZ[2].remove();}else
 	if(a==2){
-		ZZ[0].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:25px;"+"left:-10px;";
+		ZZ[0].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:25px;"+"left:-10px;";
 		ZZ[1].remove();
-		ZZ[2].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:25px;"+"left:15px;";}else
+		ZZ[2].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:25px;"+"left:15px;";}else
 	if(a==3){
-		ZZ[0].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:22px;"+"left:-15px;";
-		ZZ[1].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:25px;"+"left:2px;";
-		ZZ[2].style="scale:3;"+"fill:gold;"+"position:relative;"+"top:22px;"+"left:19px;";}
+		ZZ[0].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:22px;"+"left:-15px;";
+		ZZ[1].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:25px;"+"left:2px;";
+		ZZ[2].style="scale:3;"+"fill:gold;"+"position:fixed;"+"top:22px;"+"left:19px;";}
 }
 
 
