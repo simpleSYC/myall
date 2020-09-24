@@ -20,6 +20,9 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
 ///  firebase.analytics();
   
 
+
+var IME=document.getElementById("demo22");
+
 var MyallBase = firebase.database().ref();
 
 var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""}},"Peyment":{"L0":"","L1":"","L2":"","L3":""},"Social":{"L0":"pop","L1":"","L2":"","L3":""}}
