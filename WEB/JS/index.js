@@ -47,7 +47,7 @@ MyallBase.once("value")
  
 	if(DD!=undefined){
 		console.log("ovaj postoi  user ",mailID);
-		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD; LOADNI(true);
+		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD; LOADNIall();
 
 		}else{
 		console.log("ovaj user  go nema  WELCOME",mailID);}
@@ -255,7 +255,8 @@ firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([
 }
 
 }
-
+//// definicija
+var 
 
 ////////////////////////// citanje data
 var da=true;
@@ -269,6 +270,10 @@ function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].childr
 
 
 /////////////////  citanje data za userot
+function LOADNIall(){
+	
+	
+};
 
 
 
