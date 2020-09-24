@@ -49,7 +49,7 @@ MyallBase.once("value")
  
  if(DD){ DAJval("Social","L0",IME);
  
- DAJval("PROFIL","RANK",IME22); var Rnk=IME22.innerText. ckR(parseInt(Rnk));
+ DAJval("PROFIL","RANK",IME22); var Rnk=IME22.innerText; ckR(parseInt(Rnk));
  
  
  
@@ -108,8 +108,29 @@ function ckR(a){
 	if(a==1){QQ=1;}else
 	if(a==2){QQ=2;}else
 	if(a==3){QQ=3;}
-}
 
+updZvzda(QQ);}
+
+var z23=document.getElementById("z_23");
+var z13=document.getElementById("z_13");
+var z32=document.getElementById("z_32");
+var ZZ=[z23,z13,z32];
+
+function updZvzda(a){
+	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
+	if(a==1){
+		ZZ[0].remove();
+		ZZ[1].style="top:25px;left:2px;";
+		ZZ[2].remove();}else
+	if(a==2){
+		ZZ[0].style="top:25px;left:-10px;";
+		ZZ[1].remove();
+		ZZ[2].style="top:25px;left:15px;";}else
+	if(a==3){
+		ZZ[0].style="top:22px;left:-15px;";
+		ZZ[1].style="top:25px;left:2px;";
+		ZZ[2].style="top:22px;left:19px;";}
+}
 
 
 
