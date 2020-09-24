@@ -255,8 +255,6 @@ firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([
 }
 
 }
-//// definicija
-var 
 
 ////////////////////////// citanje data
 var da=true;
@@ -272,7 +270,9 @@ function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].childr
 /////////////////  citanje data za userot
 function LOADNIall(){
 	
-	
+	DAJval("Social","L0",IME);
+ 
+ DAJval("PROFIL","RANK",0); 
 };
 
 
