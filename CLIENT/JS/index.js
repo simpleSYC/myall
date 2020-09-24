@@ -93,7 +93,7 @@ Start();
 /// b e kodirano
 //0- zvezid
 function UPDATE(a,b){
-if(a==0){var Rnk=IME22.innerText; ckR(parseInt(Rnk));}else{
+if(a==0){ ckR(parseInt(b));}else{
 
 a.innerHTML=b;}	
 
