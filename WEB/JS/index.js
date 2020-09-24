@@ -271,7 +271,7 @@ function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].childr
 
 
 /////////////////  citanje data za userot
-function LOADNIall(){
+function LOADNIall(){///  DD === USERKO
 	
 	DAJval("Social","L0",IME);
  
@@ -281,13 +281,13 @@ function LOADNIall(){
 
 
 var toBACK="rane";
-function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
+function DAJval(a,b,ELEM){LINKtxt="URLuser/"+DD+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
 	 
- toBACK=toBACK["URLuser"][USER][a][b];
+ toBACK=toBACK["URLuser"][DD][a][b];
  
 UPDATE(ELEM,toBACK);	
 	
