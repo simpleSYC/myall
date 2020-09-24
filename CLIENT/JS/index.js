@@ -49,7 +49,7 @@ MyallBase.once("value")
  
  if(DD){ DAJval("Social","L0",IME);
  
- DAJval("PROFIL","RANK",IME22);
+ DAJval("PROFIL","RANK",IME22); var Rnk=IME22.innerText. ckR(parseInt(Rnk));
  
  
  
@@ -100,6 +100,16 @@ function Start(){
 
 
 }
+
+var QQ="ZZ";
+
+function ckR(a){
+	if(a==0){QQ=0;}else
+	if(a==1){QQ=1;}else
+	if(a==2){QQ=2;}else
+	if(a==3){QQ=3;}
+}
+
 
 
 
