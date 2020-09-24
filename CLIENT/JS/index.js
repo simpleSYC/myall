@@ -49,7 +49,7 @@ MyallBase.once("value")
  
  if(DD){ DAJval("Social","L0",IME);
  
- DAJval("PROFIL","RANK",IME22); var Rnk=IME22.innerText; ckR(parseInt(Rnk));
+ DAJval("PROFIL","RANK",0); 
  
  
  
@@ -74,7 +74,6 @@ IME.innerHTML="da si naprae akaunt";
 }
 
 var toBACK="rane";
-function UPDATE(a,b){a.innerHTML=b;}
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
@@ -91,7 +90,14 @@ UPDATE(ELEM,toBACK);
 Start();
 
 
+/// b e kodirano
+//0- zvezid
+function UPDATE(a,b){
+if(a==0){var Rnk=IME22.innerText; ckR(parseInt(Rnk));}else{
 
+a.innerHTML=b;}	
+
+}
 
 function Start(){
 	CEKuser();
