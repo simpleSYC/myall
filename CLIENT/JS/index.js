@@ -92,8 +92,9 @@ Start();
 
 /// b e kodirano
 //0- zvezid
+
 function UPDATE(a,b){
-if(a==0){ ckR(parseInt(b));}else{
+if(a==0){ updZvzda(parseInt(b));}else{
 
 a.innerHTML=b;}	
 
@@ -106,17 +107,6 @@ function Start(){
 
 
 }
-
-var QQ="ZZ";
-
-function ckR(a){
-	if(a==0){QQ=0;}else
-	if(a==1){QQ=1;}else
-	if(a==2){QQ=2;}else
-	if(a==3){QQ=3;}
-
-updZvzda(QQ);}
-
 var z23=document.getElementById("z_23");
 var z13=document.getElementById("z_13");
 var z32=document.getElementById("z_32");
@@ -126,16 +116,16 @@ function updZvzda(a){
 	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
 	if(a==1){
 		ZZ[0].remove();
-		ZZ[1].style="scale:3;fill:gold;transform:translate(2px,25px);";
+		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
 		ZZ[2].remove();}else
 	if(a==2){
-		ZZ[0].style="scale:3;fill:gold;top:transform:translate(-10px,25px);";
+		ZZ[0].style="opacity:1;scale:3;fill:gold;top:transform:translate(-10px,25px);";
 		ZZ[1].remove();
-		ZZ[2].style="scale:3;fill:gold;transform:translate(15px,25px);";}else
+		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(15px,25px);";}else
 	if(a==3){
-		ZZ[0].style="scale:3;fill:gold;transform:translate(-15px,22px);";
-		ZZ[1].style="scale:3;fill:gold;transform:translate(2px,25px);";
-		ZZ[2].style="scale:3;fill:gold;transform:translate(19px,22px);";}
+		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-15px,22px);";
+		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
+		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(19px,22px);";}
 }
 
 

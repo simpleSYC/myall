@@ -22,13 +22,13 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
 
 var MyallBase = firebase.database().ref();
 
-var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":""},"PROFIL":{"FOTO":"","IME":"","RANK":"","REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""}},"Peyment":{"L0":"","L1":"","L2":"","L3":""},"Social":{"L0":"pop","L1":"","L2":"","L3":""}}
+var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""}},"Peyment":{"L0":"","L1":"","L2":"","L3":""},"Social":{"L0":"pop","L1":"","L2":"","L3":""}}
 
 
 var USERdef;
 var mailID;
 var CC,DD;
-function KOJeOVOJ(a){
+function KOJeOVOJ(a){ /// ovdeka se pravi updajtot za userko
 	
 	
 			
@@ -47,10 +47,10 @@ MyallBase.once("value")
  
 	if(DD!=undefined){
 		console.log("ovaj postoi  user ",mailID);
-		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD;
+		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD; LOADNI(true);
 
 		}else{
-		console.log("ovaj user  go nema",mailID);}
+		console.log("ovaj user  go nema  WELCOME",mailID);}
 		
 	
   });	
@@ -265,4 +265,55 @@ function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].childr
 }
 
 
+
+
+
+/////////////////  citanje data za userot
+
+
+
+var toBACK="rane";
+function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
+MyallBase.child(LINKtxt);
+MyallBase.once("value")
+  .then(function(snapshot) {
+     toBACK = snapshot.val();
+	 
+ toBACK=toBACK["URLuser"][USER][a][b];
+ 
+UPDATE(ELEM,toBACK);	
+	
+  });	
+  
+}
+
+/// b e kodirano
+//0- zvezid
+
+function UPDATE(a,b){
+if(a==0){ updZvzda(parseInt(b));}else{
+
+a.innerHTML=b;}	
+
+}
+var z23=document.getElementById("z_23");
+var z13=document.getElementById("z_13");
+var z32=document.getElementById("z_32");
+var ZZ=[z23,z13,z32];
+
+function updZvzda(a){
+	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
+	if(a==1){
+		ZZ[0].remove();
+		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
+		ZZ[2].remove();}else
+	if(a==2){
+		ZZ[0].style="opacity:1;scale:3;fill:gold;top:transform:translate(-10px,25px);";
+		ZZ[1].remove();
+		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(15px,25px);";}else
+	if(a==3){
+		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-15px,22px);";
+		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
+		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(19px,22px);";}
+}
 
