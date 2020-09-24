@@ -10,7 +10,7 @@
   background-image: url('../img/MYALLbacground.png');
   background-size: cover;
   background-position: center center;
-  top:0px;left:0px;}
+  top:0px;left:0px;z-index:-1;}
 
 .menu {
   width: 100%;
