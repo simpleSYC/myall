@@ -21,6 +21,7 @@ var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https//myall.sytes
 var IME=document.getElementById("demo22");
 
 
+var IME22=document.getElementById("RANKE");
 
 
 
@@ -47,6 +48,11 @@ MyallBase.once("value")
  
  
  if(DD){ DAJval("Social","L0",IME);
+ 
+ DAJval("PROFIL","RANK",IME22);
+ 
+ 
+ 
  //innerHTML=toBACK;
  
  
