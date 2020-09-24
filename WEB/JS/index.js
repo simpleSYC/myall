@@ -174,7 +174,7 @@ ELEmentce.innerHTML="Deactiv";
 a.children[1].style="background-color:red;";}
 
 if(n==0){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
-if(n==1){if(b.checked){STATS_linkce=true;}else{STATS_linkce=false;}}
+
 
 }
 
@@ -250,9 +250,9 @@ function par(a){StalazINDEX="malee -"+a;}
 function UPDATElinko(){}
 
 
-function MESTENJE(a){
-if(a==1){
-	
+function MESTENJE(a,b){
+if(b==1){
+STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked
 
 firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([STATS_linkce,"re testo"]);
 }
@@ -273,11 +273,17 @@ function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].childr
 /////////////////  citanje data za userot
 function LOADNIall(){///  DD === USERKO
 	
-	DAJval("Social","L0",IME);
+	DAJval("Social","L0/0",IME);
  
  DAJval("PROFIL","RANK",0); 
+ 
+// DAJval("Activity","L0/0",
 };
 
+function puniLokalno(){
+	
+	
+}
 
 
 var toBACK="rane";
