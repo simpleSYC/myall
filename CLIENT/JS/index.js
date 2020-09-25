@@ -119,7 +119,7 @@ function updZvzda(a){
 		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
 		ZZ[2].remove();}else
 	if(a==2){
-		ZZ[0].style="opacity:1;scale:3;fill:gold;top:transform:translate(-10px,25px);";
+		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-10px,25px);";
 		ZZ[1].remove();
 		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(15px,25px);";}else
 	if(a==3){
