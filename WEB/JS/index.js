@@ -245,10 +245,6 @@ function MDL(a,b) {R_2="L"+b;                         /// be e id na stalaza
 
 function par(a){StalazINDEX="malee -"+a;}
 
-//MESTENJE();
-
-function UPDATElinko(){}
-
 
 function MESTENJE(a,b){
 if(b==1){
@@ -283,6 +279,7 @@ function puniLokalno(){
 var proz1=["Activity","Social","Peyment","Contact"];	
 var proz2=["L0","L1","L2"];
 
+
 	
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
@@ -290,6 +287,16 @@ for(i=0;i<4;i++){
 	}
 }
 GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
+
+for(w=0;w<4;w++){
+	for(r=0;r<3;r++){
+		
+		if(AR[w][r][0][0]){AR[w][r][1].value=DTA[w][r]+AR[w][r][0][1];}
+		
+	}
+}
+
+
 GTD=null;	
 
 }
