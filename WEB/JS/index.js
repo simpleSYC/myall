@@ -228,8 +228,8 @@ LOPCI.style="display: none;";
 function DROPdwnbtn(){
 	if(LOPCI.style.display=="block"){LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}
 }
-var R_0="";var STATS_linkce,R_1,R_2,StalazINDEX;
-var R=[STATS_linkce,R_1,R_2,StalazINDEX];
+var R_0="";var STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT;
+var R=[STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT];
 /// PAR i par se parametri od setinzi zimanje
 
 function PAR(b){a=b.classList.value;
@@ -252,9 +252,9 @@ function UPDATElinko(){}
 
 function MESTENJE(a,b){
 if(b==1){
-STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked
-
-firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([STATS_linkce,"re testo"]);
+STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
+LINK_TXT=document.getElementById("LINK_txt").value;
+firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([STATS_linkce,LINK_TXT]);
 }
 
 }
@@ -285,12 +285,12 @@ var proz1=["Activity","Social","Peyment","Contact"];
 var proz2=["L0","L1","L2"];
 
 	
-for(i=0;i<3;i++){
+for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
-}	
-	
+}GTD=null;	
+
 }
 
 
