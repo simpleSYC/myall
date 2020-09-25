@@ -291,7 +291,7 @@ GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
 for(w=0;w<4;w++){
 	for(r=0;r<3;r++){
 		
-		if(AR[w][r][0][0]){AR[w][r][1].value=DTA[w][r]+AR[w][r][0][1];}
+		if(AR[w][r][0]!=false){AR[w][r][1].value=DTA[w][r]+AR[w][r][1];}
 		
 	}
 }
