@@ -287,12 +287,13 @@ function puniLokalno(){
 
 
 var toBACK="rane";
+var GTD=null;
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+DD+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
-	 
+	 GTD=toBACK;
  toBACK=toBACK["URLuser"][DD][a][b];
  
 UPDATE(ELEM,toBACK);	
