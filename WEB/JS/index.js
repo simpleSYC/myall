@@ -272,10 +272,10 @@ function GETaccSTATUS(a){SW=document.getElementsByClassName("switch")[0].childre
 
 /////////////////  citanje data za userot
 function LOADNIall(){///  DD === USERKO
-	
-	DAJval("Social","L0/0",IME);
+puniLokalno();	
+//	DAJval("Social","L0/0",IME);
  
- DAJval("PROFIL","RANK",0); 
+// DAJval("PROFIL","RANK",0); 
  
 // DAJval("Activity","L0/0",
 };
