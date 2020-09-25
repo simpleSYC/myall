@@ -261,9 +261,9 @@ firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([
 
 ////////////////////////// citanje data
 var da=true;
-GETaccSTATUS(da);
-function GETaccSTATUS(da){SW=document.getElementsByClassName("switch")[0].children[0];	
-	if(da!=SW.checked ){SW.click();}
+//GETaccSTATUS(da);
+function GETaccSTATUS(a){SW=document.getElementsByClassName("switch")[0].children[0];	
+	if(a!=SW.checked ){SW.click();}
 }
 
 
