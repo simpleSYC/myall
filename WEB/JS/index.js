@@ -272,10 +272,9 @@ function GETaccSTATUS(a){SW=document.getElementsByClassName("switch")[0].childre
 
 /////////////////  citanje data za userot
 function LOADNIall(){///  DD === USERKO
-puniLokalno();	
-//	DAJval("Social","L0/0",IME);
- 
-// DAJval("PROFIL","RANK",0); 
+
+//DAJval("Social","L0/0",IME);
+DAJval("PROFIL","RANK",0); 
  
 // DAJval("Activity","L0/0",
 };
@@ -316,7 +315,7 @@ UPDATE(ELEM,toBACK);
 //0- zvezid
 
 function UPDATE(a,b){
-if(a==0){ updZvzda(parseInt(b));}else{
+if(a==0){ updZvzda(parseInt(b)); puniLokalno();}else{
 
 a.innerHTML=b;}	
 
