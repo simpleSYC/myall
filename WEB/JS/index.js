@@ -281,7 +281,14 @@ function LOADNIall(){///  DD === USERKO
 };
 
 function puniLokalno(){
+var prozivka=["L0","L1","L2"];
+
 	
+for(i=0;i<3;i++){
+	for(q=0;q<3;q++){
+		AR[i][q][0]=GTD[prozivka[q].toString()][i.toString()]
+	}
+}	
 	
 }
 
@@ -293,7 +300,7 @@ MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
-	 GTD=toBACK;
+	 GTD=toBACK["URLuser"][DD];
  toBACK=toBACK["URLuser"][DD][a][b];
  
 UPDATE(ELEM,toBACK);	

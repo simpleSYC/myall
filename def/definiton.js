@@ -19,3 +19,5 @@ var C0= document.getElementsByClassName("contact1-button")[0];
 var C1= document.getElementsByClassName("security-button")[0];
 var C2= document.getElementsByClassName("profile-button")[0];
 var arC=[[null,C0],[null,C1],[null,C2]];
+
+var AR=[arA,arS,arP,arC];
