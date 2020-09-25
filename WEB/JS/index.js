@@ -241,22 +241,23 @@ if(a.includes("settings-button")){R_1="Contact";}} //Contact
 function MDL(a,b) {R_2="L"+b;                         /// be e id na stalaza
   modal.style.display = "block";
   document.getElementById("tsto").innerHTML="vie stistnavte na "+a.classList.value;
+  
+  window.open(a.value);
 }
 
-function par(a){StalazINDEX="malee -"+a;}
+function par(a){StalazINDEX=a;}
 
 
 function MESTENJE(a,b){
 if(b==1){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
-firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([STATS_linkce,LINK_TXT]);
+firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
 }
 
 }
 
 ////////////////////////// citanje data
-var da=true;
 //GETaccSTATUS(da);
 function GETaccSTATUS(a){SW=document.getElementsByClassName("switch")[0].children[0];	
 	if(a!=SW.checked ){SW.click();}
@@ -288,10 +289,14 @@ for(i=0;i<4;i++){
 }
 GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
 
-for(w=0;w<4;w++){
+for(w=1;w<2;w++){
 	for(r=0;r<3;r++){
 		
-		if(AR[w][r][0]!=false){AR[w][r][1].value=DTA[w][r]+AR[w][r][1];}
+		if((AR[w][r][0][0][0]!=false)&&(AR[w][r][0][0][1]!=0)){
+			AR[w][r][1].children[0].innerHTML=DTA[w][r]+AR[w][r][0][1];
+			
+			AR[w][r][1].value=AR[w][r][1].children[0].innerHTML;
+			}
 		
 	}
 }
