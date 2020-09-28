@@ -109,13 +109,8 @@ for(z=0;z<4;z++){
 
 }
 var TXTETO="da";
-var rubSTL="dasd";
-function OPND(a){ rubSTL=AR[parCAT][a][0][0][1];
-
-TXTETO=DTA[parCAT][rubSTL]+AR[parCAT][rubSTL][0][1];
-window.open(TXTETO);
-} 
-
+function OPND(a){ TXTETO=DTA[parCAT][a]+AR[parCAT][a][0][1];
+window.open(TXTETO);}
 
 
 
