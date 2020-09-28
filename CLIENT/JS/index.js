@@ -98,7 +98,12 @@ for(z=0;z<4;z++){
 			AR[0][Z][1].children[0].remove();// brisenje topce titleto
 			
 			}else{
+				
+				OPNlink= "www.google.com/ewqeqweqw" //////
+				
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
+				
+				AR[z][Z][1].addEventListener("click", window.open(OPNlink));
 			}
 		}else{AR[z][Z][1].remove();}
 	}

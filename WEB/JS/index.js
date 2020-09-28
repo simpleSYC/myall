@@ -484,6 +484,9 @@ for(z=0;z<4;z++){
 			
 			}else{
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
+			//	OPNlink=  //////
+				AR[z][Z][1].addEventListener("click", function(e)
+				
 			}
 		}
 	}
