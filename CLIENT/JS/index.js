@@ -98,12 +98,9 @@ for(z=0;z<4;z++){
 			AR[0][Z][1].children[0].remove();// brisenje topce titleto
 			
 			}else{
-				
-				OPNlink= "www.google.com/ewqeqweqw"; //////
-				
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
-				
-				AR[z][Z][1].addEventListener("click", window.open(OPNlink));
+				TXTETO=DTA[z][Z]+AR[z][Z][0][1];
+				AR[z][Z][1].addEventListener("click",OPEN_W(TXTETO))
 			}
 		}else{AR[z][Z][1].remove();}
 	}
@@ -111,6 +108,11 @@ for(z=0;z<4;z++){
 
 
 }
+var TXTETO="da";
+function OPND(a){AAA=a;}
+
+function OPEN_W(a){	window.open(a);}
+
 
 
 function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");}}

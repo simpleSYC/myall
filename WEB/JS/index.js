@@ -349,11 +349,6 @@ var R=[STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT];
 /// PAR i par se parametri od setinzi zimanje
 
 var parCAT,parRUB;
-function PAR(b){a=b.classList.value;
-if(a.includes("faq-button")){R_1="Activity";parCAT=0;}else  //  Activity
-if(a.includes("home-button")){R_1="Social";parCAT=1;}else //Social
-if(a.includes("more-button")){R_1="Peyment";parCAT=2;}else // Peyment
-if(a.includes("settings-button")){R_1="Contact";parCAT=3;}} //Contact
 
 
 var L;

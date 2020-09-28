@@ -71,6 +71,13 @@ var F_Logo=[F_A,F_S,F_P,F_C];
 
 ////////////////////
 
+
+function PAR(b){a=b.classList.value;
+if(a.includes("faq-button")){R_1="Activity";parCAT=0;}else  //  Activity
+if(a.includes("home-button")){R_1="Social";parCAT=1;}else //Social
+if(a.includes("more-button")){R_1="Peyment";parCAT=2;}else // Peyment
+if(a.includes("settings-button")){R_1="Contact";parCAT=3;}} //Contact
+
 var proz1=["Activity","Social","Peyment","Contact"];	
 var proz2=["L0","L1","L2"];
 
