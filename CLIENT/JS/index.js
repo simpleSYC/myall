@@ -50,10 +50,7 @@ MyallBase.once("value")
  if(DD){
  
  DAJval("PROFIL","RANK",0); 
- 
- 
- 
-document.getElementById("user_div").style="display:block;";
+
  
 document.getElementsByClassName("containerX")[0].style="opacity:1;";
 	
