@@ -297,6 +297,8 @@ storageRef.getDownloadURL().then(function(url) {
 );
 	}); 
 
+function PREview(){window.open("https://myall.sytes.net/"+DD);}
+
 function UPD_PROFILO(T){
 	
 // se ubacuvat datada u data baza..
@@ -451,10 +453,7 @@ if(parCAT==0){
 }
 
 function puniLokalno(){
-var proz1=["Activity","Social","Peyment","Contact"];	
-var proz2=["L0","L1","L2"];
-
-
+	
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
 
 document.getElementById("PROFI_pic").src=fotoLINK;
@@ -486,7 +485,7 @@ for(z=0;z<4;z++){
 			}else{
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
 			}
-		}else{AR[z][Z][1].remove();}// remuvska clientska  samo da se dodade elseto
+		}
 	}
 }
 

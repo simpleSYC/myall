@@ -47,13 +47,10 @@ MyallBase.once("value")
  
  
  
- if(DD){ //DAJval("Social","L0",IME);
+ if(DD){
  
  DAJval("PROFIL","RANK",0); 
  
- 
- 
- //innerHTML=toBACK;
  
  
 document.getElementById("user_div").style="display:block;";
@@ -73,12 +70,11 @@ IME.innerHTML="da si naprae akaunt";
 	
 }
 
-function OPN(a){window.open(a.value);}
-
 function puniLokalno(){
-var proz1=["Activity","Social","Peyment","Contact"];	
-var proz2=["L0","L1","L2"];
+	
+fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
 
+document.getElementById("PROFI_pic").src=fotoLINK;
 
 	
 for(i=0;i<4;i++){
@@ -86,25 +82,36 @@ for(i=0;i<4;i++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
 }
-GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
+GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"]);
 
-for(w=1;w<2;w++){
-	for(r=0;r<3;r++){
+document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
+
+
+
+for(z=0;z<4;z++){
+	for(Z=0;Z<3;Z++){ /// broj na babeelsi
 		
-		if((AR[w][r][0][0][0]!=false)&&(AR[w][r][0][0][1]!=0)){
-			AR[w][r][1].children[0].innerHTML=DTA[w][r]+AR[w][r][0][1];
+		if((AR[z][Z][0][0][0])&&(AR[z][Z][0][0][1]!=-1)){
+			if(z==0){
+			AR[0][Z][1].children[2].innerHTML=svg_ASPC[0][0];
+			AR[0][Z][1].children[2].children[0].children[0].innerHTML=DTA[0][0]+AR[0][Z][0][1];
 			
-			AR[w][r][1].value=AR[w][r][1].children[0].innerHTML;
-			}else{AR[w][r][1].remove();}
-		
+			AR[0][Z][1].children[1].remove();// brisenje topce klientsko
+			
+			AR[0][Z][1].children[0].remove();// brisenje topce titleto
+			
+			}else{
+				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
+			}
+		}else{AR[z][Z][1].remove();}
 	}
 }
 
 
-GTD=null;	
-
 }
 
+
+function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");}}
 
 var toBACK="rane";
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
@@ -125,15 +132,6 @@ UPDATE(ELEM,toBACK);
 Start();
 
 
-/// b e kodirano
-//0- zvezid
-
-function UPDATE(a,b){
-if(a==0){ updZvzda(parseInt(b));  puniLokalno();}else{
-
-a.innerHTML=b;}	
-
-}
 
 function Start(){
 	CEKuser();
@@ -142,25 +140,4 @@ function Start(){
 
 
 }
-var z23=document.getElementById("z_23");
-var z13=document.getElementById("z_13");
-var z32=document.getElementById("z_32");
-var ZZ=[z23,z13,z32];
-
-function updZvzda(a){
-	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
-	if(a==1){
-		ZZ[0].remove();
-		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
-		ZZ[2].remove();}else
-	if(a==2){
-		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-10px,25px);";
-		ZZ[1].remove();
-		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(15px,25px);";}else
-	if(a==3){
-		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-15px,22px);";
-		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
-		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(19px,22px);";}
-}
-
 

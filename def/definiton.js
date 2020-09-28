@@ -70,7 +70,9 @@ var F_Logo=[F_A,F_S,F_P,F_C];
 
 
 ////////////////////
-function PREview(){window.open("https://myall.sytes.net/"+DD);}
+
+var proz1=["Activity","Social","Peyment","Contact"];	
+var proz2=["L0","L1","L2"];
 
 
 var z23=document.getElementById("z_23");
