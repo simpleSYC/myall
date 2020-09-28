@@ -99,8 +99,8 @@ for(z=0;z<4;z++){
 			
 			}else{
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
-				TXTETO=DTA[z][Z]+AR[z][Z][0][1];
-				AR[z][Z][1].addEventListener("click",OPEN_W(TXTETO))
+				
+//				AR[z][Z][1].addEventListener("click",OPEN_W(TXTETO))
 			}
 		}else{AR[z][Z][1].remove();}
 	}
@@ -109,9 +109,13 @@ for(z=0;z<4;z++){
 
 }
 var TXTETO="da";
-function OPND(a){AAA=a;}
+var rubSTL="dasd";
+function OPND(a){ rubSTL=AR[parCAT][a][0][0][1];
 
-function OPEN_W(a){	window.open(a);}
+TXTETO=DTA[parCAT][rubSTL]+AR[parCAT][rubSTL][0][1];
+window.open(TXTETO);
+} 
+
 
 
 
