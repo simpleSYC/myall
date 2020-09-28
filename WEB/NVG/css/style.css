@@ -28,10 +28,8 @@
   cursor: pointer; }
   .main-menu circle {
     transition: opacity 250ms; }
-    .main-menu circle:hover {
-      opacity: 1; }
-  .main-menu.is-active > circle {
-    opacity: 1; }
+
+ 
 
 [class$="-button"] {
   cursor: pointer; }

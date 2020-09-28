@@ -47,7 +47,7 @@ MyallBase.once("value")
  
  
  
- if(DD){ DAJval("Social","L0",IME);
+ if(DD){ //DAJval("Social","L0",IME);
  
  DAJval("PROFIL","RANK",0); 
  
@@ -73,12 +73,47 @@ IME.innerHTML="da si naprae akaunt";
 	
 }
 
+function OPN(a){window.open(a.value);}
+
+function puniLokalno(){
+var proz1=["Activity","Social","Peyment","Contact"];	
+var proz2=["L0","L1","L2"];
+
+
+	
+for(i=0;i<4;i++){
+	for(q=0;q<3;q++){
+		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
+	}
+}
+GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
+
+for(w=1;w<2;w++){
+	for(r=0;r<3;r++){
+		
+		if((AR[w][r][0][0][0]!=false)&&(AR[w][r][0][0][1]!=0)){
+			AR[w][r][1].children[0].innerHTML=DTA[w][r]+AR[w][r][0][1];
+			
+			AR[w][r][1].value=AR[w][r][1].children[0].innerHTML;
+			}else{AR[w][r][1].remove();}
+		
+	}
+}
+
+
+GTD=null;	
+
+}
+
+
 var toBACK="rane";
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
   .then(function(snapshot) {
      toBACK = snapshot.val();
+	 
+	 GTD=toBACK["URLuser"][USER];
 	 
  toBACK=toBACK["URLuser"][USER][a][b];
  
@@ -94,7 +129,7 @@ Start();
 //0- zvezid
 
 function UPDATE(a,b){
-if(a==0){ updZvzda(parseInt(b));}else{
+if(a==0){ updZvzda(parseInt(b));  puniLokalno();}else{
 
 a.innerHTML=b;}	
 

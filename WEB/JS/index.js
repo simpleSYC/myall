@@ -194,18 +194,21 @@ USerko=a.value;
 
 // Get the modal
 var modal = document.getElementById("myModal");
+var modal_PROFIL = document.getElementById("Modal_PROFIL");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+var span_PROFIL = document.getElementsByClassName("close")[1];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
-}
-
+  modal.style.display = "none";}
+  
+span_PROFIL.onclick = function() {
+  modal_PROFIL.style.display = "none";}
 
 var DROPdwnBTN=document.getElementById("MENIlink");
 var LOPCI=  document.getElementById("Lopci");
@@ -219,12 +222,123 @@ window.onclick = function(event) {
 LOPCI.style="display: none;";
   
   }
+  
+  
+  if (event.target == modal_PROFIL) {
+  modal_PROFIL.style.display = "none";
+  }
 
   
 }
 
 
 ////////////////////////// modelskoto kopce
+function MDL_PROFIL(){
+	  modal_PROFIL.style.display = "block";
+	
+}
+var FTO_UPLOAD_view=document.getElementById("wew"); var FTO_url="nonee"; var NOVO_FOTO_iME=null;
+
+var uploadPROCENT=0;
+var UPD_Pic=document.getElementById("fileButon");
+UPD_Pic.addEventListener("change", function(e){
+	
+	var file = e.target.files[0];
+	
+var storageRef= firebase.storage().ref().child("USER_pic").child(DD).child("PROFIL_pic/"+file.name);
+
+var task=storageRef.put(file);  /// ova funkcionira kako sto treba
+
+task.on('state_changed',
+
+function progress(snapshot){
+var percentage=(snapshot.bytesTransferred / snapshot.totalBytes)*100;
+uploadPROCENT.value=percentage;},
+
+
+function error(err){},
+
+function complete (){
+//FOTO	link
+
+
+reader = new FileReader();
+reader.onload = function (){ 
+FTO_UPLOAD_view.src =reader.result;}
+reader.readAsDataURL(file);
+
+firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("FOTO").child("Fime").set(file.name);
+
+NOVO_FOTO_iME=file.name;
+
+
+
+storageRef.getDownloadURL().then(function(url) {
+  // `url` is the download URL for 'images/stars.jpg'
+
+  // This can be downloaded directly:
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = 'blob';
+  xhr.onload = function(event) {
+    var blob = xhr.response;
+  };
+  xhr.open('GET', url);
+  xhr.send();
+  FTO_url=url;
+
+}).catch(function(error) {
+  // Handle any errors
+});
+
+
+
+}
+
+);
+	}); 
+
+function UPD_PROFILO(T){
+	
+// se ubacuvat datada u data baza..
+// se updejtnuva datata so LOKALNITE promeni
+
+/// ako se uploadne slika na sajtot i pritisne update , togas da se turi na firabaze
+/// ako ne da ne je uploadnuva istata slika
+promSTATUS();
+promeniTUKA();
+
+T.parentElement.children[0].click();// da closne modale
+}
+
+function promSTATUS(){b=GTD["PROFIL"]["STATUS"]["SEY"];
+a=document.getElementById("PROFIL_status").value.slice(0,141);
+document.getElementById("PRO_STATUS").innerHTML=a;
+
+if(b!=a){
+firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("STATUS").child("SEY").set(a);}}
+
+function promeniTUKA(){
+stara_FTOname=GTD["PROFIL"]["FOTO"]["Fime"];
+if(stara_FTOname!=NOVO_FOTO_iME){
+document.getElementById("PROFI_pic").src=FTO_url;
+firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("FOTO").child("Flink").set(FTO_url);}}
+
+if(screen.width<400){
+document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"
+}else{
+document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
+
+function STAR_info(a) {
+  var x = document.getElementById("info_star");
+if(x.innerHTML.length<1){
+if(a==0){txt="some free welcome text status. 0 -141 character status ";}else
+if(a==1){txt="its 200x200 PX placeholder with acteable transparent png capability";}else
+if(a==2){txt="see now this..<br>press 'add star' and paypal me X money with your USERNAM (https://myall.sytes.net/USERNAME) <br>and i will manely update your status<br> you can pey as you wanna 1-9 Euro for 1 star.. 10-99 Euro for 2 stars .. 100 euro and more for 3 stars";}
+x.innerHTML=txt;}else{x.innerHTML="";}
+
+} 
+
+
 function DROPdwnbtn(){
 	if(LOPCI.style.display=="block"){LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}
 }
@@ -232,20 +346,59 @@ var R_0="";var STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT;
 var R=[STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT];
 /// PAR i par se parametri od setinzi zimanje
 
+var parCAT,parRUB;
 function PAR(b){a=b.classList.value;
-if(a.includes("faq-button")){R_1="Activity";}else  //  Activity
-if(a.includes("home-button")){R_1="Social";}else //Social
-if(a.includes("more-button")){R_1="Peyment";}else // Peyment
-if(a.includes("settings-button")){R_1="Contact";}} //Contact
+if(a.includes("faq-button")){R_1="Activity";parCAT=0;}else  //  Activity
+if(a.includes("home-button")){R_1="Social";parCAT=1;}else //Social
+if(a.includes("more-button")){R_1="Peyment";parCAT=2;}else // Peyment
+if(a.includes("settings-button")){R_1="Contact";parCAT=3;}} //Contact
 
-function MDL(a,b) {R_2="L"+b;                         /// be e id na stalaza
+
+var L;
+function MDL(b) {R_2="L"+b;parRUB=b;                /// be e id na stalaza
   modal.style.display = "block";
-  document.getElementById("tsto").innerHTML="vie stistnavte na "+a.classList.value;
-  
-  window.open(a.value);
+ StalazINDEX=AR[parCAT][b][0][0][1];
+if(parCAT!=0){
+document.getElementById("SHW_link").innerHTML=DTA[parCAT][StalazINDEX]+AR[parCAT][b][0][1];
+}else{
+document.getElementById("SHW_link").innerHTML=DTA[parCAT][0]+AR[parCAT][b][0][1];}
+
+
+document.getElementById("LINK_txt").value=AR[parCAT][b][0][1];
+
+
+SETbLOGO();
+
+L=document.getElementsByClassName("LL");
+for(i=0;i<L.length;i++){
+	if(i<DTA[parCAT].length){
+	L[i].style="display:block;";
+	L[i].innerHTML=DTA[parCAT][i];
+	}else{		
+	L[i].style="display:none;";
+	}
+
 }
 
-function par(a){StalazINDEX=a;}
+}
+var SW=document.getElementsByClassName("switch")[0].children[0];	
+
+function SHW_LinkUPDT(a){b=a.parentElement.parentElement.children[1];	
+	
+b.innerHTML=DTA[parCAT][StalazINDEX]+a.value;}
+
+function SETbLOGO(){if(parCAT!=0){
+document.getElementById("Btn_LOGO").classList=F_Logo[parCAT][StalazINDEX];
+}else{
+document.getElementById("Btn_LOGO").classList=F_Logo[0][0];}}
+
+function par(a){StalazINDEX=a;  LOPCI.style="display: none;";
+
+document.getElementById("SHW_link").innerHTML=DTA[parCAT][StalazINDEX]+document.getElementById("LINK_txt").value;
+
+
+SETbLOGO();
+}
 
 
 function MESTENJE(a,b){
@@ -253,33 +406,58 @@ if(b==1){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
 firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
-}
 
-}
 
-////////////////////////// citanje data
-//GETaccSTATUS(da);
-function GETaccSTATUS(a){SW=document.getElementsByClassName("switch")[0].children[0];	
-	if(a!=SW.checked ){SW.click();}
+ST_svg();
 }
 
 
+a.parentElement.parentElement.parentElement.children[0].click();// da closne modale
+}
+
+
+function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
+
+function STATS(A){a=A.checked;
+	if(a){
+if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=true){
+MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(true);
+}
+	}else{  
+if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=false){
+MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(false);
+}
+	}
+}
 
 
 
-/////////////////  citanje data za userot
-function LOADNIall(){///  DD === USERKO
 
-//DAJval("Social","L0/0",IME);
-DAJval("PROFIL","RANK",0); 
- 
-// DAJval("Activity","L0/0",
+function LOADNIall(){
+	
+DAJval("PROFIL","RANK",0);
+
 };
+
+
+function ST_svg(){ 
+if(parCAT==0){
+	AR[0][parRUB][1].children[2].innerHTML=svg_ASPC[0][0];
+	AR[0][parRUB][1].children[2].children[0].children[0].innerHTML="https://"+document.getElementById("LINK_txt").value;
+	
+}else{
+	AR[parCAT][parRUB][1].children[0].innerHTML=document.getElementById("SHW_link").innerHTML;
+	AR[parCAT][parRUB][1].children[2].innerHTML=svg_ASPC[parCAT][StalazINDEX];}
+}
 
 function puniLokalno(){
 var proz1=["Activity","Social","Peyment","Contact"];	
 var proz2=["L0","L1","L2"];
 
+
+fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
+
+document.getElementById("PROFI_pic").src=fotoLINK;
 
 	
 for(i=0;i<4;i++){
@@ -287,28 +465,37 @@ for(i=0;i<4;i++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
 }
-GETaccSTATUS(GTD["PROFIL"]["STATUS"]);
+GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"]);
 
-for(w=1;w<2;w++){
-	for(r=0;r<3;r++){
+document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
+
+
+
+for(z=0;z<4;z++){
+	for(Z=0;Z<3;Z++){ /// broj na babeelsi
 		
-		if((AR[w][r][0][0][0]!=false)&&(AR[w][r][0][0][1]!=0)){
-			AR[w][r][1].children[0].innerHTML=DTA[w][r]+AR[w][r][0][1];
+		if((AR[z][Z][0][0][0])&&(AR[z][Z][0][0][1]!=-1)){
+			if(z==0){
+			AR[0][Z][1].children[2].innerHTML=svg_ASPC[0][0];
+			AR[0][Z][1].children[2].children[0].children[0].innerHTML=DTA[0][0]+AR[0][Z][0][1];
 			
-			AR[w][r][1].value=AR[w][r][1].children[0].innerHTML;
+	//		AR[0][Z][1].children[1].remove();// brisenje topce klientsko
+			
+	//		AR[0][Z][1].children[0].remove();// brisenje topce titleto
+			
+			}else{
+				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
 			}
-		
+		}else{AR[z][Z][1].remove();}// remuvska clientska  samo da se dodade elseto
 	}
 }
 
-
-GTD=null;	
 
 }
 
 
 var toBACK="rane";
-var GTD=null;
+var GTD;
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+DD+"/"+a+"/"+b;  
 MyallBase.child(LINKtxt);
 MyallBase.once("value")
@@ -317,39 +504,9 @@ MyallBase.once("value")
 	 GTD=toBACK["URLuser"][DD];
  toBACK=toBACK["URLuser"][DD][a][b];
  
-UPDATE(ELEM,toBACK);	
+ 
+ UPDATE(ELEM,toBACK);
 	
   });	
   
 }
-
-/// b e kodirano
-//0- zvezid
-
-function UPDATE(a,b){
-if(a==0){ updZvzda(parseInt(b)); puniLokalno();}else{
-
-a.innerHTML=b;}	
-
-}
-var z23=document.getElementById("z_23");
-var z13=document.getElementById("z_13");
-var z32=document.getElementById("z_32");
-var ZZ=[z23,z13,z32];
-
-function updZvzda(a){
-	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
-	if(a==1){
-		ZZ[0].remove();
-		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
-		ZZ[2].remove();}else
-	if(a==2){
-		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-10px,25px);";
-		ZZ[1].remove();
-		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(15px,25px);";}else
-	if(a==3){
-		ZZ[0].style="opacity:1;scale:3;fill:gold;transform:translate(-15px,22px);";
-		ZZ[1].style="opacity:1;scale:3;fill:gold;transform:translate(2px,25px);";
-		ZZ[2].style="opacity:1;scale:3;fill:gold;transform:translate(19px,22px);";}
-}
-
