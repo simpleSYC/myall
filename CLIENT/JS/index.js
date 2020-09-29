@@ -101,8 +101,9 @@ for(z=0;z<4;z++){
 		}else{AR[z][Z][1].remove();}
 	}
  }
-}else{document.getElementById("AJDE").remove();}
-
+}else{
+	document.getElementsByClassName("outside-layer")[0].remove();
+	document.getElementsByClassName("middle-layer")[0].remove();}
 
 
 }
