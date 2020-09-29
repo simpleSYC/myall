@@ -16,7 +16,7 @@
 //definicija  
 var USER=window.location.href.slice(24);var MyallBase = firebase.database().ref();
 
-var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https//myall.sytes.net/"+USER;
+var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://myall.sytes.net/"+USER;
 
 var IME=document.getElementById("demo22");
 
@@ -80,6 +80,8 @@ if(GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"])){
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
+		     Q=AR[i][q][0][0][1];
+		AR[i][q][1].children[0].innerHTML=DTA[i][Q]+AR[i][q][0][1];
 	}
 }
 
@@ -96,7 +98,8 @@ for(z=0;z<4;z++){
 			AR[0][Z][1].children[0].remove();// brisenje topce titleto
 			
 			}else{ Q=AR[z][Z][0][0][1];
-				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Q];				
+				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Q];
+		
 			}
 		}else{AR[z][Z][1].remove();}
 	}
