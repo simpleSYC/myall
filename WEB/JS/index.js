@@ -158,8 +158,12 @@ firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
 firebase.database().ref().child("URLuser").child(USerko).set(LERo_0);
 
 firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("REG").child("email").set(email);
-	
-	
+
+	alert("accaunt sucsecsful created ");
+
+setTimeout(function(){location.reload();}, 1000);
+
+ 	
 	}, 1500);
 
 }
