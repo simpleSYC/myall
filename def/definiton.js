@@ -50,7 +50,7 @@ var svg_ASPC=[svg_A,svg_S,svg_P,svg_C];
 
 var DTA_A=["https://"];
 
-var DTA_S=["https://www.facebook.com/","https://www.youtube.com/","https://twitter.com/","https://www.instagram.com/"];
+var DTA_S=["https://www.facebook.com/","https://www.youtube.com/","https://twitter.com/","https://www.instagram.com/","https://www.tiktok.com/"];
 
 var DTA_P=["https://www.paypal.me/","https://www.patreon.com/","https://ko-fi.com/",""];
 
@@ -60,7 +60,7 @@ var DTA=[DTA_A,DTA_S,DTA_P,DTA_C];
 
 
 var F_A=["far fa-edit"];
-var F_S=["fab fa-facebook-square","fab fa-youtube-square","fab fa-twitter-square","fab fa-instagram"];
+var F_S=["fab fa-facebook-square","fab fa-youtube-square","fab fa-twitter-square","fab fa-instagram","fab fa-tiktok"];
 var F_P=["fab fa-paypal","fab fa-patreon","fas fa-coffee"];
 var F_C=["fas fa-envelope-square","fas fa-home","fas fa-phone-square-alt"];
 var F_Logo=[F_A,F_S,F_P,F_C];

@@ -69,21 +69,19 @@ IME.innerHTML="da si naprae akaunt";
 
 function puniLokalno(){
 	
+document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
 
 document.getElementById("PROFI_pic").src=fotoLINK;
 
 	
+
+if(GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"])){
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
 }
-GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"]);
-
-document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
-
-
 
 for(z=0;z<4;z++){
 	for(Z=0;Z<3;Z++){ /// broj na babeelsi
@@ -98,13 +96,13 @@ for(z=0;z<4;z++){
 			AR[0][Z][1].children[0].remove();// brisenje topce titleto
 			
 			}else{
-				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];
-				
-//				AR[z][Z][1].addEventListener("click",OPEN_W(TXTETO))
+				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Z];				
 			}
 		}else{AR[z][Z][1].remove();}
 	}
-}
+ }
+}else{document.getElementById("AJDE").remove();}
+
 
 
 }
@@ -120,7 +118,7 @@ MDLcontact.style="display:block;";
 MDLcontact.children[0].children[1].innerHTML=TXTETO;
 }
 
-function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");}}
+function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");} return a;}
 
 var toBACK="rane";
 function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
