@@ -28,7 +28,7 @@ var AR=[arA,arS,arP,arC];
 ///	}
 ///}
 var svg_A=[
-'<g target="_blank" onclick="TTT=this.children[0].innerHTML;window.open(TTT);"><text x="0" y="25" style="font-size: 50px;fill: #5d8ffc;font-weight:bold;"></text></g>'
+'<g target="_blank" onclick="TTT=this.children[0].innerHTML;window.open(TTT);"><text x="0" y="25" style="font-size:40px;fill: #5d8ffc;font-weight:bold;"></text></g>'
 ];
 
 var svg_S=[ 
