@@ -108,11 +108,17 @@ for(z=0;z<4;z++){
 
 
 }
-var TXTETO="da";
+
 function OPND(a){ TXTETO=DTA[parCAT][a]+AR[parCAT][a][0][1];
 window.open(TXTETO);}
 
 
+var MDLcontact=document.getElementById("MDL_contact");
+function SHWcontact(a){TXTETO=DTA[parCAT][a]+"<br>"+AR[parCAT][a][0][1];
+
+MDLcontact.style="display:block;";
+MDLcontact.children[0].children[1].innerHTML=TXTETO;
+}
 
 function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");}}
 
