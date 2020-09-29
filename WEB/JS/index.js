@@ -455,8 +455,8 @@ document.getElementById("PROFI_pic").src=fotoLINK;
 
 	
 for(i=0;i<4;i++){
-	for(q=0;q<3;q++){Q=GTD[proz1[i].toString()][proz2[q].toString()][0][1];
-		AR[i][q][0]=GTD[proz1[i].toString()][proz2[Q].toString()][0];
+	for(q=0;q<3;q++){
+		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
 }
 GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"]);
