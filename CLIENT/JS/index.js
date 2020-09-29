@@ -116,7 +116,8 @@ window.open(TXTETO);}
 
 
 var MDLcontact=document.getElementById("MDL_contact");
-function SHWcontact(a){TXTETO=DTA[parCAT][a]+"<br><br>"+AR[parCAT][a][0][1];
+function SHWcontact(a){  X=AR[parCAT][a][0][0][1];
+	TXTETO=DTA[parCAT][X]+"<br><br>"+AR[parCAT][a][0][1];
 
 MDLcontact.style="display:block;";
 MDLcontact.children[0].children[1].innerHTML=TXTETO;
