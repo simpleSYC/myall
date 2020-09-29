@@ -18,11 +18,6 @@ var USER=window.location.href.slice(24);var MyallBase = firebase.database().ref(
 
 var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://myall.sytes.net/"+USER;
 
-var IME=document.getElementById("demo22");
-
-
-var IME22=document.getElementById("RANKE");
-
 
 
 
@@ -55,7 +50,7 @@ MyallBase.once("value")
 document.getElementsByClassName("containerX")[0].style="opacity:1;";
 	
 }else{
-IME.innerHTML="da si naprae akaunt";	
+document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/>"+USER+"<a> still dont exist </a><br><button onclick='window.open(https://myall.sytes.net/)'>Create that acc</button>";	
 
 //document.getElementById("user_div").style="display:block;";
 
