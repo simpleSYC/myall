@@ -455,7 +455,7 @@ document.getElementById("PROFI_pic").src=fotoLINK;
 
 	
 for(i=0;i<4;i++){
-	for(q=0;q<3;q++){
+	for(q=0;q<4;q++){
 		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
 	}
 }
