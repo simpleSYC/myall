@@ -50,11 +50,9 @@ MyallBase.once("value")
 document.getElementsByClassName("containerX")[0].style="opacity:1;";
 	
 }else{
-document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/>"+USER+"<a> still dont exist </a><br><button onclick='window.open(https://myall.sytes.net/)'>Create that acc</button>";	
+document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><button href='https://myall.sytes.net/'>Create that acc</button>";	
 
-//document.getElementById("user_div").style="display:block;";
 
-//document.getElementsByClassName("containerX")[0].style="opacity:1;";
 }
  
 	
