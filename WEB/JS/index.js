@@ -25,8 +25,9 @@ var IME=document.getElementById("demo22");
 
 var MyallBase = firebase.database().ref();
 
-var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""},"STATUS":true},"Peyment":{"L0":"","L1":"","L2":"","L3":""},"Social":{"L0":"","L1":"","L2":"","L3":""}}
-
+var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""},"STATUS":true},"Peyment":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Social":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""}}
+var LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":"" }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":false }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
+//
 
 var USERdef;
 var mailID;
@@ -152,7 +153,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
-firebase.database().ref().child("URLuser").child(USerko).set(LERo);
+firebase.database().ref().child("URLuser").child(USerko).set(LERo_0);
 
 firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("REG").child("email").set(email);
 
