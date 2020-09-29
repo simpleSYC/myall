@@ -152,10 +152,15 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorMessage = error.message;
   // ...
 });
+setTimeout(function(){
+
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
 firebase.database().ref().child("URLuser").child(USerko).set(LERo_0);
 
 firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("REG").child("email").set(email);
+	
+	
+	}, 1500);
 
 }
 
