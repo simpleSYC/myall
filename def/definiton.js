@@ -79,7 +79,7 @@ if(a.includes("more-button")){R_1="Peyment";parCAT=2;}else // Peyment
 if(a.includes("settings-button")){R_1="Contact";parCAT=3;}} //Contact
 
 var proz1=["Activity","Social","Peyment","Contact"];	
-var proz2=["L0","L1","L2"];
+var proz2=["L0","L1","L2","L3","L4","L5"];
 
 
 var z23=document.getElementById("z_23");
