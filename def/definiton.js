@@ -50,11 +50,8 @@ var svg_C=[
 var svg_ASPC=[svg_A,svg_S,svg_P,svg_C];
 
 var DTA_A=["https://"];
-
 var DTA_S=["https://www.facebook.com/","https://www.youtube.com/","https://twitter.com/","https://www.instagram.com/","https://www.tiktok.com/"];
-
 var DTA_P=["https://www.paypal.me/","https://www.patreon.com/","https://ko-fi.com/",""];
-
 var DTA_C=["Email : ","Adresse  : ","Phone : "];
 
 var DTA=[DTA_A,DTA_S,DTA_P,DTA_C];

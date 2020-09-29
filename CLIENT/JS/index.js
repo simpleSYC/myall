@@ -108,7 +108,10 @@ for(z=0;z<4;z++){
 
 }
 
-function OPND(a){ TXTETO=DTA[parCAT][a]+AR[parCAT][a][0][1];
+/// AR[1][0][0][0][1]
+
+function OPND(a){ X=AR[parCAT][a][0][0][1];
+	TXTETO=DTA[parCAT][X]+AR[parCAT][a][0][1];
 window.open(TXTETO);}
 
 
