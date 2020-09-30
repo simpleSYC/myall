@@ -460,7 +460,7 @@ if(parCAT==0){
 function puniLokalno(){
 	
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
-if(fotoLINK=="nonee"){
+if((fotoLINK=="nonee")||(fotoLINK=="")){
 document.getElementById("PROFI_pic").src="../img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
 	
