@@ -64,7 +64,7 @@ function puniLokalno(){
 	
 document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
-if((fotoLINK==null){
+if((fotoLINK==false){
 document.getElementById("PROFI_pic").src="../img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
 
