@@ -26,7 +26,7 @@ var IME=document.getElementById("demo22");
 var MyallBase = firebase.database().ref();
 
 var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""},"STATUS":true},"Peyment":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Social":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""}}
-var LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":false }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
+var LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":0 }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
 //
 
 var USERdef;
@@ -153,6 +153,8 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 setTimeout(function(){
+	
+
 
 firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
 firebase.database().ref().child("URLuser").child(USerko).set(LERo_0);
@@ -165,11 +167,27 @@ setTimeout(function(){location.reload();}, 1000);
 
  	
 	}, 1500);
+	
+
+
 
 }
 
 
+function SND_vrf(a){
+	if(a==0){
+	var user = firebase.auth().currentUser;
 
+user.sendEmailVerification().then(function() {
+  // Email sent.
+  
+  MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(false);
+}).catch(function(error) {
+  // An error happened.
+});
+
+}
+document.getElementById("E_status").innerHTML=a;}
 
 function Aktiv(a,n){ b=a.children[0];
 if(n==0){ELEmentce=document.getElementById("STatusTxT");}
@@ -461,6 +479,11 @@ if(parCAT==0){
 }
 
 function puniLokalno(){
+//ld("REG").child("veri").
+E_status=GTD["PROFIL"]["REG"]["veri"];
+SND_vrf(E_status);
+
+
 	
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
 if(fotoLINK==false){
