@@ -460,9 +460,9 @@ if(parCAT==0){
 function puniLokalno(){
 	
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
-
-document.getElementById("PROFI_pic").src=fotoLINK;
-
+if(GTD["PROFIL"]["FOTO"]["Fime"].length<3){
+document.getElementById("PROFI_pic").src="../img/deflat.png";
+}else{document.getElementById("PROFI_pic").src=fotoLINK;}
 	
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
