@@ -187,7 +187,11 @@ user.sendEmailVerification().then(function() {
 });
 
 }
-document.getElementById("E_status").innerHTML=a;}
+if(a!=true){
+	document.getElementById("E_status").innerHTML="unverifed";
+}else{
+	document.getElementById("E_status").innerHTML="verifyed";
+}}
 
 function Aktiv(a,n){ b=a.children[0];
 if(n==0){ELEmentce=document.getElementById("STatusTxT");}
@@ -366,7 +370,7 @@ function STAR_info(a) {
 if(x.innerHTML.length<1){
 if(a==0){txt="some free welcome text status. 0 -141 character status ";}else
 if(a==1){txt="its 200x200 PX placeholder with acteable transparent png capability";}else
-if(a==2){txt="see now this..<br>press 'add star' and paypal me X money with your USERNAM (https://myall.sytes.net/USERNAME) <br>and i will manely update your status<br> you can pey as you wanna 1-9 Euro for 1 star.. 10-99 Euro for 2 stars .. 100 euro and more for 3 stars";}
+if(a==2){txt="you can be verifyed<br><a href='/agriment/'>see policy off verification & peyment process</a>;}
 x.innerHTML=txt;}else{x.innerHTML="";}
 
 } 
