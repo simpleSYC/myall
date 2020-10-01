@@ -193,10 +193,8 @@ user.sendEmailVerification().then(function() {
 }
 
 if (user.emailVerified) {
-if(a!=true){
-MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(true);}
-document.getElementById("E_status").innerHTML="verifyed";}else{
-document.getElementById("E_status").innerHTML="UNverifyed";}}
+if(a!=true){MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(true);}}
+}
 
 function Aktiv(a,n){ b=a.children[0];
 if(n==0){ELEmentce=document.getElementById("STatusTxT");}
@@ -270,7 +268,12 @@ LOPCI.style="display: none;";
 
 
 ////////////////////////// modelskoto kopce
-function MDL_PROFIL(){modal_PROFIL.style.display = "block";}
+function MDL_PROFIL(){modal_PROFIL.style.display = "block";
+a=GTD["PROFIL"]["REG"]["veri"];
+if(a==true){
+document.getElementById("E_status").innerHTML="verifyed";}else{
+document.getElementById("E_status").innerHTML="unverified";}
+}
 	
 
 var FTO_UPLOAD_view=document.getElementById("wew"); var FTO_url=false; var NOVO_FOTO_iME=null;
