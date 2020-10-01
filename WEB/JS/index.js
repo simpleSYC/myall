@@ -117,7 +117,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-    document.getElementById("user_div").style.display = "block";
+    document.getElementById("user_div").style.display = "contents";
     document.getElementById("user_div").style.width = 37+"%";
     document.getElementById("login_div").style.display = "none";
 
@@ -145,7 +145,7 @@ KOJeOVOJ(user.email);	// go pozdravuva akkauntot
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("user_div").style.width = 73+"%";
-    document.getElementById("login_div").style.display = "contents";
+    document.getElementById("login_div").style.display = "block";
 
   }
 });
