@@ -132,7 +132,7 @@ KOJeOVOJ(user.email);	// go pozdravuva akkauntot
 
       var email_id = user.email;
   
-	  document.getElementById("NVG").style="display:block;";
+	  document.getElementById("NVG").style="display:unset;";
 	   
  
 	  
