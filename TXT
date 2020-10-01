@@ -1,0 +1,2 @@
+v=spf1 include:_spf.firebasemail.com ~all
+firebase=myall-proekt
