@@ -25,9 +25,62 @@ var IME=document.getElementById("demo22");
 
 var MyallBase = firebase.database().ref();
 
-var LERo={"Activity":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Contact":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"PROFIL":{"FOTO":"","IME":"","RANK":0,"REG":{"ID":"","email":"","veri":false},"SETINGS":{"S0":"","S1":""},"STATUS":true},"Peyment":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""},"Social":{"L0":"","L1":"","L2":"","L3":"","L4":"","L5":""}}
-var LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":0 }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
-//
+var USerko;
+var p0=false;var p1=false;
+var Parametar=[p0,p1];
+
+function Imenik (a){
+b="https://myall.sytes.net/";
+if(a.value.length>0){d="";}else{d="1kinger";}	
+document.getElementById("TitLINK").innerHTML=b+d+a.value;
+USerko=a.value;
+if(a.value.length<4){
+document.getElementById("ErorTXT").innerHTML="Username must be longer than 3 charakters";}else{
+CEK_singupUSERNAME(USerko);}}
+
+function CKMail(a){
+if(a.value.length>4){A=a.value.slice(0,a.value.length-4);
+if(OKname(A)){snd2ckM(A);}else{document.getElementById("ErorTXT").innerHTML="Unsuported email type ";}}}
+
+function CEK_singupUSERNAME(a){
+if(OKname(a)){
+document.getElementById("ErorTXT").innerHTML="";
+snd2ckU(a);
+}else{document.getElementById("ErorTXT").innerHTML="los karakter";}}
+
+
+function usrFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[0]=true;}else{document.getElementById("ErorTXT").innerHTML="this username is alredy taken";Parametar[0]=false;}}
+function mailFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[1]=true;}else{document.getElementById("ErorTXT").innerHTML="this email is alredy used ";Parametar[1]=false;}}
+
+function snd2ckU(a){
+MyallBase.child("URLuser").child(a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
+EEE=BAZATA;if(EEE==null){usrFRE(true);}else{usrFRE(false);}
+ 
+});}
+
+function snd2ckM(a){
+MyallBase.child("REG@").child(A).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
+EEE=BAZATA;if(EEE==null){mailFRE(true);}else{mailFRE(false);}});
+
+}
+
+
+function OKname(a){
+if((a.includes("/"))||
+   (a.includes("#"))||
+   (a.includes("."))||
+   (a.includes(","))||
+   (a.includes(" "))||
+   (a.includes("`"))||
+   (a.includes("|"))||
+   (a.includes("'"))||
+   (a.includes('"'))||
+   (a.includes(" "))||
+   (a.includes("["))||
+   (a.includes("]"))||
+   (a.includes("%")))
+{return false;}else{return true;}}
+
 
 var USERdef;
 var mailID;
@@ -46,31 +99,18 @@ MyallBase.once("value")
 	 
  DD=CC["REG@"][mailID];
  
- 
- 
 	if(DD!=undefined){
 		console.log("ovaj postoi  user ",mailID);
 		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD; LOADNIall();
-
 		}else{
 		console.log("ovaj user  go nema  WELCOME",mailID);}
-		
-	
-  });	
-  
-  
-  
+  });	 
 }
 
 
 		
 
 firebase.auth().onAuthStateChanged(function(user) {
-	
-
-	
-		
-	
 
   if (user) {
     // User is signed in.
@@ -141,6 +181,7 @@ document.getElementById("password_field_2").innerHTML="";
 
 function SUP(a){
 if(a){
+	
 	document.getElementById("Lin").style.display = "none";
     document.getElementById("Sup").style.display = "block";}else{
 	document.getElementById("Lin").style.display = "block";
@@ -149,6 +190,7 @@ if(a){
 }
 var eMAIL;
 function SingUP(){
+	if((Parametar[0])&&(Parametar[1])){
   var email = document.getElementById("email_field_2").value;   eMAIL=email.slice(0,email.length-4);
   var password = document.getElementById("password_field_2").value;
 	
@@ -159,6 +201,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   // ...
 });
 setTimeout(function(){
+LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":0 }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
 	
 
 
@@ -173,9 +216,11 @@ setTimeout(function(){location.reload();}, 1000);
 
  	
 	}, 1500);
-	
-
-
+}else{
+if(Parametar[0]!=true){TXTO="heyy dude take other username..";}else
+if(Parametar[1]!=true){TXTO="this email is unvaeble for sign up..";}else
+{TXTO="pasword is to short";}
+document.getElementById("ErorTXT").innerHTML=TXTO;}
 
 }
 
@@ -217,13 +262,6 @@ if(n==0){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
 
 
 
-var USerko;
-function Imenik (a){
-b="https://myall.sytes.net/";
-if(a.value.length>0){d="";}else{d="1kinger";}	
-document.getElementById("TitLINK").innerHTML=b+d+a.value;
-USerko=a.value;
-}
 
 //////////////////// modalo
 
