@@ -48,12 +48,12 @@ document.getElementById("ErorTXT").innerHTML="";
 snd2ckU(a);
 }else{document.getElementById("ErorTXT").innerHTML="los karakter";}}
 
-function CEp(a){A=a.value;pasot(a);}
+function CEp(a){A=a.value;pasot(A);}
 
 
 function usrFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[0]=true;}else{document.getElementById("ErorTXT").innerHTML="this username is alredy taken";Parametar[0]=false;}}
 function mailFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[1]=true;}else{document.getElementById("ErorTXT").innerHTML="this email is alredy used ";Parametar[1]=false;}}
-function pasot(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[2]=true;}else{document.getElementById("ErorTXT").innerHTML="this email is alredy used ";Parametar[2]=false;}}
+function pasot(a){if(a.length>7){document.getElementById("ErorTXT").innerHTML="";Parametar[2]=true;}else{document.getElementById("ErorTXT").innerHTML="pasword must be over 8 charakters";Parametar[2]=false;}}
 
 function snd2ckU(a){
 MyallBase.child("URLuser").child(a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
@@ -221,7 +221,7 @@ setTimeout(function(){location.reload();}, 1000);
 }else{
 if(Parametar[0]!=true){TXTO="heyy dude take other username..";}else
 if(Parametar[1]!=true){TXTO="this email is unvaeble for sign up..";}else
-{TXTO="pasword is to short";}
+{TXTO="paswort to short,, dude comone think somthink long";}
 document.getElementById("ErorTXT").innerHTML=TXTO;}
 
 }
@@ -508,7 +508,6 @@ MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTI
 
 
 
-
 function LOADNIall(){
 	
 DAJval("PROFIL","RANK",0);
@@ -531,7 +530,6 @@ E_status=GTD["PROFIL"]["REG"]["veri"];
 SND_vrf(E_status);
 
 
-	
 fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
 if(fotoLINK==false){
 document.getElementById("PROFI_pic").src="../img/deflat.png";
@@ -556,23 +554,14 @@ for(z=0;z<4;z++){
 			AR[0][Z][1].children[2].innerHTML=svg_ASPC[0][0];
 			AR[0][Z][1].children[2].children[0].children[0].innerHTML=DTA[0][0]+AR[0][Z][0][1];
 			
-	//		AR[0][Z][1].children[1].remove();// brisenje topce klientsko
-			
-	//		AR[0][Z][1].children[0].remove();// brisenje topce titleto
-			
 			}else{ Q=AR[z][Z][0][0][1];
 				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Q];
-			//	OPNlink=  //////
-	///			AR[z][Z][1].addEventListener("click", function(e)
-				
 			}
 		}
 	}
 }
 
-
 }
-
 
 var toBACK="rane";
 var GTD;
@@ -584,9 +573,7 @@ MyallBase.once("value")
 	 GTD=toBACK["URLuser"][DD];
  toBACK=toBACK["URLuser"][DD][a][b];
  
- 
  UPDATE(ELEM,toBACK);
 	
   });	
-  
 }
