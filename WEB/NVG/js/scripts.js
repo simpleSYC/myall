@@ -84,8 +84,9 @@ var faqOpen = false;
 var settingsOpen = false;
 var moreOpen = false;
 
-// Main (Center) Button
-$('.main-menu').click(function() {
+// Main (Center) Button 
+
+document.getElementsByClassName("main-menu")[0].addEventListener("click", function() {
 	
 	if(menuOpen == false) {
 		
