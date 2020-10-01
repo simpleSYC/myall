@@ -84,12 +84,12 @@ var faqOpen = false;
 var settingsOpen = false;
 var moreOpen = false;
 
-// Main (Center) Button  .classList.toggle
-document.getElementById("main-menu").addEventListener("click", function() {
+// Main (Center) Button
+$('.main-menu').click(function() {
 	
 	if(menuOpen == false) {
 		
-		document.getElementById("main-menu").classList.toggle('is-active');
+		$('.main-menu').addClass('is-active');
 		animate_middle.play();
 		menuOpen = true;
 	
@@ -99,7 +99,7 @@ document.getElementById("main-menu").addEventListener("click", function() {
 		$('.outside-layer [class*="-button"]').removeClass('is-active');
 
 		setTimeout(function() {
-			$('.main-menu').classList.toggle('is-active');
+			$('.main-menu').removeClass('is-active');
 		}, 750);
 		
 		animate_middle.reverse();
