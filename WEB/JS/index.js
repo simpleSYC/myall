@@ -33,8 +33,7 @@ var USERdef;
 var mailID;
 var CC,DD;
 function KOJeOVOJ(a){ /// ovdeka se pravi updajtot za userko
-	
-	
+
 			
 		mailID=a.slice(0,a.length-4);
 		
@@ -69,6 +68,10 @@ MyallBase.once("value")
 firebase.auth().onAuthStateChanged(function(user) {
 	
 
+	
+		
+	
+
   if (user) {
     // User is signed in.
 
@@ -77,6 +80,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
+
+	
+	
 
 KOJeOVOJ(user.email);	// go pozdravuva akkauntot	  
 
@@ -174,24 +180,23 @@ setTimeout(function(){location.reload();}, 1000);
 }
 
 
-function SND_vrf(a){
+function SND_vrf(a){var user = firebase.auth().currentUser;
 	if(a==0){
-	var user = firebase.auth().currentUser;
-
 user.sendEmailVerification().then(function() {
   // Email sent.
   
-  MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(false);
+  
 }).catch(function(error) {
   // An error happened.
 });
 
 }
+
+if (user.emailVerified) {
 if(a!=true){
-	document.getElementById("E_status").innerHTML="unverifed";
-}else{
-	document.getElementById("E_status").innerHTML="verifyed";
-}}
+MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(true);}
+document.getElementById("E_status").innerHTML="verifyed";}else{
+document.getElementById("E_status").innerHTML="UNverifyed";}}
 
 function Aktiv(a,n){ b=a.children[0];
 if(n==0){ELEmentce=document.getElementById("STatusTxT");}
@@ -265,10 +270,9 @@ LOPCI.style="display: none;";
 
 
 ////////////////////////// modelskoto kopce
-function MDL_PROFIL(){
-	  modal_PROFIL.style.display = "block";
+function MDL_PROFIL(){modal_PROFIL.style.display = "block";}
 	
-}
+
 var FTO_UPLOAD_view=document.getElementById("wew"); var FTO_url=false; var NOVO_FOTO_iME=null;
 
 var uploadPROCENT=0;
@@ -481,7 +485,6 @@ if(parCAT==0){
 	AR[parCAT][parRUB][1].children[0].innerHTML=document.getElementById("SHW_link").innerHTML;
 	AR[parCAT][parRUB][1].children[2].innerHTML=svg_ASPC[parCAT][StalazINDEX];}
 }
-
 function puniLokalno(){
 //ld("REG").child("veri").
 E_status=GTD["PROFIL"]["REG"]["veri"];
