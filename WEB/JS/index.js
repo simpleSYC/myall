@@ -145,7 +145,7 @@ KOJeOVOJ(user.email);	// go pozdravuva akkauntot
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("user_div").style.width = 73+"%";
-    document.getElementById("login_div").style.display = "block";
+    document.getElementById("login_div").style.display = "contents";
 
   }
 });
