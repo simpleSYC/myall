@@ -26,8 +26,8 @@ var IME=document.getElementById("demo22");
 var MyallBase = firebase.database().ref();
 
 var USerko;
-var p0=false;var p1=false;
-var Parametar=[p0,p1];
+var p0=false;var p1=false;var p2=false;
+var Parametar=[p0,p1,p2];
 
 function Imenik (a){
 b="https://myall.sytes.net/";
@@ -48,9 +48,12 @@ document.getElementById("ErorTXT").innerHTML="";
 snd2ckU(a);
 }else{document.getElementById("ErorTXT").innerHTML="los karakter";}}
 
+function CEp(a){A=a.value;pasot(a);}
+
 
 function usrFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[0]=true;}else{document.getElementById("ErorTXT").innerHTML="this username is alredy taken";Parametar[0]=false;}}
 function mailFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[1]=true;}else{document.getElementById("ErorTXT").innerHTML="this email is alredy used ";Parametar[1]=false;}}
+function pasot(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parametar[2]=true;}else{document.getElementById("ErorTXT").innerHTML="this email is alredy used ";Parametar[2]=false;}}
 
 function snd2ckU(a){
 MyallBase.child("URLuser").child(a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
@@ -70,7 +73,6 @@ if((a.includes("/"))||
    (a.includes("#"))||
    (a.includes("."))||
    (a.includes(","))||
-   (a.includes(" "))||
    (a.includes("`"))||
    (a.includes("|"))||
    (a.includes("'"))||
@@ -190,7 +192,7 @@ if(a){
 }
 var eMAIL;
 function SingUP(){
-	if((Parametar[0])&&(Parametar[1])){
+	if((Parametar[0])&&(Parametar[1])&&(Parametar[2])){
   var email = document.getElementById("email_field_2").value;   eMAIL=email.slice(0,email.length-4);
   var password = document.getElementById("password_field_2").value;
 	
@@ -257,9 +259,6 @@ if(n==0){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
 
 
 }
-
-
-
 
 
 
