@@ -118,8 +118,7 @@ function SHWcontact(a){  X=AR[parCAT][a][0][0][1];
 	TXTETO=DTA[parCAT][X]+"<br><br>"+AR[parCAT][a][0][1];
 
 MDLcontact.style="display:block;";
-MDLcontact.children[0].children[1].innerHTML=TXTETO;
-}
+MDLcontact.children[0].children[1].innerHTML=TXTETO;}
 
 function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");} return a;}
 
