@@ -183,9 +183,10 @@ document.getElementById("password_field_2").innerHTML="";
 
 function SUP(a){
 if(a){
-	
+	document.getElementById("ErorTXT").display="block";
 	document.getElementById("Lin").style.display = "none";
     document.getElementById("Sup").style.display = "block";}else{
+	document.getElementById("ErorTXT").display="none";
 	document.getElementById("Lin").style.display = "block";
     document.getElementById("Sup").style.display = "none";}
 
