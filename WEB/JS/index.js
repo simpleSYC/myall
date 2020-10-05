@@ -420,6 +420,8 @@ x.innerHTML=txt;}else{x.innerHTML="";}
 
 } 
 
+function BYproces(){txt="https://www.paypal.com/paypalme/MyallStar";
+window.open(txt);}
 
 function DROPdwnbtn(){
 	if(LOPCI.style.display=="block"){LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}
