@@ -415,7 +415,7 @@ function STAR_info(a) {
 if(x.innerHTML.length<1){
 if(a==0){txt="some free welcome text status. 0 -141 character status ";}else
 if(a==1){txt="its 200x200 PX placeholder with acteable transparent png capability";}else
-if(a==2){txt="you can be verifyed<br><a href='/agriment/'>see policy off verification & peyment process</a>";}
+if(a==2){txt="you can be verifyed<br><a href='/Verification/'>see policy off verification & peyment process</a>";}
 x.innerHTML=txt;}else{x.innerHTML="";}
 
 } 
