@@ -43,12 +43,10 @@ MyallBase.once("value")
  
  
  if(DD){
-	 if(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=0){
-DAJval("PROFIL","RANK",0); 
-document.getElementsByClassName("containerX")[0].style="opacity:1;";
-}else{
-	document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";
-}
+if(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=0){
+document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";
+}else{ DAJval("PROFIL","RANK",0); 
+document.getElementsByClassName("containerX")[0].style="opacity:1;";}
 }else{
 document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://myall.sytes.net/'>Create that acc</a>";	
 }
