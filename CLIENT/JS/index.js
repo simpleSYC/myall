@@ -43,7 +43,7 @@ MyallBase.once("value")
  
  
  if(DD){
-if(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]==0){
+if(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]=="suspend"){
 document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";}
 else{ DAJval("PROFIL","RANK",0); 
 document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
