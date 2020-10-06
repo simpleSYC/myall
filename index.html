@@ -138,9 +138,9 @@
  
  <h3 id="user_para" style="text-align: center; margin: auto;position: relative;"></h3>
 
-<button onclick="STATS(SW);PREview();" style="position: absolute;top: 0px;left: 0px;width: auto;margin: 20px;">prewie</button>
-<button onclick="MDL_PROFIL();" style="position: absolute;top: 0px;right: 0px;width: auto;margin: 20px;">profil update</button>
-<button onclick="STATS(SW);logout();" style="position: absolute;bottom: 0px;right: 0px;width: auto;margin: 20px;" >Logout</button>
+<button type="button"  onclick="STATS(SW);PREview();" style="position: absolute;top: 0px;left: 0px;width: auto;margin: 20px;">prewie</button>
+<button type="button"  onclick="MDL_PROFIL();" style="position: absolute;top: 0px;right: 0px;width: auto;margin: 20px;">profil update</button>
+<button type="button"  onclick="STATS(SW);logout();" style="position: absolute;bottom: 0px;right: 0px;width: auto;margin: 20px;" >Logout</button>
 
 <div style="position: absolute;bottom: 0px;left: 0px;margin: 20px;font-size: x-large;font-weight: bold;">
 <span>Wiget Status </span><br>
@@ -181,7 +181,7 @@
 
 
   <div class="dropdown" id="MENIlink">
-    <button class="dropbtn" onclick="DROPdwnbtn();" >Options 
+    <button type="button"  class="dropbtn" onclick="DROPdwnbtn();" >Options 
       <i class="fa fa-caret-down"></i>
     </button>
     <div id="Lopci" class="dropdown-content" >
@@ -200,10 +200,10 @@
 
 <div> 
 
-  <input  style="width:100%;" type="text" id="LINK_txt"  onchange="SHW_LinkUPDT(this);" name="Name" required>
+  <input style="width:100%;" type="text" id="LINK_txt"  onchange="SHW_LinkUPDT(this);" name="Name" required>
   <div style="display: block ruby;">
-    <button onclick="MESTENJE(this,1)" style="float:left;width: auto;margin: 10px;" >Save</button>
-    <button onclick="MESTENJE(this,null)" style="float:right;width: auto;margin: 10px;" >Cancel</button>
+    <button type="button"  onclick="MESTENJE(this,1)" style="float:left;width: auto;margin: 10px;" >Save</button>
+    <button type="button"  onclick="MESTENJE(this,null)" style="float:right;width: auto;margin: 10px;" >Cancel</button>
   </div>
 	
 
@@ -230,11 +230,11 @@
 <p> update PROFIL pic <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(1);"></i><input type="file" value="upload" id="fileButon" style="width: auto;float: right;position: inherit;"></p>
 <img id="wew" src="../img/deflat.png" style="width: auto;margin: auto;display:table-caption;" >
 <p> email account  verification status   : <span id="E_status"></span></p>
-<p> update Update Star <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(2);"></i><button onclick="BYproces();" style="width: auto;float: right;position: inherit;">add <i class='fas fa-star'></i></button></p>
+<p> update Update Star <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(2);"></i><button type="button"  onclick="BYproces();" style="width: auto;float: right;position: inherit;">add <i class='fas fa-star'></i></button></p>
 
 <p id="info_star"></p>	 
 	
-<button onclick="UPD_PROFILO(this);" style="width: auto;margin: auto;position: inherit;display: table-caption;" >update</button>
+<button type="button"  onclick="UPD_PROFILO(this);" style="width: auto;margin: auto;position: inherit;display: table-caption;" >update</button>
 
   </div>
 
@@ -266,10 +266,10 @@
     <input type="email" placeholder="Email..." id="email_field_1" />
     <input type="password" placeholder="Password..." id="password_field_1" />
 <div>
-    <button onclick="login();">Login to Account</button> <hr>
-    <button onclick="SUP(true)">Sing Up</button> 
+    <button type="button"  onclick="login();">Login to Account</button> <hr>
+    <button type="button"  onclick="SUP(true)">Sing Up</button> 
 	
-<button style="position: absolute;z-index: -1;bottom: 0px;left:0px;margin: 10px;width: auto;background-color: cadetblue;color: white;" onclick="window.open('https://www.w3schools.com');">what is myall ?</button> <br>
+<button type="button"  style="position: absolute;z-index: -1;bottom: 0px;left:0px;margin: 10px;width: auto;background-color: cadetblue;color: white;" onclick="window.open('https://www.w3schools.com');">what is myall ?</button> <br>
 
 </div>
 
@@ -282,8 +282,8 @@
   	<input type="email" placeholder="Email..." id="email_field_2" oninput="CKMail(this);"  />
     <input type="password" placeholder="Password..." id="password_field_2" oninput="CEp(this);" />
 <div>	
-	    <button onclick="SingUP();">Sing Up</button> <hr>
-		<button onclick="SUP(false);">back</button> 
+	    <button type="button"  onclick="SingUP();">Sing Up</button> <hr>
+		<button type="button"  onclick="SUP(false);">back</button> 
 </div>
 </div>
 

@@ -462,9 +462,21 @@ for(i=0;i<L.length;i++){
 }
 var SW=document.getElementsByClassName("switch")[0].children[0];	
 
-function SHW_LinkUPDT(a){b=a.parentElement.parentElement.children[1];	
+function SHW_LinkUPDT(A){a=A.value;
+b=A.parentElement.parentElement.children[1];
+OKbtn=A.parentElement.children[1].children[0];
+if(OKname_1(a)){if(OKbtn.style.display!="block"){OKbtn.style.display="block";}
+b.innerHTML=DTA[parCAT][StalazINDEX]+A.value;
+}else{if(OKbtn.style.display!="none"){OKbtn.style.display="none";}
+b.innerHTML="unsuported Charakter spoted .not allowed(#,$,<'/)";}}
 	
-b.innerHTML=DTA[parCAT][StalazINDEX]+a.value;}
+function OKname_1(a){
+if((a.includes("</"))||
+   (a.includes("#"))||
+   (a.includes("$")))
+{return false;}else{return true;}}
+
+
 
 function SETbLOGO(){if(parCAT!=0){
 document.getElementById("Btn_LOGO").classList=F_Logo[parCAT][StalazINDEX];
@@ -497,17 +509,13 @@ a.parentElement.parentElement.parentElement.children[0].click();// da closne mod
 
 function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 
-function STATS(A){a=A.checked;
-	if(a){
-if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=true){
-MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(true);
-}
+function STATS(A){a=A.checked;if(a){
+	
+if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=true){GTD["PROFIL"]["STATUS"]["AKTIV"]=true;
+MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(true);}
 	}else{  
-if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=false){
-MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(false);
-}
-	}
-}
+if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=false){GTD["PROFIL"]["STATUS"]["AKTIV"]=false;
+MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(false);}}}
 
 
 
