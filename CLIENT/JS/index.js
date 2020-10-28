@@ -135,8 +135,10 @@ UPDATE(ELEM,toBACK);
 }
 Start();
 
-
-function DEL_NVG(){document.getElementById("NVG").remove();}
+PROFI_pic
+function DEL_NVG(){
+	document.getElementById("PROFI_pic").remove();
+	document.getElementById("AJDE").remove();}
 
 function Start(){
 	CEKuser();
