@@ -44,11 +44,13 @@ MyallBase.once("value")
  
  if(DD){
 if((CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=true)&&(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=false)){
-document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";}
-else{ DAJval("PROFIL","RANK",0); 
+DEL_NVG();
+document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";
+
+}else{ DAJval("PROFIL","RANK",0); 
 document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
-else{
+else{ DEL_NVG();
 document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://myall.sytes.net/'>Create that acc</a>";}
  	
   });}
@@ -134,6 +136,7 @@ UPDATE(ELEM,toBACK);
 Start();
 
 
+function DEL_NVG(){document.getElementById("NVG").remove();}
 
 function Start(){
 	CEKuser();
