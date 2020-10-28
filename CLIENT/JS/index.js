@@ -135,7 +135,7 @@ UPDATE(ELEM,toBACK);
 }
 Start();
 
-PROFI_pic
+
 function DEL_NVG(){
 	document.getElementById("PROFI_pic").remove();
 	document.getElementById("AJDE").remove();}
