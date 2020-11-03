@@ -20,9 +20,6 @@ document.getElementsByClassName("containerX")[0].style="opacity:1;";
 ///  firebase.analytics();
   
 
-
-var IME=document.getElementById("demo22");
-
 var MyallBase = firebase.database().ref();
 
 var USerko;
@@ -56,13 +53,13 @@ function mailFRE(a){if(a){document.getElementById("ErorTXT").innerHTML="";Parame
 function pasot(a){if(a.length>7){document.getElementById("ErorTXT").innerHTML="";Parametar[2]=true;}else{document.getElementById("ErorTXT").innerHTML="pasword must be over 8 charakters";Parametar[2]=false;}}
 
 function snd2ckU(a){
-MyallBase.child("URLuser").child(a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
+MyallBase.child("WEBuser/"+a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
 EEE=BAZATA;if(EEE==null){usrFRE(true);}else{usrFRE(false);}
  
 });}
 
 function snd2ckM(a){
-MyallBase.child("REG@").child(A).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
+MyallBase.child("REG@/"+a).once("value").then(function(snapshot) {BAZATA = snapshot.val();	
 EEE=BAZATA;if(EEE==null){mailFRE(true);}else{mailFRE(false);}});
 
 }
@@ -82,30 +79,22 @@ if((a.includes("/"))||
    (a.includes("]"))||
    (a.includes("%")))
 {return false;}else{return true;}}
+var CekDATA;
 
-
-var USERdef;
-var mailID;
-var CC,DD;
-function KOJeOVOJ(a){ /// ovdeka se pravi updajtot za userko
-
-			
-		mailID=a.slice(0,a.length-4);
-		
-		USERdef="REG@/"+mailID;
-		
-MyallBase.child(USERdef);
-MyallBase.once("value")
+var SIFRA,userNAME;function KOJeOVOJ(a){
+                SIFRA=a.uid;
+USERdef="USER/"+SIFRA;
+		                                          
+MyallBase.child(USERdef).once("value")
   .then(function(snapshot) {
-     CC = snapshot.val();
+     CekDATA = snapshot.val();
 	 
- DD=CC["REG@"][mailID];
+	if(CekDATA!=undefined){userNAME=CekDATA["ID"];console.log("ovaj postoi  user ",userNAME); 	
+	F5();}else{     ADDni_novUSER(a);    console.log("ovaj user  go nema  WELCOME",userNAME);  }
+             /// se adnuva ama nnema refresh
  
-	if(DD!=undefined){
-		console.log("ovaj postoi  user ",mailID);
-		      document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + DD; LOADNIall();
-		}else{
-		console.log("ovaj user  go nema  WELCOME",mailID);}
+ document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME; 
+ 
   });	 
 }
 
@@ -124,19 +113,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     var user = firebase.auth().currentUser;
 
 	
-	
-
-KOJeOVOJ(user.email);	// go pozdravuva akkauntot	  
+KOJeOVOJ(user);	// go pozdravuva akkauntot	  
 
     if(user != null){
 
-      var email_id = user.email;
-  
 	  document.getElementById("NVG").style="display:block;";
-	   
- 
-	  
-	  
+
 
     }
 
@@ -191,10 +173,10 @@ if(a){
     document.getElementById("Sup").style.display = "none";}
 
 }
-var eMAIL;
+
 function SingUP(){
 	if((Parametar[0])&&(Parametar[1])&&(Parametar[2])){
-  var email = document.getElementById("email_field_2").value;   eMAIL=email.slice(0,email.length-4);
+  var email = document.getElementById("email_field_2").value;
   var password = document.getElementById("password_field_2").value;
 	
 firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
@@ -203,22 +185,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorMessage = error.message;
   // ...
 });
-setTimeout(function(){
-LERo_0={"Activity":{ "L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false }, "IME":"", "RANK":0, "REG":{ "ID":"", "email":"", "veri":0 }, "SETINGS":{ "S0":"11", "S1":"32" }, "STATUS":{ "AKTIV":true, "SEY":"" } }, "Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] }}
-	
 
-
-firebase.database().ref().child("REG@").child(eMAIL).set(USerko);
-firebase.database().ref().child("URLuser").child(USerko).set(LERo_0);
-
-firebase.database().ref().child("URLuser").child(USerko).child("PROFIL").child("REG").child("email").set(email);
-
-	alert("accaunt sucsecsful created ");
-
-setTimeout(function(){location.reload();}, 1000);
-
- 	
-	}, 1500);
 }else{
 if(Parametar[0]!=true){TXTO="heyy dude take other username..";}else
 if(Parametar[1]!=true){TXTO="this email is unvaeble for sign up..";}else
@@ -241,7 +208,7 @@ user.sendEmailVerification().then(function() {
 }
 
 if (user.emailVerified) {
-if(a!=true){MyallBase.child("URLuser").child(DD).child("PROFIL").child("REG").child("veri").set(true);}}
+if(a!=true){MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/REG/veri").set(true);}}
 }
 
 function Aktiv(a,n){ b=a.children[0];
@@ -262,26 +229,18 @@ if(n==0){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
 }
 
 
-
 //////////////////// modalo
 
 // Get the modal
 var modal = document.getElementById("myModal");
 var modal_PROFIL = document.getElementById("Modal_PROFIL");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 var span_PROFIL = document.getElementsByClassName("close")[1];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";}
-  
-span_PROFIL.onclick = function() {
-  modal_PROFIL.style.display = "none";}
+       span.onclick = function() {modal.style.display = "none";}
+span_PROFIL.onclick = function() {modal_PROFIL.style.display = "none";}
 
 var DROPdwnBTN=document.getElementById("MENIlink");
 var LOPCI=  document.getElementById("Lopci");
@@ -291,28 +250,19 @@ var LOPCI=  document.getElementById("Lopci");
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
-	
-LOPCI.style="display: none;";
+	LOPCI.style="display: none;";}
   
-  }
-  
-  
-  if (event.target == modal_PROFIL) {
-  modal_PROFIL.style.display = "none";
-  }
-
-  
+  if (event.target == modal_PROFIL) {modal_PROFIL.style.display = "none";}
 }
 
 
 ////////////////////////// modelskoto kopce
 function MDL_PROFIL(){modal_PROFIL.style.display = "block";
-a=GTD["PROFIL"]["REG"]["veri"];
+a=W["PROFIL"]["REG"]["veri"];
 if(a==true){
 document.getElementById("E_status").innerHTML="verifyed";}else{
 document.getElementById("E_status").innerHTML="unverified";}
 }
-	
 
 var FTO_UPLOAD_view=document.getElementById("wew"); var FTO_url=false; var NOVO_FOTO_iME=null;
 
@@ -322,7 +272,7 @@ UPD_Pic.addEventListener("change", function(e){
 	
 	var file = e.target.files[0];
 	
-var storageRef= firebase.storage().ref().child("USER_pic").child(DD).child("PROFIL_pic/"+file.name);
+var storageRef= firebase.storage().ref().child("USER_pic/"+userNAME+"/PROFIL_pic/"+file.name);
 
 var task=storageRef.put(file);  /// ova funkcionira kako sto treba
 
@@ -344,7 +294,7 @@ reader.onload = function (){
 FTO_UPLOAD_view.src =reader.result;}
 reader.readAsDataURL(file);
 
-firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("FOTO").child("Fime").set(file.name);
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Fime").set(file.name);
 
 NOVO_FOTO_iME=file.name;
 
@@ -374,9 +324,9 @@ storageRef.getDownloadURL().then(function(url) {
 );
 	}); 
 
-function PREview(){window.open("https://myall.sytes.net/"+DD);}
+function PREview(){window.open("https://myall.sytes.net/"+userNAME);}
 
-function UPD_PROFILO(T){
+function UPD_PROFILO(){
 	
 // se ubacuvat datada u data baza..
 // se updejtnuva datata so LOKALNITE promeni
@@ -386,29 +336,24 @@ function UPD_PROFILO(T){
 promSTATUS();
 promeniTUKA();
 
-T.parentElement.children[0].click();// da closne modale
-}
+modal_PROFIL.style.display = "none";}
 
-function promSTATUS(){b=GTD["PROFIL"]["STATUS"]["SEY"];
+function promSTATUS(){b=W["PROFIL"]["STATUS"]["SEY"];
 a=document.getElementById("PROFIL_status").value.slice(0,141);
 document.getElementById("PRO_STATUS").innerHTML=a;
 
 if(b!=a){
-firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("STATUS").child("SEY").set(a);}}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/SEY").set(a);}}
 
 function promeniTUKA(){
 	if(FTO_url!=false){
-stara_FTOname=GTD["PROFIL"]["FOTO"]["Fime"];
+stara_FTOname=W["PROFIL"]["FOTO"]["Fime"];
 if(stara_FTOname!=NOVO_FOTO_iME){
 document.getElementById("PROFI_pic").src=FTO_url;
-firebase.database().ref().child("URLuser").child(DD).child("PROFIL").child("FOTO").child("Flink").set(FTO_url);}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
 
 }}
 
-if(screen.width<400){
-document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"
-}else{
-document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
 
 function STAR_info(a) {
   var x = document.getElementById("info_star");
@@ -496,7 +441,7 @@ function MESTENJE(a,b){
 if(b==1){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
-firebase.database().ref().child("URLuser").child(DD).child(R_1).child(R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
 
 
 ST_svg();
@@ -511,19 +456,14 @@ function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 
 function STATS(A){a=A.checked;if(a){
 	
-if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=true){GTD["PROFIL"]["STATUS"]["AKTIV"]=true;
-MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(true);}
+if(W["PROFIL"]["STATUS"]["AKTIV"]!=true){W["PROFIL"]["STATUS"]["AKTIV"]=true;
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);}
 	}else{  
-if(GTD["PROFIL"]["STATUS"]["AKTIV"]!=false){GTD["PROFIL"]["STATUS"]["AKTIV"]=false;
-MyallBase.child("URLuser").child(DD).child("PROFIL").child("STATUS").child("AKTIV").set(false);}}}
+if(W["PROFIL"]["STATUS"]["AKTIV"]!=false){W["PROFIL"]["STATUS"]["AKTIV"]=false;
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);}}}
 
 
 
-function LOADNIall(){
-	
-DAJval("PROFIL","RANK",0);
-
-};
 
 
 function ST_svg(){ 
@@ -536,24 +476,24 @@ if(parCAT==0){
 	AR[parCAT][parRUB][1].children[2].innerHTML=svg_ASPC[parCAT][StalazINDEX];}
 }
 function puniLokalno(){
-//ld("REG").child("veri").
-E_status=GTD["PROFIL"]["REG"]["veri"];
+updZvzda(parseInt(W["PROFIL"]["RANK"]));
+E_status=W["PROFIL"]["REG"]["veri"];
 SND_vrf(E_status);
 
 
-fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
+fotoLINK=W["PROFIL"]["FOTO"]["Flink"];
 if(fotoLINK==false){
 document.getElementById("PROFI_pic").src="../img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
 	
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
-		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
+		AR[i][q][0]=W[proz1[i].toString()][proz2[q].toString()];
 	}
 }
-GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"]);
+GETaccSTATUS(W["PROFIL"]["STATUS"]["AKTIV"]);
 
-document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
+document.getElementById("PRO_STATUS").innerHTML=W["PROFIL"]["STATUS"]["SEY"];
 
 
 
@@ -574,17 +514,51 @@ for(z=0;z<4;z++){
 
 }
 
-var toBACK="rane";
-var GTD;
-function DAJval(a,b,ELEM){LINKtxt="URLuser/"+DD+"/"+a+"/"+b;  
-MyallBase.child(LINKtxt);
-MyallBase.once("value")
-  .then(function(snapshot) {
-     toBACK = snapshot.val();
-	 GTD=toBACK["URLuser"][DD];
- toBACK=toBACK["URLuser"][DD][a][b];
- 
- UPDATE(ELEM,toBACK);
+
+function ADDni_novUSER(USER){
+UID=USER.uid;
+email=USER.email;
+userNAME= document.getElementById("username_field").value;
 	
+LERo_0={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] },"Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] },
+"PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
+"IME":"", "RANK":0,
+"REG":{ "ID":"", "email":"", "veri":0 },
+"SETINGS":{ "S0":"11", "S1":"32" },
+"STATUS":{ "AKTIV":true, "SEY":"" }}}
+
+/// edno lero za web i edno lero za uid	
+
+MyallBase.child("REG@/"+userNAME).set(email);
+MyallBase.child("WEBuser/"+userNAME).set(LERo_0);
+
+MyallBase.child("USER/"+UID+"/"+userNAME).set(LERo_0);
+
+MyallBase.child("USER/"+UID+"/ID").set(userNAME);
+MyallBase.child("USER/"+UID+"/email").set(email);
+
+F5();}
+
+var W;function F5(){	
+                LINKtxt="USER/"+SIFRA+"/"+userNAME; 
+MyallBase.child(LINKtxt).once("value")
+  .then(function(snapshot) {
+     W = snapshot.val();
+	 
+	 puniLokalno();
+	 
   });	
 }
+
+
+ 
+ScrenRedsing();function ScrenRedsing(){
+	if(screen.width<400){
+document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"
+}else{
+document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
+
+}
+
+
+

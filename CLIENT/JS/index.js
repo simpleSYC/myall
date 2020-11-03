@@ -13,52 +13,36 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-//definicija  
 var USER=window.location.href.slice(24);var MyallBase = firebase.database().ref();
 
 var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://myall.sytes.net/"+USER;
 
 
-
-
-
-var  USERlinkceto="aaa";
-var CC,DD;
 function CEKuser(){
 		
-		
-		
-		USERlinkceto="URLuser/"+USER  
-MyallBase.child(USERlinkceto);
-MyallBase.once("value")
+MyallBase.child("WEBuser/"+USER).once("value")
   .then(function(snapshot) {
-     CC = snapshot.val();
-	 
- DD=CC["URLuser"][USER];
+     W = snapshot.val();
  
-	if(DD!=undefined){
-		console.log("ovaj postoi  user ",USER);DD=true;}else{
-		console.log("ovaj user  go nema",USER);DD=false;}
- 
- 
- 
- if(DD){
-if((CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=true)&&(CC["URLuser"][USER]["PROFIL"]["STATUS"]["AKTIV"]!=false)){
+ if(W!=undefined){
+if((W["PROFIL"]["STATUS"]["AKTIV"]!=true)&&(W["PROFIL"]["STATUS"]["AKTIV"]!=false)){
 DEL_NVG();
 document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";
 
-}else{ DAJval("PROFIL","RANK",0); 
+}else{   puniLokalno(W["PROFIL"]);
 document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
 else{ DEL_NVG();
 document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://myall.sytes.net/'>Create that acc</a>";}
- 	
+ 
   });}
+  
 
-function puniLokalno(){
+function puniLokalno(V){
+	updZvzda(parseInt(V["RANK"]));
 	
-document.getElementById("PRO_STATUS").innerHTML=GTD["PROFIL"]["STATUS"]["SEY"];
-fotoLINK=GTD["PROFIL"]["FOTO"]["Flink"];
+document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
+fotoLINK=V["FOTO"]["Flink"];
 if(fotoLINK==false){
 document.getElementById("PROFI_pic").src="../img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
@@ -66,10 +50,10 @@ document.getElementById("PROFI_pic").src="../img/deflat.png";
 
 	
 
-if(GETaccSTATUS(GTD["PROFIL"]["STATUS"]["AKTIV"])){
+if(V["STATUS"]["AKTIV"]){
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
-		AR[i][q][0]=GTD[proz1[i].toString()][proz2[q].toString()];
+		AR[i][q][0]=W[proz1[i].toString()][proz2[q].toString()];
 		     Q=AR[i][q][0][0][1];
 		AR[i][q][1].children[0].innerHTML=DTA[i][Q]+AR[i][q][0][1];
 	}
@@ -101,7 +85,6 @@ for(z=0;z<4;z++){
 
 }
 
-/// AR[1][0][0][0][1]
 
 function OPND(a){ X=AR[parCAT][a][0][0][1];
 	TXTETO=DTA[parCAT][X]+AR[parCAT][a][0][1];
@@ -115,36 +98,29 @@ function SHWcontact(a){  X=AR[parCAT][a][0][0][1];
 MDLcontact.style="display:block;";
 MDLcontact.children[0].children[1].innerHTML=TXTETO;}
 
-function GETaccSTATUS(a){if(a){console.log(" TRUEEEEEEEEEEE");}else{console.log("FALSEEE");} return a;}
-
-var toBACK="rane";
-function DAJval(a,b,ELEM){LINKtxt="URLuser/"+USER+"/"+a+"/"+b;  
-MyallBase.child(LINKtxt);
-MyallBase.once("value")
-  .then(function(snapshot) {
-     toBACK = snapshot.val();
-	 
-	 GTD=toBACK["URLuser"][USER];
-	 
- toBACK=toBACK["URLuser"][USER][a][b];
- 
-UPDATE(ELEM,toBACK);	
-	
-  });	
-  
-}
-Start();
 
 
 function DEL_NVG(){
 	document.getElementById("PROFI_pic").remove();
 	document.getElementById("AJDE").remove();}
-
+	
+	
+Start();
 function Start(){
 	CEKuser();
 
+ScrenRedsing();
+}
 
-
+function ScrenRedsing(){
+	if(screen.width<400){
+document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"
+}else{
+document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
 
 }
+
+
+
+
 

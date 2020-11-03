@@ -102,9 +102,3 @@ function updZvzda(a){
 }
 
 
-
-function UPDATE(a,b){
-if(a==0){ updZvzda(parseInt(b)); puniLokalno();
-}else{a.innerHTML=b;}}
-
-

@@ -1,0 +1,320 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>myall</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="WEB/CSS/style.css"/>
+  <link rel="stylesheet" href="WEB/NVG/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	
+</head><body>
+
+<!--   -->	
+<div id="NVG">	
+	
+  <div id="user_div" class="loggedin-div" style="display:contents; width: 100%; z-index: 3; position: relative;">
+ 
+<div class="containerX">
+<img id="PROFI_pic" style="position:absolute;border-radius:100%;width:auto;height: auto;max-width: 19vw;max-height: 19vh;">
+
+
+		<svg class="menu"  style="z-index:2" id="AJDE" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 792 792">
+			<defs>
+				<path class="path-1" d="M45 67.9c0 2.3 1.9 4.1 4.2 4.1a4.1 4.1 0 1 0 0-8.3 4.1 4.1 0 0 0-4.1 4.2zm6 0c0 1-.8 1.7-1.8 1.7s-1.8-.7-1.8-1.7.8-1.8 1.8-1.8 1.8.7 1.8 1.8z"/>
+			</defs>
+			<g class="All-on" fill="none" fill-rule="evenodd" transform="translate(-571 -143)">
+				<g class="menu" transform="translate(571 143)">
+					<g class="outside-layer">
+						<circle class="outer-cirlce-background" cx="396" cy="396" r="396" fill="#000" fill-opacity=".4"/>
+						<g class="more-menu" transform="translate(654 229)">
+							<g class="writing-button" transform="translate(24 120)">
+								<title>My Posts</title>
+								<circle onclick="MDL(1);" class="Oval-2-Copy-11" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g class="new-button">
+								<title>New Posts</title>
+								<circle onclick="MDL(0);"  class="Oval-2-Copy-13" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g class="bin-button" transform="translate(0 240)">
+								<title>Deleted Posts</title>
+								<circle onclick="MDL(2);" class="Oval-2-Copy-12" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+						</g>
+						<g class="home-menu" transform="translate(229 18)">
+							<g class="portfolio-button" transform="translate(119)">
+								<title>Portfolio</title>
+								<circle onclick="MDL(1);"  class="Oval-2-Copy-4" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g class="testimonials-button" transform="translate(0 23)">
+								<title>Testimonials</title>
+								<circle onclick="MDL(0);"  class="Oval-2-Copy-6" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g onclick="MDL(2);" class="contact-button" transform="translate(239 23)">\
+								<title>Contact Us</title>
+								<circle class="Oval-2-Copy-5" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;"  fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+						</g>
+						<g class="settings-menu" transform="translate(228 654)">
+							<g class="security-button" transform="translate(120 24)">
+								<title>Secuirty Settings</title>
+								<circle onclick="MDL(1);"  class="Oval-2-Copy-8" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g onclick="MDL(2);" class="profile-button">
+								<title>Profile Settings</title>
+								<circle class="Oval-2-Copy-9" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+							<g class="contact1-button" transform="translate(240)">
+								<title>Contact Settings</title>
+								<circle  onclick="MDL(0);"  class="Oval-2-Copy-10" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+<g></g>
+							</g>
+						</g>
+						<g class="faq-menu" transform="translate(18 229)">
+							<g class="writing-button" transform="translate(0 120)">
+								<title>Writing FAQs</title>
+								<circle  onclick="MDL(1);"  class="Oval-2-Copy-7" style="fill:#5d8ffc;opacity:0.4; transform: translate(5px,-40px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+<g style="transform: translate(-22px,-90px);"></g>
+							</g>
+							<g class="reading-button" transform="translate(24)">
+								<title>Reading FAQs</title>
+								<circle onclick="MDL(0);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4; transform: translate(60px,-100px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+<g style="transform: translate(-45px,-160px);"></g>
+							</g>
+							<g class="general-button" transform="translate(24 240)">
+								<title>General FAQs</title>
+								<circle onclick="MDL(2);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4;transform: translate(70px,110px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+<g style="transform: translate(-45px,240px);"></g>
+							</g>
+						</g>
+					</g>
+					<g class="middle-layer" transform="translate(132 132)">
+						<circle class="middle-circle-backgroud" cx="264" cy="264" r="264" fill="#000" fill-opacity=".4"/>
+						<g class="button-group">
+							<g onclick="PAR(this);" class="settings-button" transform="translate(216 408)">
+								<title>Contact </title>
+								<circle class="Oval-2-Copy-3" cx="48" cy="48" r="48" fill="#F06" opacity=".6"/>
+							<g class="Shape" fill="#fff" fill-rule="nonzero" style="transform: scale(0.21) translate(69px,69px);"><path d="M337.559,67.704v-28.33c0-17.506-14.242-31.748-31.748-31.748h-54.572c-4.932-3.021-10.727-4.765-16.922-4.765H32.5 C14.58,2.86,0,17.44,0,35.36v266.838c0,17.921,14.58,32.5,32.5,32.5h201.816c6.196,0,11.992-1.745,16.925-4.767h54.569 c17.506,0,31.748-14.242,31.748-31.748v-28.33c0-9.715-4.391-18.42-11.287-24.248c6.896-5.828,11.287-14.533,11.287-24.248 v-28.331c0-9.715-4.391-18.42-11.287-24.248c6.896-5.828,11.287-14.533,11.287-24.248V116.2c0-9.715-4.391-18.42-11.287-24.248 C333.168,86.123,337.559,77.418,337.559,67.704z M251.816,302.198c0,9.649-7.851,17.5-17.5,17.5H32.5 c-9.649,0-17.5-7.851-17.5-17.5V35.36c0-9.649,7.851-17.5,17.5-17.5h201.816c9.649,0,17.5,7.851,17.5,17.5V302.198z  M322.559,298.184c0,9.235-7.513,16.748-16.748,16.748h-41.595c1.673-3.912,2.601-8.216,2.601-12.733v-49.093h38.994 c9.235,0,16.748,7.513,16.748,16.748V298.184z M322.559,221.357c0,9.235-7.513,16.748-16.748,16.748h-38.994v-61.827h38.994 c9.235,0,16.748,7.513,16.748,16.748V221.357z M322.559,144.53c0,9.235-7.513,16.748-16.748,16.748h-38.994V99.451h38.994 c9.235,0,16.748,7.513,16.748,16.748V144.53z M322.559,67.704c0,9.235-7.513,16.748-16.748,16.748h-38.994V35.36 c0-4.518-0.929-8.822-2.602-12.735h41.596c9.235,0,16.748,7.513,16.748,16.748V67.704z"/> <rect x="40.413" y="230.024" width="185.991" height="15"/> <path d="M66.891,206.201h133.035c2.263,0,4.405-1.021,5.829-2.78c1.424-1.759,1.978-4.066,1.507-6.279 c-3.595-16.907-13.071-32.176-26.474-43.02c8.782-10.818,13.689-24.438,13.689-38.522c0-33.674-27.396-61.07-61.07-61.07 s-61.07,27.396-61.07,61.07c0,14.084,4.908,27.704,13.689,38.522c-13.402,10.844-22.878,26.112-26.472,43.02 c-0.471,2.213,0.083,4.521,1.507,6.279C62.486,205.18,64.628,206.201,66.891,206.201z M101.343,161.584 c1.988-1.245,3.279-3.35,3.488-5.687c0.209-2.337-0.687-4.637-2.422-6.216c-9.579-8.718-15.072-21.14-15.072-34.081 c0-25.403,20.667-46.07,46.07-46.07c25.403,0,46.07,20.667,46.07,46.07c0,12.941-5.494,25.363-15.072,34.081 c-1.735,1.579-2.631,3.879-2.422,6.216c0.209,2.337,1.5,4.441,3.488,5.687c11.154,6.989,19.735,17.49,24.42,29.618H76.923 C81.608,179.074,90.189,168.571,101.343,161.584z"/> <rect x="63.83" y="259.688" width="139.156" height="15"/></g>
+							</g>
+							<g onclick="PAR(this);" class="faq-button" transform="translate(24 217)">
+								<title>Aktivity</title>
+								<circle class="Oval-2-Copy" cx="48" cy="48" r="48" fill="#F06" opacity=".6"/>
+								<g class="Shape" fill="#fff" fill-rule="nonzero" style="transform: scale(0.009) translate(10100px,5400px) rotate(180deg);"><path d="M4248.9,4991.6c-878.1-83.1-1782-460.8-2472.2-1036.3C141.1,2594.6-359.3,355.7,548.5-1540.9c233.4-488.5,486.5-848.4,886-1257.8c213.6-219.5,263-278.9,263-326.3c2-164.2,112.7-482.6,255.1-729.8c124.6-215.6,449-539.9,664.5-664.5c338.2-195.8,581.5-263.1,959.2-263.1c377.8,0,621,67.2,959.2,263.1c176,102.8,516.2,423.2,615.1,579.5l57.4,94.9h583.4H6375l57.4-94.9c98.9-156.3,439-476.7,615.1-579.5c579.5-336.2,1204.5-361.9,1778-73.2c207.7,102.9,306.5,172.1,476.6,334.2c759.5,721.9,801,1867,93,2628.4c-122.6,134.5-318.4,298.7-413.3,354c-23.7,11.9-17.8,47.5,41.5,221.5c563.7,1653.4,138.4,3469-1107.5,4713C6942.6,4631.6,5601.7,5120.1,4248.9,4991.6z M4525.8,4586.2l-2-114.7l-741.7-443l-741.7-443l-607.2-55.4c-334.2-29.7-646.7-59.3-696.2-63.3l-89-9.9l118.7,108.8c628.9,579.5,1439.8,967.1,2264.5,1083.8c237.3,33.6,316.4,41.5,421.3,45.5l73.2,4V4586.2z M5346.5,4647.5c818.8-116.7,1629.7-506.3,2254.6-1081.8l118.7-108.8l-89,9.9c-49.4,3.9-361.9,33.6-696.2,63.3l-607.2,55.4l-741.7,443l-741.7,443l-2,116.7v114.7l154.3-11.9C5079.6,4683.1,5237.8,4663.3,5346.5,4647.5z M4856.1,4091.7c85-49.4,162.2-96.9,170.1-104.8c21.7-19.8-73.2-87-880.1-619l-706-466.8l-75.2,227.4c-63.3,195.8-71.2,231.4-45.5,245.2c15.8,9.9,324.3,195.8,682.3,413.3c360,215.6,662.5,395.5,676.4,395.5C4691.9,4184.7,4771,4143.1,4856.1,4091.7z M5483,3715.9c65.3-39.6,136.5-83.1,156.3-96.9c31.6-21.8-81.1-100.9-965.1-688.3c-549.8-365.9-1008.7-660.6-1016.6-656.6c-7.9,5.9-35.6,77.1-61.3,160.2c-35.6,112.7-41.5,154.3-23.7,172.1c33.6,33.6,1752.3,1178.7,1772.1,1180.7C5352.5,3789.1,5415.8,3755.5,5483,3715.9z M6038.8,3383.7c37.6-29.7,37.6-31.6-17.8-197.8c-29.7-93-65.3-178-79.1-191.8c-13.8-13.8-296.7-205.7-627-427.2l-603.2-401.5l-302.6,5.9l-304.6,5.9l927.6,617.1c510.3,340.2,937.5,619,947.3,619C5991.3,3413.3,6017,3399.5,6038.8,3383.7z M3200.7,2651.9c108.8-326.3,197.8-603.2,197.8-617.1c0-25.7-838.6-1578.2-870.2-1613.8c-7.9-9.9-284.8-77.1-615.1-152.3c-443-98.9-607.2-128.6-623-110.8c-11.9,11.9-174,360-361.9,775.3l-342.2,753.5l73.2,195.8c94.9,255.1,239.3,561.7,365.9,771.3c126.6,207.7,332.3,486.5,352,474.7c7.9-4,369.8,25.7,804.9,65.3c435.1,41.5,797,67.2,806.9,61.3C2997,3249.2,3091.9,2976.3,3200.7,2651.9z M7990.8,3130.5c19.8,9.9,225.4-269,352-476.6c126.6-209.6,271-516.2,365.9-771.3l73.2-195.8l-342.1-753.5c-187.9-415.3-350.1-763.4-361.9-775.3c-15.8-17.8-180,11.9-623,110.8c-330.3,75.2-607.2,142.4-615.1,152.3c-31.6,35.6-870.2,1588.1-870.2,1613.8c0,25.7,383.7,1184.7,401.5,1214.4c5.9,9.9,369.8-15.8,808.9-55.4C7619,3154.3,7982.9,3124.6,7990.8,3130.5z M5734.2,2333.5l-57.3-156.2l-193.8-5.9c-118.7-4-187.9,2-176,11.9c39.6,35.6,472.7,318.4,478.6,312.5C5789.6,2491.7,5765.8,2418.5,5734.2,2333.5z M6133.7,1059.8l429.2-791.1l-342.1-628.9l-344.1-627H4684H3491.4l-344.1,627l-342.1,628.9l429.2,791.1l431.1,791.1H4684h1018.5L6133.7,1059.8z M766.1,535.7l278.9-611.1V-819v-745.6l-47.5-43.5l-47.5-45.5l-49.4,87c-27.7,45.5-85,166.1-128.6,263C534.7-759.7,412-170.3,412,434.9c0,274.9,45.5,745.6,69.2,721.9C485.2,1152.8,613.8,873.9,766.1,535.7z M8934.2,860.1c59.3-615.1-9.9-1236.1-199.8-1793.8c-49.4-146.4-69.2-180-93-172.1c-17.8,7.9-92.9,29.7-170.1,49.4l-138.4,35.6L8327-550l-4,470.7l280.8,621c193.8,427.2,284.8,607.2,294.7,583.4C8906.5,1105.3,8922.3,986.6,8934.2,860.1z M2577.7,33.4c27.7-57.4,27.7-59.3-25.7-96.9c-29.7-21.7-308.5-209.6-621-417.3l-569.6-377.8v342.1v344.1l579.5,130.5c316.4,71.2,583.4,130.5,591.4,130.5C2540.1,90.7,2559.9,65,2577.7,33.4z M7270.9-10.1l379.7-83.1l-680.4-454.9c-373.8-249.2-694.2-449-710-445c-19.8,4,11.9,79.1,124.6,282.8c83.1,152.3,215.6,395.6,294.7,539.9c110.7,201.7,152.3,261.1,176,253.2C6875.3,76.9,7061.3,35.4,7270.9-10.1z M8006.6-447.2l-2-203.7l-257.1-174l-257.1-174l-308.5,5.9l-308.5,5.9l551.8,369.8c304.6,203.7,557.7,369.8,567.6,369.8C8000.7-245.5,8006.6-336.5,8006.6-447.2z M2844.7-455.1c45.5-83.1,79.1-152.3,75.2-156.3c-4-2-334.2-223.5-735.7-490.5c-660.6-441-733.7-482.6-775.3-464.8c-43.5,19.8-47.5,33.6-47.5,176v152.3l696.2,466.8c383.7,257.1,698.1,466.7,700.1,466.7C2759.6-304.8,2799.2-372.1,2844.7-455.1z M3121.6-961.4c19.8-33.6,33.6-69.2,29.7-77.1c-5.9-5.9-51.4-23.7-102.8-35.6c-352-89-773.3-393.6-1026.5-741.7l-39.6-55.4l-102.8,51.4c-57.4,29.7-102.8,55.4-102.8,61.3c0,13.8,1271.7,860.3,1291.5,860.3C3076.1-898.1,3099.8-925.8,3121.6-961.4z M4001.7-1362.9c425.2-114.7,806.9-431.1,996.8-826.7c122.6-255.1,148.3-375.8,148.3-706.1c0-330.3-25.7-450.9-148.3-706.1c-191.8-399.5-567.6-710-1006.7-828.7c-180-49.4-650.7-49.4-830.7,0c-439.1,118.7-814.8,429.2-1006.7,828.7c-98.9,205.7-136.5,352-152.3,599.2c-51.4,812.9,480.6,1509,1269.7,1659.3C3463.7-1307.5,3829.6-1317.4,4001.7-1362.9z M6909-1357c-114.7-85-352-324.3-437.1-443c-272.9-381.7-399.5-850.4-348.1-1289.5c11.9-106.8,39.6-249.2,61.3-316.4l37.6-122.6h-431.1h-431.1l37.6,116.7c191.8,623,11.9,1323.1-466.7,1811.6c-96.9,100.9-209.6,205.7-247.2,233.4l-69.2,53.4h1176.8l1176.8-2L6909-1357z M8244-1333.3c271-43.5,599.3-185.9,781.2-336.2c233.4-195.8,437.1-514.2,518.2-810.9c47.5-180,47.5-650.7-2-830.7c-118.7-439.1-429.2-814.8-828.7-1006.7c-255.1-122.6-375.8-148.3-706.1-148.3c-330.3,0-450.9,25.7-706.1,148.3c-310.5,148.3-567.6,405.4-716,715.9c-122.6,255.1-148.3,375.8-148.3,706.1c0,330.3,25.7,450.9,146.4,704.1C6881.3-1570.6,7551.7-1224.5,8244-1333.3z M1545.3-1993.8l286.8-156.3l-35.6-91c-19.8-49.4-51.4-158.2-71.2-237.3l-35.6-148.3l-146.4,158.2c-81.1,85-209.6,239.3-284.8,340.2l-138.4,183.9l55.4,59.3c29.7,31.6,61.3,55.4,69.2,53.4C1252.6-1835.6,1387.1-1908.8,1545.3-1993.8z"/><path d="M3101.8-1995.8v-365.9l237.3-118.7l237.3-118.7l237.3,118.7l237.3,118.7v365.9v365.9h-474.7h-474.7V-1995.8z M3734.7-2055.1c0-106.8-2-108.8-79.1-148.3l-79.1-39.6l-79.1,39.6c-77.1,39.6-79.1,41.5-79.1,148.3v108.8h158.2h158.2V-2055.1z"/><path d="M2310.7-2895.7v-474.7h365.9h365.9l118.7,237.3l118.7,237.3l-118.7,237.3L3042.5-2421h-365.9h-365.9V-2895.7z M2884.2-2816.6l39.6-79.1l-39.6-79.1c-39.6-77.1-41.5-79.1-148.3-79.1h-108.8v158.2v158.2h108.8C2842.7-2737.5,2844.7-2739.4,2884.2-2816.6z"/><path d="M3991.8-2658.3l-118.7-237.3l118.7-237.3l118.7-237.3h365.9h365.9v474.7v474.7h-365.9h-365.9L3991.8-2658.3z M4525.8-2895.7v-158.2H4417c-106.8,0-108.8,2-148.3,79.1l-39.6,79.1l39.6,79.1c39.6,77.1,41.5,79.1,148.3,79.1h108.8V-2895.7z"/><path d="M3335.2-3313l-233.4-116.7v-365.9v-365.9h474.7h474.7v365.9v365.9L3813.8-3311c-130.5,65.3-239.3,118.7-241.3,116.7C3568.5-3194.3,3461.7-3247.7,3335.2-3313z M3655.6-3587.9c77.1-39.6,79.1-41.5,79.1-148.3V-3845h-158.2h-158.2v108.8c0,104.8,2,108.8,75.2,146.4C3584.4-3540.4,3564.6-3540.4,3655.6-3587.9z"/><path d="M7868.2-1655.6c-98.9-31.6-282.8-221.5-312.5-322.4c-13.8-45.5-23.7-102.9-23.7-126.6c0-217.5,257.1-474.7,474.7-474.7c217.5,0,474.7,257.1,474.7,474.7c0,108.8-51.4,209.7-158.2,316.4C8176.7-1639.8,8042.2-1600.3,7868.2-1655.6z M8125.3-1985.9c25.7-25.7,39.6-65.3,39.6-118.7c0-104.8-53.4-158.2-158.2-158.2c-104.8,0-158.2,53.4-158.2,158.2c0,53.4,13.8,93,39.6,118.7c25.7,25.7,65.3,39.6,118.7,39.6C8060-1946.4,8099.6-1960.2,8125.3-1985.9z"/><path d="M7077.1-2446.7c-98.9-31.6-282.8-221.5-312.5-322.4c-13.8-45.5-23.7-102.9-23.7-126.6c0-217.6,257.1-474.7,474.7-474.7c217.5,0,474.7,257.1,474.7,474.7c0,108.8-51.4,209.6-158.2,316.4C7385.6-2430.9,7251.1-2391.3,7077.1-2446.7z M7334.2-2777c25.7-25.7,39.6-65.3,39.6-118.7c0-104.8-53.4-158.2-158.2-158.2c-104.8,0-158.2,53.4-158.2,158.2c0,104.8,53.4,158.2,158.2,158.2C7268.9-2737.5,7308.5-2751.3,7334.2-2777z"/><path d="M8659.3-2446.7c-98.9-31.6-282.8-221.5-312.5-322.4c-13.8-45.5-23.7-102.9-23.7-126.6c0-217.6,257.1-474.7,474.7-474.7c217.6,0,474.7,257.1,474.7,474.7c0,108.8-51.4,209.6-158.2,316.4C8967.8-2430.9,8833.3-2391.3,8659.3-2446.7z M8916.4-2777c25.7-25.7,39.6-65.3,39.6-118.7c0-104.8-53.4-158.2-158.2-158.2c-104.8,0-158.2,53.4-158.2,158.2c0,104.8,53.4,158.2,158.2,158.2C8851.1-2737.5,8890.7-2751.3,8916.4-2777z"/><path d="M7868.2-3237.8c-98.9-31.7-282.8-221.5-312.5-322.4c-13.8-45.5-23.7-102.9-23.7-126.6c0-217.6,257.1-474.7,474.7-474.7c217.5,0,474.7,257.1,474.7,474.7c0,108.8-51.4,209.6-158.2,316.4C8176.7-3222,8042.2-3182.5,7868.2-3237.8z M8125.3-3568.1c25.7-25.7,39.6-65.3,39.6-118.7c0-104.8-53.4-158.2-158.2-158.2c-104.8,0-158.2,53.4-158.2,158.2s53.4,158.2,158.2,158.2C8060-3528.6,8099.6-3542.4,8125.3-3568.1z"/></g>
+							</g>
+							<g onclick="PAR(this);" class="home-button" transform="translate(216 24)">
+								<title>Social Network</title>
+								<circle class="Oval-2-Copy-2" cx="48" cy="48" r="48" fill="#F06" opacity=".6"/>
+							<g class="Shape" fill="#fff" fill-rule="nonzero" style="transform: scale(0.14) translate(90px,85px);"><path d="M96.213,42.667c-5.888,0-10.667,4.779-10.667,10.667S90.325,64,96.213,64s10.667-4.779,10.667-10.667 S102.101,42.667,96.213,42.667z"/> <path d="M53.547,42.667c-5.888,0-10.667,4.779-10.667,10.667S47.659,64,53.547,64s10.667-4.779,10.667-10.667 S59.435,42.667,53.547,42.667z"/> <path d="M467.733,444.843l-32.021-8l-1.344-5.355c8.299-9.173,14.208-20.864,16.64-33.024c5.696-2.923,9.835-8.533,10.688-15.253 l2.304-18.56c0.704-5.611-1.024-11.285-4.757-15.552c-1.173-1.323-2.496-2.475-3.904-3.435l0.533-11.307l1.963-1.963 c5.504-5.845,12.949-18.325,1.152-36.331c-5.611-8.533-17.109-18.731-40.171-18.731c-6.784,0-22.123,0-37.013,9.323 c-43.904,1.557-49.067,25.216-49.067,43.072c0,3.52,0.64,10.112,1.237,15.616c-1.579,1.003-3.008,2.219-4.267,3.648 c-3.797,4.267-5.568,9.984-4.864,15.68l2.325,18.56c0.875,6.955,5.291,12.715,11.797,15.552 c2.389,11.627,7.957,22.891,15.744,31.829l-1.557,6.272l-32.021,8c-25.92,6.485-44.032,29.696-44.032,56.448 c0,2.837,1.109,5.568,3.115,7.552c2.005,1.984,4.715,3.115,7.552,3.115l213.355-0.064c5.888,0,10.667-4.779,10.667-10.667 C511.787,474.517,493.675,451.328,467.733,444.843z M299.989,490.645c3.669-12.16,13.483-21.845,26.325-25.088L364.544,456 c3.819-0.939,6.805-3.925,7.765-7.744l4.565-18.197c0.939-3.755-0.235-7.723-3.072-10.368 c-8.299-7.787-13.781-19.2-14.699-30.528c-0.448-5.547-5.184-8.619-10.752-8.619l-2.752-16.981c3.072,0,5.973-1.301,8-3.605 c2.027-2.283,2.965-5.333,2.581-8.384c-0.811-6.443-2.112-18.091-2.112-21.845c0-11.051,0-21.483,31.189-21.803 c2.176-0.021,4.309-0.704,6.101-1.984c10.155-7.275,21.845-7.275,27.456-7.275c16.384,0,20.864,6.848,22.357,9.088 c4.331,6.635,2.56,8.512,1.365,9.792l-4.651,4.629c-1.877,1.877-2.987,4.395-3.115,7.04l-1.131,23.211 c-0.128,2.901,0.213,4.928,2.219,7.04c1.984,2.112,4.053,2.539,6.955,2.56l-1.387,17.344c-5.568,0-10.176,4.288-10.624,9.835 c-0.917,11.477-6.827,23.403-15.403,31.104c-2.923,2.624-4.181,6.677-3.221,10.517l4.352,17.429 c0.96,3.819,3.925,6.827,7.765,7.765l38.229,9.557c12.843,3.221,22.656,12.907,26.325,25.088L299.989,490.645z"/> <path d="M256.213,448H53.547c-17.643,0-32-14.357-32-32V106.667h426.667V256c0,5.888,4.779,10.667,10.667,10.667 c5.888,0,10.667-4.779,10.667-10.667V53.333C469.547,23.936,445.632,0,416.213,0H53.547C24.128,0,0.213,23.936,0.213,53.333V416 c0,29.397,23.915,53.333,53.333,53.333h202.667c5.888,0,10.667-4.779,10.667-10.667S262.101,448,256.213,448z M21.547,53.333 c0-17.643,14.357-32,32-32h362.667c17.643,0,32,14.357,32,32v32H21.547V53.333z"/> <path d="M138.88,42.667c-5.888,0-10.667,4.779-10.667,10.667S132.992,64,138.88,64s10.667-4.779,10.667-10.667 S144.768,42.667,138.88,42.667z"/></g>
+							</g>
+							<g onclick="PAR(this);" class="more-button" transform="translate(408 217)">
+								<title>Payment</title>
+								<circle class="Oval-2" cx="48" cy="48" r="48" fill="#F06" opacity=".6"/>							
+							<g class="Shape" fill="#fff" fill-rule="nonzero" style="transform: scale(0.17) translate(25px,25px);"><path d="m473.6,256.6c0-99.3-67.1-185.9-163.3-210.6-9.2-2.4-18.6,3.2-20.9,12.4-2.4,9.2 3.2,18.6 12.4,20.9 80.9,20.7 137.4,93.7 137.4,177.3 0,73.7-43.9,139-109.6,167.7l15.9-37c3.7-8.7-0.3-18.8-9-22.6-8.7-3.7-18.8,0.3-22.6,9l-31,72.2c-3.7,8.7 0.3,18.8 9,22.6l72.2,31c10.8,3.8 19.8-2.5 22.6-9 3.7-8.7-0.3-18.8-9-22.6l-31.4-13.5c76.5-34.6 127.3-111.4 127.3-197.8z"/> <path d="m210.4,433.9c-80.9-20.8-137.4-93.7-137.4-177.3 0-72.7 42.7-137.2 106.9-166.5l-14.9,34.6c-3.7,8.7 0.1,19.2 9,22.6 10.4,3.9 19.2-0.8 22.6-9l31-72.3c3-7 2.9-17.5-9-22.6l-72.2-31c-8.7-3.7-18.8,0.3-22.6,9-3.7,8.7 0.3,18.8 9,22.6l33.6,14.4c-76.8,34.7-127.8,111.6-127.8,198.2 7.10543e-15,99.3 67.2,185.8 163.3,210.6 11.6,3 18.9-4.6 20.9-12.4 2.3-9.2-3.2-18.5-12.4-20.9z"/> <path d="m296.6,321.4c8.8-9.2 13.2-20.8 13.2-34.6 0-6.3-1.1-12.1-3.2-17.5-2.1-5.4-5.1-10-9-14-3.9-3.9-9-7.2-15.2-10-3.3-1.4-9.9-3.4-20-5.9v-57.4c6.5,1.3 11.6,4.1 15.4,8.3 3.7,4.2 6.2,10.2 7.4,18l20.6-3.1c-1.8-12.6-7-22.6-15.7-29.8-6.8-5.7-16-9.1-27.6-10.2v-9.5h-11.8v9.5c-13.2,1.3-23.2,5-29.9,10.9-10.1,8.8-15.1,20.3-15.1,34.5 0,8 1.7,15.1 5.2,21.4 3.4,6.3 8.3,11.2 14.7,14.7 8.6,4.8 17,8 25.2,9.5v63.5c-7.8-0.8-14.6-4.8-20.2-11.9-3.9-5-6.7-12.9-8.2-23.6l-20.1,3.8c0.7,10.3 3.4,19.1 7.9,26.3 4.5,7.2 9.9,12.4 16.2,15.6 6.2,3.2 14.4,5.4 24.3,6.7v19.9h11.8v-20.2c14-0.7 25.4-5.7 34.1-14.9zm-45.8-84.5c-9.1-2.7-15.5-6.4-19.3-11-3.8-4.6-5.7-10.3-5.7-17.1 0-6.9 2.2-12.8 6.7-17.8 4.5-5 10.6-8.1 18.3-9.3v55.2zm30.9,72.6c-5.1,5.8-11.5,9.1-19.2,10.1v-60.7c10.7,3.5 17.9,7.4 21.5,11.8 3.6,4.4 5.4,10.2 5.4,17.5-0.1,8.4-2.6,15.6-7.7,21.3z"/> </g>
+							</g>
+						</g>
+					</g>
+					<g class="main-menu" transform="translate(276 276)">
+						<title>Main Menu</title>
+						<circle   cx="120" cy="120" r="120" fill="#000" opacity="0"/>
+						<g class="menu-button" fill="#fff" fill-rule="nonzero" transform="translate(84 95)">
+<g id="z_23" style="opacity:0;"><path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"></path></g>
+<g id="z_13" style="opacity:0;"><path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"></path></g>
+<g id="z_32" style="opacity:0;"><path d="M9.5 14.25l-5.584 2.936 1.066-6.218L.465 6.564l6.243-.907L9.5 0l2.792 5.657 6.243.907-4.517 4.404 1.066 6.218"></path></g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</svg>
+		
+ 		
+	</div>
+ 
+ <h3 id="user_para" style="text-align: center; margin: auto;position: relative;"></h3>
+
+<button type="button"  onclick="STATS(SW);PREview();" style="position: absolute;top: 0px;left: 0px;width: auto;margin: 20px;">prewie</button>
+<button type="button"  onclick="MDL_PROFIL();" style="position: absolute;top: 0px;right: 0px;width: auto;margin: 20px;">profil update</button>
+<button type="button"  onclick="STATS(SW);logout();" style="position: absolute;bottom: 0px;right: 0px;width: auto;margin: 20px;" >Logout</button>
+
+<div style="position: absolute;bottom: 0px;left: 0px;margin: 20px;font-size: x-large;font-weight: bold;">
+<span>Wiget Status </span><br>
+<label class="switch" onclick="Aktiv(this,0);" >
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label><br><span id="STatusTxT" style="color:green;">Activ</span></div>
+
+
+
+<!-- tuka ke e modalskijot stngs --->
+
+
+<h2 id="PRO_STATUS"> LOADING........</h2>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="SHW_link"></p>
+	
+	
+	
+	
+	
+	
+<div class="topnav" id="myTopnav">
+
+
+<div style="float: left;text-align: center;">
+  <span id="STATS_linkce" style="color:green;">Activ</span><br>
+<label class="switch" onclick="Aktiv(this,1);" >
+  <input type="checkbox" >
+  <span class="slider round"></span>
+</label></div>
+
+
+  <div class="dropdown" id="MENIlink">
+    <button type="button"  class="dropbtn" onclick="DROPdwnbtn();" >Options 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div id="Lopci" class="dropdown-content" >
+      <a onclick="par(0);" class="LL"></a>
+      <a onclick="par(1);" class="LL"></a>
+      <a onclick="par(2);" class="LL"></a>
+      <a onclick="par(3);" class="LL"></a>
+      <a onclick="par(4);" class="LL"></a>
+      <a onclick="par(5);" class="LL"></a>
+    </div>
+  </div> 
+  
+  <a style="font-size:30px;"><i id="Btn_LOGO" ></i></a>
+  
+</div> <br>
+
+<div> 
+
+  <input style="width:100%;" type="text" id="LINK_txt"  onchange="SHW_LinkUPDT(this);" name="Name" required>
+  <div style="display: block ruby;">
+    <button type="button"  onclick="MESTENJE(this,1)" style="float:left;width: auto;margin: 10px;" >Save</button>
+    <button type="button"  onclick="MESTENJE(this,null)" style="float:right;width: auto;margin: 10px;" >Cancel</button>
+  </div>
+	
+
+</div>
+
+	
+	
+	
+  </div>
+
+</div>
+
+
+<div id="Modal_PROFIL" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	
+	
+<p> update Status text <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(0);"></i></p>
+<input type="text" id="PROFIL_status" style="width: 90%;margin: auto;display: table-caption;" ><br><br>
+
+<p> update PROFIL pic <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(1);"></i><input type="file" value="upload" id="fileButon" style="width: auto;float: right;position: inherit;"></p>
+<img id="wew" src="../img/deflat.png" style="width: auto;margin: auto;display:table-caption;" >
+<p> email account  verification status   : <span id="E_status"></span></p>
+<p> update Update Star <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(2);"></i><button type="button"  onclick="BYproces();" style="width: auto;float: right;position: inherit;">add <i class='fas fa-star'></i></button></p>
+
+<p id="info_star"></p>	 
+	
+<button type="button"  onclick="UPD_PROFILO(this);" style="width: auto;margin: auto;position: inherit;display: table-caption;" >update</button>
+
+  </div>
+
+</div>
+<!-- --->
+
+
+
+
+
+
+  </div>
+
+	
+	
+</div>	
+<!--   -->	
+
+	
+	
+  <div id="login_div" class="main-div">
+    <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to myall </h3>
+
+<img src="img/MYALLogo.png" style="display: block;border-radius:45px;margin-left: auto;margin-right: auto;width: 73%;margin-top:-50px;max-width: 600px;" >
+<p id="ErorTXT" style="color:red;margin: 0px;text-align: center;"></p>
+
+<div id="Lin" >	
+	
+    <input type="email" placeholder="Email..." id="email_field_1" />
+    <input type="password" placeholder="Password..." id="password_field_1" />
+<div>
+    <button type="button"  onclick="login();">Login to Account</button> <hr>
+    <button type="button"  onclick="SUP(true)">Sing Up</button> 
+	
+<button type="button"  style="position: absolute;z-index: -1;bottom: 0px;left:0px;margin: 10px;width: auto;background-color: cadetblue;color: white;" onclick="window.open('https://1kinger.github.io/web/#s4');">what is myall ?</button> <br>
+
+</div>
+
+</div>
+
+	
+<div id="Sup" style="display:none;">
+<p id="TitLINK" class="TITlink">https://myall.sytes.net/1kinger</p>
+	<input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this);" />
+  	<input type="email" placeholder="Email..." id="email_field_2" oninput="CKMail(this);"  />
+    <input type="password" placeholder="Password..." id="password_field_2" oninput="CEp(this);" />
+<div>	
+	    <button type="button"  onclick="SingUP();">Sing Up</button> <hr>
+		<button type="button"  onclick="SUP(false);">back</button> 
+</div>
+</div>
+
+		
+  </div>
+
+
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+
+<script src='def/definiton.js' type='text/javascript'></script>
+  <script src="WEB/JS/index.js"></script>
+  
+  	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
+	<script src='WEB/NVG/js/scripts.js' type='text/javascript'></script>
+	
+</body></html>
