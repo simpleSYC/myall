@@ -81,7 +81,7 @@ if((a.includes("/"))||
 {return false;}else{return true;}}
 var CekDATA;
 
-var SIFRA,userNAME;function KOJeOVOJ(a){
+var SIFRA,userNAME,W;function KOJeOVOJ(a){
                 SIFRA=a.uid;
 USERdef="USER/"+SIFRA;
 		                                          
@@ -89,9 +89,8 @@ MyallBase.child(USERdef).once("value")
   .then(function(snapshot) {
      CekDATA = snapshot.val();
 	 
-	if(CekDATA!=undefined){userNAME=CekDATA["ID"];console.log("ovaj postoi  user ",userNAME); 	
-	F5();}else{     ADDni_novUSER(a);    console.log("ovaj user  go nema  WELCOME",userNAME);  }
-             /// se adnuva ama nnema refresh
+	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();}
+	else{  ADDni_novUSER(a); }
  
  document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME; 
  
@@ -271,8 +270,8 @@ var UPD_Pic=document.getElementById("fileButon");
 UPD_Pic.addEventListener("change", function(e){
 	
 	var file = e.target.files[0];
-	
-var storageRef= firebase.storage().ref().child("USER_pic/"+userNAME+"/PROFIL_pic/"+file.name);
+	//////////////////////////////////////////
+var storageRef= firebase.storage().ref().child("USER_pic/"SIFRA+"/"+userNAME+"/PROFIL_pic/"+file.name);
 
 var task=storageRef.put(file);  /// ova funkcionira kako sto treba
 
@@ -295,6 +294,7 @@ FTO_UPLOAD_view.src =reader.result;}
 reader.readAsDataURL(file);
 
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Fime").set(file.name);
+MyallBase.child("USER/"+userNAME+"/PROFIL/FOTO/Fime").set("ProfilPIC");
 
 NOVO_FOTO_iME=file.name;
 
@@ -343,14 +343,16 @@ a=document.getElementById("PROFIL_status").value.slice(0,141);
 document.getElementById("PRO_STATUS").innerHTML=a;
 
 if(b!=a){
-MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/SEY").set(a);}}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/SEY").set(a);
+MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/SEY").set(a);}}
 
 function promeniTUKA(){
 	if(FTO_url!=false){
 stara_FTOname=W["PROFIL"]["FOTO"]["Fime"];
 if(stara_FTOname!=NOVO_FOTO_iME){
 document.getElementById("PROFI_pic").src=FTO_url;
-MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);
+MyallBase.child("USER/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
 
 }}
 
@@ -442,6 +444,7 @@ if(b==1){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
+MyallBase.child("USER/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
 
 
 ST_svg();
@@ -457,10 +460,14 @@ function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 function STATS(A){a=A.checked;if(a){
 	
 if(W["PROFIL"]["STATUS"]["AKTIV"]!=true){W["PROFIL"]["STATUS"]["AKTIV"]=true;
-MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);
+MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);}
 	}else{  
 if(W["PROFIL"]["STATUS"]["AKTIV"]!=false){W["PROFIL"]["STATUS"]["AKTIV"]=false;
-MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);}}}
+MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
+MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
+
+}}}
 
 
 
@@ -520,35 +527,31 @@ UID=USER.uid;
 email=USER.email;
 userNAME= document.getElementById("username_field").value;
 	
-LERo_0={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] },"Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] },
+Privat={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] },"Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] },
 "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
 "IME":"", "RANK":0,
-"REG":{ "ID":"", "email":"", "veri":0 },
+"REG":{ "veri":0 },
+"SETINGS":{ "S0":"11", "S1":"32" },
+"STATUS":{ "AKTIV":true, "SEY":"" }}}
+
+Web={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] },"Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] },
+"PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
+"RANK":0,
 "SETINGS":{ "S0":"11", "S1":"32" },
 "STATUS":{ "AKTIV":true, "SEY":"" }}}
 
 /// edno lero za web i edno lero za uid	
 
 MyallBase.child("REG@/"+userNAME).set(email);
-MyallBase.child("WEBuser/"+userNAME).set(LERo_0);
+MyallBase.child("WEBuser/"+userNAME).set(Web);
 
-MyallBase.child("USER/"+UID+"/"+userNAME).set(LERo_0);
+MyallBase.child("USER/"+UID+"/"+userNAME).set(Privat);
 
 MyallBase.child("USER/"+UID+"/ID").set(userNAME);
 MyallBase.child("USER/"+UID+"/email").set(email);
 
-F5();}
-
-var W;function F5(){	
-                LINKtxt="USER/"+SIFRA+"/"+userNAME; 
-MyallBase.child(LINKtxt).once("value")
-  .then(function(snapshot) {
-     W = snapshot.val();
-	 
-	 puniLokalno();
-	 
-  });	
 }
+
 
 
  
