@@ -1,6 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>myall</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+<title>myall</title><link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="WEB/CSS/style.css"/>
   <link rel="stylesheet" href="WEB/NVG/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -9,9 +8,34 @@
 	
 </head><body>
 
-<!--   -->	
-<div id="NVG">	
+  <div id="login_div" class="main-div">
+   <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to myall </h3>
+  <img src="img/MYALLogo.png" style="display: block;border-radius:45px;margin-left: auto;margin-right: auto;width: 73%;margin-top:-50px;max-width: 600px;" >
+  <p id="ErorTXT" style="color:red;margin: 0px;text-align: center;"></p>
+  <div id="Lin">
+    <input type="email" placeholder="Email..." id="email_field_1" />
+    <input type="password" placeholder="Password..." id="password_field_1" />
+   <div>
+    <button type="button"  onclick="login();">Login to Account</button> <hr>
+    <button type="button"  onclick="SUP(true)">Sing Up</button> 
+	<button type="button"  style="position: absolute;z-index: -1;bottom: 0px;left:0px;margin: 10px;width: auto;background-color: cadetblue;color: white;" onclick="window.open('https://1kinger.github.io/web/#s4');">what is myall ?</button> <br>
+   </div>
+  </div>
 	
+  <div id="Sup" style="display:none;">
+   <p id="TitLINK" class="TITlink">https://myall.sytes.net/1kinger</p>
+	<input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this.value);" />
+  	<input type="email" placeholder="Email..." id="email_field_2" oninput="CKMail(this.value);"  />
+    <input type="password" placeholder="Password..." id="password_field_2" oninput="PAS_L(this.value);" />
+   <div>	
+	    <button type="button"  onclick="SingUP();">Sing Up</button> <hr>
+		<button type="button"  onclick="SUP(false);">back</button> 
+  </div>
+ </div>
+</div>
+
+
+
   <div id="user_div" class="loggedin-div" style="display:contents; width: 100%; z-index: 3; position: relative;">
  
 <div class="containerX">
@@ -153,7 +177,6 @@
 
 <!-- tuka ke e modalskijot stngs --->
 
-
 <h2 id="PRO_STATUS"> LOADING........</h2>
 
 <!-- The Modal -->
@@ -164,13 +187,7 @@
     <span class="close">&times;</span>
     <p id="SHW_link"></p>
 	
-	
-	
-	
-	
-	
 <div class="topnav" id="myTopnav">
-
 
 <div style="float: left;text-align: center;">
   <span id="STATS_linkce" style="color:green;">Activ</span><br>
@@ -200,7 +217,7 @@
 
 <div> 
 
-  <input style="width:100%;" type="text" id="LINK_txt"  onchange="SHW_LinkUPDT(this);" name="Name" required>
+  <input style="width:100%;" type="text" id="LINK_txt"  oninput="SHW_LinkUPDT(this);" name="Name" required>
   <div style="display: block ruby;">
     <button type="button"  onclick="MESTENJE(this,1)" style="float:left;width: auto;margin: 10px;" >Save</button>
     <button type="button"  onclick="MESTENJE(this,null)" style="float:right;width: auto;margin: 10px;" >Cancel</button>
@@ -209,8 +226,6 @@
 
 </div>
 
-	
-	
 	
   </div>
 
@@ -241,60 +256,12 @@
 </div>
 <!-- --->
 
-
-
-
-
-
-  </div>
-
 	
 	
 </div>	
 <!--   -->	
 
 	
-	
-  <div id="login_div" class="main-div">
-    <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to myall </h3>
-
-<img src="img/MYALLogo.png" style="display: block;border-radius:45px;margin-left: auto;margin-right: auto;width: 73%;margin-top:-50px;max-width: 600px;" >
-<p id="ErorTXT" style="color:red;margin: 0px;text-align: center;"></p>
-
-<div id="Lin" >	
-	
-    <input type="email" placeholder="Email..." id="email_field_1" />
-    <input type="password" placeholder="Password..." id="password_field_1" />
-<div>
-    <button type="button"  onclick="login();">Login to Account</button> <hr>
-    <button type="button"  onclick="SUP(true)">Sing Up</button> 
-	
-<button type="button"  style="position: absolute;z-index: -1;bottom: 0px;left:0px;margin: 10px;width: auto;background-color: cadetblue;color: white;" onclick="window.open('https://1kinger.github.io/web/#s4');">what is myall ?</button> <br>
-
-</div>
-
-</div>
-
-	
-<div id="Sup" style="display:none;">
-<p id="TitLINK" class="TITlink">https://myall.sytes.net/1kinger</p>
-	<input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this);" />
-  	<input type="email" placeholder="Email..." id="email_field_2" oninput="CKMail(this);"  />
-    <input type="password" placeholder="Password..." id="password_field_2" oninput="CEp(this);" />
-<div>	
-	    <button type="button"  onclick="SingUP();">Sing Up</button> <hr>
-		<button type="button"  onclick="SUP(false);">back</button> 
-</div>
-</div>
-
-		
-  </div>
-
-
-
-
-
-
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
