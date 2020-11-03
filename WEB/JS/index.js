@@ -271,7 +271,7 @@ UPD_Pic.addEventListener("change", function(e){
 	
 	var file = e.target.files[0];
 	
-var storageRef= firebase.storage().ref().child("USER_pic/"+SIFRA+"/"+userNAME+"/PROFIL_pic/"+file.name);
+var storageRef= firebase.storage().ref().child("USER_pic/"+userNAME+"/PROFIL_pic/"+file.name);
 
 var task=storageRef.put(file);  /// ova funkcionira kako sto treba
 
@@ -294,7 +294,7 @@ FTO_UPLOAD_view.src =reader.result;}
 reader.readAsDataURL(file);
 
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Fime").set(file.name);
-MyallBase.child("USER/"+userNAME+"/PROFIL/FOTO/Fime").set("ProfilPIC");
+MyallBase.child("WEBuser/"+userNAME+"/PROFIL/FOTO/Fime").set("ProfilPIC");
 
 NOVO_FOTO_iME=file.name;
 
@@ -344,7 +344,7 @@ document.getElementById("PRO_STATUS").innerHTML=a;
 
 if(b!=a){
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/SEY").set(a);
-MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/SEY").set(a);}}
+MyallBase.child("WEBuser/"+userNAME+"/PROFIL/STATUS/SEY").set(a);}}
 
 function promeniTUKA(){
 	if(FTO_url!=false){
@@ -352,7 +352,7 @@ stara_FTOname=W["PROFIL"]["FOTO"]["Fime"];
 if(stara_FTOname!=NOVO_FOTO_iME){
 document.getElementById("PROFI_pic").src=FTO_url;
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);
-MyallBase.child("USER/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
+MyallBase.child("WEBuser/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
 
 }}
 
@@ -444,7 +444,7 @@ if(b==1){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
-MyallBase.child("USER/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
+MyallBase.child("WEBuser/"+userNAME+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
 
 
 ST_svg();
@@ -461,11 +461,11 @@ function STATS(A){a=A.checked;if(a){
 	
 if(W["PROFIL"]["STATUS"]["AKTIV"]!=true){W["PROFIL"]["STATUS"]["AKTIV"]=true;
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);
-MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);}
+MyallBase.child("WEBuser/"+userNAME+"/PROFIL/STATUS/AKTIV").set(true);}
 	}else{  
 if(W["PROFIL"]["STATUS"]["AKTIV"]!=false){W["PROFIL"]["STATUS"]["AKTIV"]=false;
 MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
-MyallBase.child("USER/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
+MyallBase.child("WEBuser/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
 
 }}}
 
