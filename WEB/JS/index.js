@@ -89,14 +89,13 @@ MyallBase.child(USERdef).once("value")
   .then(function(snapshot) {
      CekDATA = snapshot.val();
 	 
-	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();}
-	else{  ADDni_novUSER(a); }
+	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();
+  document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME;}
+	else{  ADDni_novUSER(a);}
  
- document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME; 
  
   });	 
 }
-
 
 		
 
@@ -550,9 +549,17 @@ MyallBase.child("USER/"+UID+"/"+userNAME).set(Privat);
 MyallBase.child("USER/"+UID+"/ID").set(userNAME);
 MyallBase.child("USER/"+UID+"/email").set(email);
 
+Loadni_noviot(UID);
 }
 
-
+function Loadni_noviot(a){                         
+MyallBase.child("USER/"+a).once("value")
+  .then(function(snapshot) {
+         Freski = snapshot.val();
+userNAME=Freski["ID"];  W=Freski[userNAME]; puniLokalno();
+ document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME; 
+  });	 
+}
 
  
 ScrenRedsing();function ScrenRedsing(){
