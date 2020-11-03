@@ -270,8 +270,8 @@ var UPD_Pic=document.getElementById("fileButon");
 UPD_Pic.addEventListener("change", function(e){
 	
 	var file = e.target.files[0];
-	//////////////////////////////////////////
-var storageRef= firebase.storage().ref().child("USER_pic/"SIFRA+"/"+userNAME+"/PROFIL_pic/"+file.name);
+	
+var storageRef= firebase.storage().ref().child("USER_pic/"+SIFRA+"/"+userNAME+"/PROFIL_pic/"+file.name);
 
 var task=storageRef.put(file);  /// ova funkcionira kako sto treba
 
