@@ -458,15 +458,14 @@ Web={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], 
 MyallBase.child("USER/"+UID+"/"+userNAME).set(Privat);
 MyallBase.child("USER/"+UID+"/ID").set(userNAME);
 MyallBase.child("USER/"+UID+"/email").set(em4);
-window.alert("New account"+"\n"+userNAME+"\n"+"sucsessful created !");
-setTimeout(function(){ 
+
 MyallBase.child("WEBuser/"+userNAME).set(Web);
                               
 MyallBase.child("REG@/email/"+em4).set(true);
 MyallBase.child("REG@/user/"+userNAME).set(true);
 Loadni_noviot(UID);
 
- }, 750);
+
  
 }
 
