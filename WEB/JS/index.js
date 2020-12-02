@@ -20,7 +20,7 @@ var ErorINFO=document.getElementById("ErorTXT");
 var SW=document.getElementsByClassName("switch")[0].children[0];
 var p0,p1,p2;var Par=[p0,p1,p2]; for(i=0;i<3;i++){Par[i]=false;}
 
-function Imenik (a){b="https://myall.sytes.net/";if(a.length>0){d="";}else{d="1kinger";}
+function Imenik (a){b="https://mylinks.sytes.net/";if(a.length>0){d="";}else{d="1kinger";}
 			document.getElementById("TitLINK").innerHTML=b+d+a;
 if(a.length<4){ErorINFO.innerHTML="Username must be longer than 3 charakters";}
 else{CEK_singupUSERNAME(a);}}
@@ -60,7 +60,7 @@ MyallBase.child(USERdef).once("value")
      CekDATA = snapshot.val();
 	 
 	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();
-  document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME;}
+  document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + userNAME;}
 	else{ADDni_novUSER(a);}
   });	 
 }
@@ -254,7 +254,7 @@ storageRef.getDownloadURL().then(function(url) {
   // Handle any errors
 });});}); 
 
-function PREview(){window.open("https://myall.sytes.net/"+userNAME);}
+function PREview(){window.open("https://mylinks.sytes.net/"+userNAME);}
 
 function UPD_PROFILO(){
 	
@@ -474,7 +474,7 @@ MyallBase.child("USER/"+a).once("value")
   .then(function(snapshot) {
          Freski = snapshot.val();
 userNAME=Freski["ID"];  W=Freski[userNAME]; puniLokalno();
- document.getElementById("user_para").innerHTML = "https://myall.sytes.net<br>/" + userNAME; 
+ document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + userNAME; 
   });	 
 }
  

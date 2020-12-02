@@ -13,9 +13,9 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-var USER=window.location.href.slice(24);var MyallBase = firebase.database().ref();
+var USER=window.location.href.slice(26);var MyallBase = firebase.database().ref();
 
-var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://myall.sytes.net/"+USER;
+var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://mylinks.sytes.net/"+USER;
 
 
 function CEKuser(){
@@ -33,7 +33,7 @@ document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+US
 document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
 else{ DEL_NVG();
-document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://myall.sytes.net/'>Create that acc</a>";}
+document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://mylinks.sytes.net/'>Create that acc</a>";}
  
   });}
   
