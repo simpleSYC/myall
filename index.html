@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>myall</title><link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+<title>mylinks</title><link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="WEB/CSS/style.css"/>
   <link rel="stylesheet" href="WEB/NVG/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -9,7 +9,7 @@
 </head><body>
 
   <div id="login_div" class="main-div">
-   <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to myall </h3>
+   <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to mylinks </h3>
   <img src="img/MYlinks.png" style="display: block;border-radius:45px;margin-left: auto;margin-right: auto;width: 73%;margin-top:-50px;max-width: 600px;" >
   <p id="ErorTXT" style="color:red;margin: 0px;text-align: center;"></p>
   <div id="Lin">
@@ -243,8 +243,9 @@
 <input type="text" id="PROFIL_status" style="width: 90%;margin: auto;display: table-caption;" ><br><br>
 
 <p> update PROFIL pic <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(1);"></i><input type="file" value="upload" id="fileButon" style="width: auto;float: right;position: inherit;"></p>
-<img id="wew" src="../img/deflat.png" style="width: auto;margin: auto;display:table-caption;" >
-<p> email account  verification status   : <span id="E_status"></span></p>
+<img id="wew" src="img/deflat.png" style="width: auto;margin: auto;display:table-caption;">
+<p id="usr_email"></p>
+<p> email account  verification status   : <span id="E_status"></span> <button id="re_snd_email">re send email</button></p>
 <p> update Update Star <i style="color: cadetblue;font-size: large;" class="fas fa-question-circle" onclick="STAR_info(2);"></i><button type="button"  onclick="BYproces();" style="width: auto;float: right;position: inherit;">add <i class='fas fa-star'></i></button></p>
 
 <p id="info_star"></p>	 
@@ -264,18 +265,18 @@
 	
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
 
 
 <!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
 
 <script src='def/definiton.js' type='text/javascript'></script>
   <script src="WEB/JS/index.js"></script>

@@ -1,6 +1,4 @@
- // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
+   var firebaseConfig = {
     apiKey: "AIzaSyBNjmQnhNhtKS3Fl-S01bPLapvqtjFN7kE",
     authDomain: "myall-proekt.firebaseapp.com",
     databaseURL: "https://myall-proekt.firebaseio.com",
@@ -12,8 +10,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-///  firebase.analytics();
-  
+
 
 var MyallBase = firebase.database().ref();
 var ErorINFO=document.getElementById("ErorTXT");
@@ -59,7 +56,7 @@ MyallBase.child(USERdef).once("value")
   .then(function(snapshot) {
      CekDATA = snapshot.val();
 	 
-	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();
+	if(CekDATA!=undefined){userNAME=CekDATA["ID"]; W=CekDATA[userNAME]; puniLokalno();  Turi_ACT_email(CekDATA["email"]);
   document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + userNAME;}
 	else{ADDni_novUSER(a);}
   });	 
@@ -128,7 +125,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
-});
+}); setTimeout(SND_vrf,3000);
 
   }else{
   if(Par[0]!=true){TXTO="heyy dude take other username..";}else
@@ -137,8 +134,8 @@ firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(e
 ErorINFO.innerHTML=TXTO;}}
 
 
-function SND_vrf(a){var user = firebase.auth().currentUser;
-	if(a==0){
+function SND_vrf(){var user = firebase.auth().currentUser;
+	
 user.sendEmailVerification().then(function() {
   // Email sent.
   
@@ -148,9 +145,23 @@ user.sendEmailVerification().then(function() {
 });
 
 }
+function Turi_ACT_email(a){document.getElementById("usr_email").innerHTML="( "+a+".com )";}
+function CHK_vrf(Status_ver){  var user = firebase.auth().currentUser;
+                                var BTN_ver=document.getElementById("re_snd_email"); BTN_ver.style="width: auto;";
+ if(Status_ver){
+	 // da se trgne resend button
+BTN_ver.style.display="none";
+BTN_ver.onclick=function(){};
+BTN_ver.innerHTML="";
+ }else{
+BTN_ver.style.display="inline-block";
+BTN_ver.onclick=function(){SND_vrf();BTN_ver.innerHTML="email alredy send ..";BTN_ver.onclick=function(){};};
+BTN_ver.innerHTML="verification email send ";}
+ 
+ 
+if(user.emailVerified) {
+if(!Status_ver){MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/REG/veri").set(true);}}
 
-if (user.emailVerified) {
-if(a!=true){MyallBase.child("USER/"+SIFRA+"/"+userNAME+"/PROFIL/REG/veri").set(true);}}
 }
 
 function Aktiv(a,n){ b=a.children[0];
@@ -387,6 +398,9 @@ MyallBase.child("WEBuser/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
 
 function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 
+function BTN_za_SND_M(a){
+	
+}
 
 function ST_svg(){ 
 if(parCAT==0){
@@ -400,12 +414,13 @@ if(parCAT==0){
 function puniLokalno(){
 updZvzda(parseInt(W["PROFIL"]["RANK"]));
 E_status=W["PROFIL"]["REG"]["veri"];
-SND_vrf(E_status);
+
+CHK_vrf(E_status);
 
 
 fotoLINK=W["PROFIL"]["FOTO"]["Flink"];
 if(fotoLINK==false){
-document.getElementById("PROFI_pic").src="../img/deflat.png";
+document.getElementById("PROFI_pic").src="img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
 	
 for(i=0;i<4;i++){
@@ -473,7 +488,7 @@ function Loadni_noviot(a){
 MyallBase.child("USER/"+a).once("value")
   .then(function(snapshot) {
          Freski = snapshot.val();
-userNAME=Freski["ID"];  W=Freski[userNAME]; puniLokalno();
+userNAME=Freski["ID"];  W=Freski[userNAME]; puniLokalno(); Turi_ACT_email(Freski["email"]);
  document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + userNAME; 
   });	 
 }
