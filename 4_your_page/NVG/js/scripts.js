@@ -85,7 +85,7 @@ var settingsOpen = false;
 var moreOpen = false;
 
 // Main (Center) Button
-$('.main-menu').click(function() {
+$('#PROFI_pic').click(function() {
 	
 	if(menuOpen == false) {
 		

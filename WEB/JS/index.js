@@ -25,13 +25,13 @@ else{CEK_singupUSERNAME(a);}}
 function CKMail(A){if(A.length>4){a=A.slice(0,A.length-4);Par[1]=false;if(OKname(a)){snd2ckM(a);}
 else{ErorINFO.innerHTML="Unsuported email type";}}else{ErorINFO.innerHTML="";}}
 
-function snd2ckM(a){MyallBase.child("REG@/email/"+a).once("value").then(function(snapshot){
+function snd2ckM(a){MyallBase.child("REG@/LINKS/email/"+a).once("value").then(function(snapshot){
 B_data = snapshot.val();if(B_data){MAIL_FREE(false);}else{MAIL_FREE(true);}});}
 
 function CEK_singupUSERNAME(a){Par[0]=false;if(OKname(a)){snd2ckU(a);}
 else{ErorINFO.innerHTML="los karakter";}}
 
-function snd2ckU(a){MyallBase.child("REG@/user/"+a).once("value").then(function(snapshot){
+function snd2ckU(a){MyallBase.child("REG@/LINKS/user/"+a).once("value").then(function(snapshot){
 B_data = snapshot.val();if(B_data){USER_FREE(false);}else{USER_FREE(true);}});}
 
 
@@ -207,7 +207,7 @@ window.onclick = function(event) {
 
 
 ////////////////////////// modelskoto kopce
-function MDL_PROFIL(){modal_PROFIL.style.display = "block";
+function MDL_PROFIL(){modal_PROFIL.style.display = "block"; STAR_info("x");
 a=W["PROFIL"]["REG"]["veri"];
 if(a==true){
 document.getElementById("E_status").innerHTML="verifyed";}else{
@@ -297,16 +297,22 @@ MyallBase.child("WEBuser/"+userNAME+"/PROFIL/FOTO/Flink").set(FTO_url);}
 
 }}
 
-
 function STAR_info(a) {
-  var x = document.getElementById("info_star");
-if(x.innerHTML.length<1){
+	      document.getElementById("inv_cod").innerHTML="**********";
+  var x = document.getElementById("info_star");txt="";
+if((x.innerHTML.length<1)&&(a!="x")){
 if(a==0){txt="some free welcome text status. 0 -141 character status ";}else
 if(a==1){txt="its 200x200 PX placeholder with acteable transparent png capability";}else
-if(a==2){txt="you can be verifyed<br><a href='/Verification/'>see policy off verification & peyment process</a>";}
-x.innerHTML=txt;}else{x.innerHTML="";}
+if(a==2){txt="you can be verifyed<br><a href='/Verification/'>see policy off verification & peyment process</a>";}else
 
-} 
+if(a==3){txt="This is your invite cod for link other acc with seeam username.";
+document.getElementById("inv_cod").innerHTML=W["PROFIL"]["COD"];}}
+
+x.innerHTML=txt;
+	
+
+
+}
 
 function BYproces(){txt="https://www.paypal.com/paypalme/MyallStar";
 window.open(txt);}
@@ -398,9 +404,6 @@ MyallBase.child("WEBuser/"+userNAME+"/PROFIL/STATUS/AKTIV").set(false);
 
 function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 
-function BTN_za_SND_M(a){
-	
-}
 
 function ST_svg(){ 
 if(parCAT==0){
@@ -416,12 +419,15 @@ updZvzda(parseInt(W["PROFIL"]["RANK"]));
 E_status=W["PROFIL"]["REG"]["veri"];
 
 CHK_vrf(E_status);
-
+//document.getElementById("inv_cod").innerHTML=W["PROFIL"]["COD"];
 
 fotoLINK=W["PROFIL"]["FOTO"]["Flink"];
 if(fotoLINK==false){
 document.getElementById("PROFI_pic").src="img/deflat.png";
 }else{document.getElementById("PROFI_pic").src=fotoLINK;}
+
+document.getElementById("wew").src=document.getElementById("PROFI_pic").src;
+
 	
 for(i=0;i<4;i++){
 	for(q=0;q<3;q++){
@@ -431,6 +437,8 @@ for(i=0;i<4;i++){
 GETaccSTATUS(W["PROFIL"]["STATUS"]["AKTIV"]);
 
 document.getElementById("PRO_STATUS").innerHTML=W["PROFIL"]["STATUS"]["SEY"];
+
+document.getElementById("PROFIL_status").value=W["PROFIL"]["STATUS"]["SEY"];
 
 
 
@@ -461,6 +469,7 @@ Privat={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""
 "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
 "IME":"", "RANK":0,
 "REG":{ "veri":0 },
+"COD":0,
 "SETINGS":{ "S0":"11", "S1":"32" },
 "STATUS":{ "AKTIV":true, "SEY":"" }}}
 
@@ -469,6 +478,9 @@ Web={"Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], 
 "RANK":0,
 "SETINGS":{ "S0":"11", "S1":"32" },
 "STATUS":{ "AKTIV":true, "SEY":"" }}}
+
+                        NEW_COD=GT_NW_COD();
+Privat["PROFIL"]["COD"]=NEW_COD;
 											em4=email.slice(0,email.length-4);
 MyallBase.child("USER/"+UID+"/"+userNAME).set(Privat);
 MyallBase.child("USER/"+UID+"/ID").set(userNAME);
@@ -476,8 +488,13 @@ MyallBase.child("USER/"+UID+"/email").set(em4);
 
 MyallBase.child("WEBuser/"+userNAME).set(Web);
                               
-MyallBase.child("REG@/email/"+em4).set(true);
-MyallBase.child("REG@/user/"+userNAME).set(true);
+MyallBase.child("REG@/LINKS/email/"+em4).set(true);
+MyallBase.child("REG@/LINKS/user/"+userNAME).set(true);
+
+
+                     
+CHK_codirano_i_onadi(NEW_COD,userNAME)
+
 Loadni_noviot(UID);
 
 
@@ -492,6 +509,30 @@ userNAME=Freski["ID"];  W=Freski[userNAME]; puniLokalno(); Turi_ACT_email(Freski
  document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + userNAME; 
   });	 
 }
+ 
+function GT_NW_COD(){
+  t=new Date().getTime(); c=Math.floor((Math.random() * 999999999) + 1);
+T=t.toString(36);      Cc=c.toString(36).slice(2);  
+       Co=T+Cc;
+return Co;}
+
+function CHK_codirano_i_onadi(C,U){P="REG@/cod/"+C; Uu=P+"/"+U;  c_u_links=Uu+"/mylink_STS"; c_u_local=Uu+"/mylocal_STS";
+MyallBase.child(P).once("value").then(function(snapshot){  C_data = snapshot.val();
+
+if(C_data!=undefined){ //goo ima 
+                
+MyallBase.child(c_u_links).set(1);
+
+}else{//go nema codot
+	
+MyallBase.child(c_u_links).set(1);
+MyallBase.child(c_u_local).set(0);
+
+}
+
+
+});}
+
  
 ScrenRedsing();function ScrenRedsing(){
 if(screen.width<400){
