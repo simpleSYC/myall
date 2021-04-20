@@ -1,5 +1,3 @@
-
-
 var A0=document.getElementsByClassName("reading-button")[0];
 var A1=document.getElementsByClassName("writing-button")[1];
 var A2=document.getElementsByClassName("general-button")[0];
@@ -97,8 +95,9 @@ function updZvzda(a){
 		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(15px,46px);";}else
 	if(a==3){
 		ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-15px,44px);";
-		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,46px);";
+		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,49px);";
 		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(19px,44px);";}
 }
 
-
+function Titliranje(){										 let a=location.href.slice(26);
+document.getElementsByTagName("TITLE")[0].innerHTML="mylinks / "+a;}

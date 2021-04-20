@@ -37,7 +37,7 @@ document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+US
   });}
   
 
-function puniLokalno(V){
+function puniLokalno(V){ Titliranje();
 	updZvzda(parseInt(V["RANK"]));
 	
 document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
