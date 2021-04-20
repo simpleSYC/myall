@@ -143,7 +143,7 @@ initPayPalButton();
 
 
 
-const PYMNT_WB="https://peyment-status.web.app/";
+const PYMNT_WB="https://peyment-status.web.app/#";
 function OpenSuccsesfulPeyment(a,b){let AB="_"+a.value+":"+b.value;
 document.getElementById("amount").value="";
 document.getElementById("description").value="";
