@@ -1,19 +1,3 @@
-  var firebaseConfig = {
-    apiKey: "AIzaSyBNjmQnhNhtKS3Fl-S01bPLapvqtjFN7kE",
-    authDomain: "myall-proekt.firebaseapp.com",
-    databaseURL: "https://myall-proekt.firebaseio.com",
-    projectId: "myall-proekt",
-    storageBucket: "myall-proekt.appspot.com",
-    messagingSenderId: "53126128195",
-    appId: "1:53126128195:web:c5605a60494f511b8b6af6",
-    measurementId: "G-2YRGN7EEZN"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-  
-var USER=window.location.href.slice(26);var MyallBase = firebase.database().ref();
-
 var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://mylinks.sytes.net/"+USER;
 
 
@@ -42,9 +26,8 @@ function puniLokalno(V){ Titliranje();
 	
 document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
 fotoLINK=V["FOTO"]["Flink"];
-if(fotoLINK==false){
-document.getElementById("PROFI_pic").src="../img/deflat.png";
-}else{document.getElementById("PROFI_pic").src=fotoLINK;}
+if(fotoLINK){document.getElementById("PROFI_pic").src=fotoLINK;}
+else{	     document.getElementById("PROFI_pic").src="../img/deflat.png";}
 
 
 	

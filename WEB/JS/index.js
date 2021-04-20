@@ -1,18 +1,3 @@
-   var firebaseConfig = {
-    apiKey: "AIzaSyBNjmQnhNhtKS3Fl-S01bPLapvqtjFN7kE",
-    authDomain: "myall-proekt.firebaseapp.com",
-    databaseURL: "https://myall-proekt.firebaseio.com",
-    projectId: "myall-proekt",
-    storageBucket: "myall-proekt.appspot.com",
-    messagingSenderId: "53126128195",
-    appId: "1:53126128195:web:c5605a60494f511b8b6af6",
-    measurementId: "G-2YRGN7EEZN"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-
-var MyallBase = firebase.database().ref();
 var ErorINFO=document.getElementById("ErorTXT");
 var SW=document.getElementsByClassName("switch")[0].children[0];
 var p0,p1,p2;var Par=[p0,p1,p2]; for(i=0;i<3;i++){Par[i]=false;}
