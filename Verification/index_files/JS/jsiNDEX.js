@@ -144,7 +144,7 @@ initPayPalButton();
 
 
 const PYMNT_WB="https://peyment-status.web.app/#";
-function OpenSuccsesfulPeyment(a,b){let AB="_"+a.value+":"+b.value;
+function OpenSuccsesfulPeyment(a,b){let AB="B"+a.value+":"+b.value;
 document.getElementById("amount").value="";
 document.getElementById("description").value="";
 let F=document.getElementById("Gg_ordero");F.style.display="block";
