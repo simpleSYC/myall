@@ -415,7 +415,7 @@ if(parCAT==0){
 	AR[parCAT][parRUB][1].children[2].innerHTML=svg_ASPC[parCAT][StalazINDEX];}
 }
 function puniLokalno(){
-updZvzda(parseInt(W["PROFIL"]["RANK"]));
+updZvzda(parseInt(W["PROFIL"]["RANK"]));  console.log(parseInt(W["PROFIL"]["RANK"]));
 E_status=W["PROFIL"]["REG"]["veri"];
 
 CHK_vrf(E_status);
