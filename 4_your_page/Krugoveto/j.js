@@ -118,7 +118,7 @@ Vue.component("krugceto", {
                 </g>
             </svg>
         </div>`})
-
+var store="";
 var storeqqee = new Vuex.Store({
 state: {
   view:"krugceto"
