@@ -89,16 +89,16 @@ function updZvzda(a){
 	if(a==0){for(i=0;i<ZZ.length;i++){ZZ[i].remove();}}else
 	if(a==1){
 		ZZ[0].remove();
-		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,25px);";
+		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,46px);";
 		ZZ[2].remove();}else
 	if(a==2){
-		ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-10px,25px);";
+		ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-10px,46px);";
 		ZZ[1].remove();
-		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(15px,25px);";}else
+		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(15px,46px);";}else
 	if(a==3){
-		ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-15px,22px);";
-		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,25px);";
-		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(19px,22px);";}
+		ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-15px,44px);";
+		ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,46px);";
+		ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(19px,44px);";}
 }
 
 

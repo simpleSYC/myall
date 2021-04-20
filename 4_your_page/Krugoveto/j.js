@@ -1,7 +1,6 @@
 Vue.component("krugceto", {
     template: `<div class="containerX">
-    <img id="PROFI_pic" style="position:absolute;z-index:-1;border-radius:100%;width:auto;height: auto;max-width: 19vw;max-height: 19vh;">
-    
+    <img id="PROFI_pic" style="position:absolute;border-radius:100%;width:auto;height: auto;max-width: 19vw;max-height: 19vh;">
     
             <svg class="menu" id="AJDE" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 792 792">
                 <defs>
