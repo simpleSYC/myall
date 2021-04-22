@@ -5,18 +5,19 @@ MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) { let x=document.getElementById("PRO_STATUS");
     let  PRO = snapshot.val();
  
- if(PRO!=undefined){let W=PRO["PROFIL"];  
- 	if( typeof W["STATUS"]["AKTIV"]  != "boolean"){DEL_NVG();
+ if(PRO!=undefined){
+ 	if( typeof PRO["PROFIL"]["STATUS"]["AKTIV"]  != "boolean"){DEL_NVG();
 	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> is alredy suspended</a><br><a>the reason is : "+W["STATUS"]["AKTIV"]+"</a>";
 
-		}else{puniLokalno(W); document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
+		}else{puniLokalno(PRO); document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
 	else{DEL_NVG();
 	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://mylinks.sytes.net/'>Create that acc</a>";}
  });}
   
 
-function puniLokalno(V){ Titliranje();
+function puniLokalno(W){ Titliranje();
+			   let V=W["PROFIL"];
 	updZvzda(parseInt(V["RANK"]));
 	
 document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
