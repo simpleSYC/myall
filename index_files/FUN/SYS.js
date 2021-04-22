@@ -114,15 +114,4 @@ MyallBase.child("MYLOCAL/"+USR_NME).set(BLANKO_4_WEB["MYLOCAL"]);
 MyallBase.child("REG@/LINKS/email/"+em4).set(true);
 MyallBase.child("REG@/LINKS/user/"+USR_NME).set(true);
     
-setTimeout(function(){KOJeOVOJ(u);},1000);
-}
-
-function Loadni_noviot(a,b){
-    
-    
-    let pat="ID/"+a+"/"+b;
-document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/"+b;
-
-MyallBase.child(pat).once("value")
-    .then(function(snapshot) {  let Freski = snapshot.val();
-puniLokalno(Freski); Turi_ACT_email(Freski["email"]);});}
+setTimeout(function(){KOJeOVOJ(u);},1000);}

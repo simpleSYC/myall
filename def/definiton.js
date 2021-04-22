@@ -55,10 +55,10 @@ var DTA_C=["Email : ","Adresse  : ","Phone : "];
 var DTA=[DTA_A,DTA_S,DTA_P,DTA_C];
 
 
-var F_A=["far fa-edit"];
-var F_S=["fab fa-facebook-square","fab fa-youtube-square","fab fa-twitter-square","fab fa-instagram","fab fa-tiktok"];
-var F_P=["fab fa-paypal","fab fa-patreon","fas fa-coffee"];
-var F_C=["fas fa-envelope-square","fas fa-home","fas fa-phone-square-alt"];
+var F_A=["fa fa-edit"];
+var F_S=["fa fa-facebook-square","fa fa-youtube-square","fa fa-twitter-square","fa fa-instagram","fa fa-tiktok"];
+var F_P=["fa fa-paypal","fa fa-patreon","fa fa-coffee"];
+var F_C=["fa fa-envelope-square","fa fa-home","fa fa-phone-square-alt"];
 var F_Logo=[F_A,F_S,F_P,F_C];
 
 
