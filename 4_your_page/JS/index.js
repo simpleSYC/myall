@@ -1,3 +1,5 @@
+$(document).ready(CEKuser,ScrenRedsing);
+
 function CEKuser(){ document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;	
 MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) { let x=document.getElementById("PRO_STATUS");
@@ -79,13 +81,6 @@ function DEL_NVG(){
 	document.getElementById("PROFI_pic").remove();
 	document.getElementById("AJDE").remove();}
 	
-	
-Start();
-function Start(){
-	CEKuser();
-
-ScrenRedsing();
-}
 
 function ScrenRedsing(){
 	if(screen.width<400){
