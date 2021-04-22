@@ -1,17 +1,15 @@
-document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;
-
-function CEKuser(){
+function CEKuser(){ document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;	
 MyallBase.child("MYLINKS/"+USER).once("value")
-  .then(function(snapshot) {
+  .then(function(snapshot) { let x=document.getElementById("PRO_STATUS");
     let  PRO = snapshot.val();
  
  if(PRO!=undefined){let W=PRO["PROFIL"];  
- 	if( typeof W["STATUS"]["AKTIV"]  != "boolean"){ DEL_NVG(); let x=document.getElementById("PRO_STATUS");
-	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br><a>the reason is : "+W["STATUS"]["AKTIV"]+"</a>";
+ 	if( typeof W["STATUS"]["AKTIV"]  != "boolean"){DEL_NVG();
+	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> is alredy suspended</a><br><a>the reason is : "+W["STATUS"]["AKTIV"]+"</a>";
 
 		}else{puniLokalno(W); document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
-	else{ DEL_NVG();let x=document.getElementById("PRO_STATUS");
+	else{DEL_NVG();
 	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://mylinks.sytes.net/'>Create that acc</a>";}
  });}
   
