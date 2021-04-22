@@ -11,12 +11,9 @@ ELEmentce.innerHTML="Deactiv";
 a.children[1].style="background-color:red;";}
 
 if(!n){if(b.checked){GLAVEN_SW=true;}else{GLAVEN_SW=false;}}
-
 }
 
-function MDL_PROFIL(){modal_PROFIL.style.display = "block"; STAR_info("x");
-
-}
+function MDL_PROFIL(){modal_PROFIL.style.display = "block"; STAR_info("x");}
 
 function UPD_PROFILO(){
 // se ubacuvat datada u data baza..
@@ -54,11 +51,8 @@ if(a==2){txt="you can be verifyed<br><a href='https://mylinks.sytes.net/Verifica
 
 x.innerHTML=txt;}
 
-
 function DROPdwnbtn(){if(LOPCI.style.display=="block"){
 LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}}
-
-
 
 function MDL(b) {R_2="L"+b;parRUB=b;                /// be e id na stalaza
   modal.style.display = "block";
