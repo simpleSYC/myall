@@ -60,14 +60,15 @@ for(z=0;z<4;z++){
 }
 
 
-function OPND(a){ X=AR[parCAT][a][0][0][1];
-	TXTETO=DTA[parCAT][X]+AR[parCAT][a][0][1];
+function OPND(a){  let X=AR[parCAT][a][0][0][1];
+let TXTETO=DTA[parCAT][X]+AR[parCAT][a][0][1];
 	a.target="_blank"; window.open(TXTETO);}
 
 
 var MDLcontact=document.getElementById("MDL_contact");
-function SHWcontact(a){  X=AR[parCAT][a][0][0][1];
-	TXTETO=DTA[parCAT][X]+"<br><br>"+AR[parCAT][a][0][1];
+
+function SHWcontact(a){let X=AR[parCAT][a][0][0][1];
+    let TXTETO=DTA[parCAT][X]+"<br><br>"+AR[parCAT][a][0][1];
 
 MDLcontact.style="display:block;";
 MDLcontact.children[0].children[1].innerHTML=TXTETO;}
