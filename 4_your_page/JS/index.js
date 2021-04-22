@@ -5,8 +5,8 @@ MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) {
     let  PRO = snapshot.val();
  
- if(PRO!=undefined){let W=PRO["PROFIL"];
- 	if(Boolean(W["STATUS"]["AKTIV"])){ DEL_NVG(); let x=document.getElementById("PRO_STATUS");
+ if(PRO!=undefined){let W=PRO["PROFIL"];  
+ 	if( typeof W["STATUS"]["AKTIV"]  != "boolean"){ DEL_NVG(); let x=document.getElementById("PRO_STATUS");
 	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br><a>the reason is : "+W["STATUS"]["AKTIV"]+"</a>";
 
 		}else{puniLokalno(W); document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
