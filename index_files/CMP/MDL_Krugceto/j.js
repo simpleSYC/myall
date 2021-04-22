@@ -35,8 +35,8 @@ Vue.component("mdl_krugceto", {
   
     <input style="width:100%;" type="text" id="LINK_txt"  oninput="SHW_LinkUPDT(this);" name="Name" required>
     <div style="display: block ruby;">
-      <button type="button"  onclick="MESTENJE(this,1)" style="float:left;width: auto;margin: 10px;" >Save</button>
-      <button type="button"  onclick="MESTENJE(this,null)" style="float:right;width: auto;margin: 10px;" >Cancel</button>
+      <button type="button"  onclick="MESTENJE(this,1);" style="float:left;width: auto;margin: 10px;" >Save</button>
+      <button type="button"  onclick="MESTENJE(this,0);" style="float:right;width: auto;margin: 10px;" >Cancel</button>
     </div>
     
      </div>

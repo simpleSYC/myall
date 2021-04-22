@@ -95,8 +95,8 @@ document.getElementById("SHW_link").innerHTML=DTA[parCAT][StalazINDEX]+document.
 SETbLOGO();}
 
 
-function MESTENJE(a,b){
-if(b==1){
+function MESTENJE(a,B){
+if(B){
 STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
 LINK_TXT=document.getElementById("LINK_txt").value;
 MyallBase.child("ID/"+SIFRA+"/"+AKK+"/MYLINKS/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
