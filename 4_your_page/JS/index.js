@@ -20,12 +20,11 @@ function puniLokalno(V){ Titliranje();
 	updZvzda(parseInt(V["RANK"]));
 	
 document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
-   fotoLINK=V["FOTO"]["Flink"];
-if(fotoLINK){document.getElementById("PROFI_pic").src=fotoLINK;}
-else{	     document.getElementById("PROFI_pic").src="../img/deflat.png";}
+let fotoLINK=V["FOTO"]["Flink"];
+ if(fotoLINK){document.getElementById("PROFI_pic").src=fotoLINK;}
+         else{document.getElementById("PROFI_pic").src="../img/deflat.png";}
 
 
-	
 
 if(V["STATUS"]["AKTIV"]){
 for(i=0;i<4;i++){
