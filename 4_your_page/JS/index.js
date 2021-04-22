@@ -1,29 +1,26 @@
-var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://mylinks.sytes.net/"+USER;
+document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;
 
 function CEKuser(){
 MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) {
-     W = snapshot.val();
+    let  PRO = snapshot.val();
  
- if(W!=undefined){
-if((W["PROFIL"]["STATUS"]["AKTIV"]!=true)&&(W["PROFIL"]["STATUS"]["AKTIV"]!=false)){
-DEL_NVG();
-document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br>";
+ if(PRO!=undefined){let W=PRO["PROFIL"];
+ 	if(!Boolean(W["STATUS"]["AKTIV"])){ DEL_NVG(); let x=document.getElementById("PRO_STATUS");
+	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a>is alredy suspended</a><br><a>the reason is : "+W["STATUS"]["AKTIV"]+"</a>";
 
-}else{   puniLokalno(W["PROFIL"]);
-document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
+		}else{puniLokalno(W); document.getElementsByClassName("containerX")[0].style="opacity:1;";}}
 
-else{ DEL_NVG();
-document.getElementById("PRO_STATUS").innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://mylinks.sytes.net/'>Create that acc</a>";}
- 
-  });}
+	else{ DEL_NVG();let x=document.getElementById("PRO_STATUS");
+	x.innerHTML="<a>this USERNAME <a/><span>"+USER+"</span><a> still dont exist </a><br><br><a target='_self'    style='font-size: 35px;' href='https://mylinks.sytes.net/'>Create that acc</a>";}
+ });}
   
 
 function puniLokalno(V){ Titliranje();
 	updZvzda(parseInt(V["RANK"]));
 	
 document.getElementById("PRO_STATUS").innerHTML=V["STATUS"]["SEY"];
-fotoLINK=V["FOTO"]["Flink"];
+   fotoLINK=V["FOTO"]["Flink"];
 if(fotoLINK){document.getElementById("PROFI_pic").src=fotoLINK;}
 else{	     document.getElementById("PROFI_pic").src="../img/deflat.png";}
 
@@ -99,8 +96,3 @@ document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-
 document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
 
 }
-
-
-
-
-
