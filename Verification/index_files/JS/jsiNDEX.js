@@ -1,6 +1,6 @@
 function Precek(a){let R=null;
 if(a.includes("#")){location.href="#footer";R=a.slice(40);
-if(R!="footer"){document.getElementById("BYSKO").setAttribute("user",R);}}}
+if((R)&&(R!="footer")){document.getElementById("BYSKO").setAttribute("user",R);}}}
 
 Precek(location.href);
 
