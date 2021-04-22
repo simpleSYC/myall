@@ -37,5 +37,9 @@ var signqqee = new Vue({
 el:"#login_div",
 store: store
 })
+///////////// da se stave reset pass
 
-
+var input = document.getElementsByTagName("input")[1];
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {event.preventDefault();
+  document.getElementsByTagName("button")[0].click();}}); 

@@ -1,3 +1,9 @@
+function Precek(a){let R=null;
+if(a.includes("#")){location.href="#footer";R=a.slice(40);
+document.getElementById("BYSKO").setAttribute("user",R);}}
+
+Precek(location.href);
+
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -30,10 +36,12 @@ document.execCommand('copy');
 document.body.removeChild(el);}
 
 
-function peyProcedura(){
-  document.getElementById("Peysko").style.display="block";
-  description.value=null;
-  amount.value=null;}
+function peyProcedura(a){document.getElementById("Peysko").style.display="block";
+let A=a.getAttribute("user");
+ if(A){description.value=A;}
+  else{description.value=null;}
+
+            amount.value=null;}
 
 function ClinskoMDL_pyOrdero(){
 document.getElementById("Peysko").style.display="none";}
@@ -144,7 +152,7 @@ initPayPalButton();
 
 
 const PYMNT_WB="https://peyment-status.web.app/#";
-function OpenSuccsesfulPeyment(a,b){let AB="B"+a.value+":"+b.value;
+function OpenSuccsesfulPeyment(a,b){let AB="$"+a.value+":"+b.value;
 document.getElementById("amount").value="";
 document.getElementById("description").value="";
 let F=document.getElementById("Gg_ordero");F.style.display="block";

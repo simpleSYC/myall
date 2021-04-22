@@ -1,9 +1,7 @@
 var TITLE= document.getElementById("demo"); TITLE.innerHTML ="https://mylinks.sytes.net/"+USER;
 
-
 function CEKuser(){
-		
-MyallBase.child("WEBuser/"+USER).once("value")
+MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) {
      W = snapshot.val();
  
