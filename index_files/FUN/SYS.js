@@ -114,10 +114,13 @@ MyallBase.child("MYLOCAL/"+USR_NME).set(BLANKO_4_WEB["MYLOCAL"]);
 MyallBase.child("REG@/LINKS/email/"+em4).set(true);
 MyallBase.child("REG@/LINKS/user/"+USR_NME).set(true);
     
-setTimeout(function(){Loadni_noviot(UID,USR_NME);},1500);
+setTimeout(function(){KOJeOVOJ(u);},1000);
 }
 
-function Loadni_noviot(a,b){let pat="ID/"+a+"/"+b;
+function Loadni_noviot(a,b){
+    
+    
+    let pat="ID/"+a+"/"+b;
 document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/"+b;
 
 MyallBase.child(pat).once("value")
