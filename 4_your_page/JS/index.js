@@ -16,7 +16,7 @@ MyallBase.child("MYLINKS/"+USER).once("value")
  });}
   
 
-function puniLokalno(W){ Titliranje();
+function puniLokalno(W){ Titliranje(location.href);
 			   let V=W["PROFIL"];
 	updZvzda(parseInt(V["RANK"]));
 	
@@ -28,44 +28,34 @@ let fotoLINK=V["FOTO"]["Flink"];
 
 
 if(V["STATUS"]["AKTIV"]){
-for(i=0;i<4;i++){
-	for(q=0;q<3;q++){
-		AR[i][q][0]=W[proz1[i].toString()][proz2[q].toString()];
-		     Q=AR[i][q][0][0][1];
-		AR[i][q][1].children[0].innerHTML=DTA[i][Q]+AR[i][q][0][1];
-	}
-}
+	
+	
+for(i in O_Element){
+	for(q in a[i]){
+let A=a[i][q]["Aktivno"];
+let L=a[i][q]["LINK"];
+let T=a[i][q]["TxT"];
+let l=PRE_FIX[i][L]+T;
 
-for(z=0;z<4;z++){
-	for(Z=0;Z<3;Z++){ /// broj na babeelsi
-		
-		if((AR[z][Z][0][0][0])&&(AR[z][Z][0][0][1]!=-1)){
-			if(z==0){
-			AR[0][Z][1].children[2].innerHTML=svg_ASPC[0][0];
-			AR[0][Z][1].children[2].children[0].children[0].innerHTML=DTA[0][0]+AR[0][Z][0][1];
-			
-			AR[0][Z][1].children[1].remove();// brisenje topce klientsko
-			
-			AR[0][Z][1].children[0].remove();// brisenje topce titleto
-			
-			}else{ Q=AR[z][Z][0][0][1];
-				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Q];
-		
-			}
-		}else{AR[z][Z][1].remove();}
-	}
- }
+if(A){ O_Element[i][q].setAttribute("GOling",l)
+	if(i=="Activity"){
+	O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
+	O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
+	}else{
+	O_Element[i][q].children[2].innerHTML=  svg_ASPC[i][L];}
+}else{  O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];}
+
+}}
+
 }else{
-	document.getElementsByClassName("outside-layer")[0].remove();
-	document.getElementsByClassName("middle-layer")[0].remove();}
+document.getElementsByClassName("outside-layer")[0].remove();
+document.getElementsByClassName("middle-layer")[0].remove();}}
 
 
-}
 
-
-function OPND(a){  let X=AR[parCAT][a][0][0][1];
-let TXTETO=DTA[parCAT][X]+AR[parCAT][a][0][1];
-	a.target="_blank"; window.open(TXTETO);}
+function OPND(a){ 
+let TxT_lnk=a.getAttribute("GOling");
+window.open(TxT_lnk);}
 
 
 var MDLcontact=document.getElementById("MDL_contact");

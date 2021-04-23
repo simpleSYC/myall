@@ -1,4 +1,4 @@
-var STATS_linkce,R_1,R_2,StalazINDEX,LINK_TXT,parCAT,parRUB;
+var STATS_linkce,KRUG_o,KRUG_O,StalazINDEX,LINK_TXT,parRUB;
 
 var MeM={};
 
@@ -75,7 +75,7 @@ let USR_NME=document.getElementById("username_field").value;
 
 let BLANKO_4_WEB={
 "MYLINKS":{
-    "Activity":{"L0":[[false,0],""], "L1":[[false,0],""], "L2":[[false,0],""], "L3":[[false,1],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Contact":{ "L0":[[false,0],""], "L1":[[false,-1],""], "L2":[[false,1],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] },"Peyment":{ "L0":[[false,2],""], "L1":[[false,1],""], "L2":[[false,2],""], "L3":[[false,0],""], "L4":[[false,0],""], "L5":[[false,0],""] }, "Social":{ "L0":[[false,4],""], "L1":[[false,4],""], "L2":[[false,3],""], "L3":[[false,-1],""], "L4":[[false,0],""], "L5":[[false,0],""] },
+    "Activity":"","Contact":"","Peyment":"","Social":"",
     "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
     "RANK":0,
     "SETINGS":{ "S0":"11", "S1":"32" },

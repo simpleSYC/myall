@@ -54,58 +54,54 @@ x.innerHTML=txt;}
 function DROPdwnbtn(){if(LOPCI.style.display=="block"){
 LOPCI.style="display: none;";}else{LOPCI.style="display:block;";}}
 
-function MDL(b) {R_2="L"+b;parRUB=b;                /// be e id na stalaza
-  modal.style.display = "block";
- StalazINDEX=AR[parCAT][b][0][0][1];
-if(parCAT!=0){
-document.getElementById("SHW_link").innerHTML=DTA[parCAT][StalazINDEX]+AR[parCAT][b][0][1];
-}else{
-document.getElementById("SHW_link").innerHTML=DTA[parCAT][0]+AR[parCAT][b][0][1];}
+function MDL(a){KRUG_O="L"+a;modal.style.display = "block";
 
+let SWLNK= document.getElementById("SHW_link");
 
-document.getElementById("LINK_txt").value=AR[parCAT][b][0][1];
+let Ra=O_Element[KRUG_o][KRUG_O].getAttribute("Aktivno");
+let Rl=O_Element[KRUG_o][KRUG_O].getAttribute("LINK");
+let Rt=O_Element[KRUG_o][KRUG_O].getAttribute("TxT");
+StalazINDEX=Rl;
+let Togel=document.getElementById("StatusLink");
+ if(Togel.checked.toString()!=Ra){Togel.parentElement.click();}
 
+if(KRUG_o=="Activity")
+    {SWLNK.innerHTML=PRE_FIX[KRUG_o][0] +Rt;}
+else{SWLNK.innerHTML=PRE_FIX[KRUG_o][Rl]+Rt;}
+SETbLOGO(KRUG_o,Rl);
+document.getElementById("LINK_txt").value=Rt;
 
-SETbLOGO();
-
-L=document.getElementsByClassName("LL");
-for(i=0;i<L.length;i++){
-	if(i<DTA[parCAT].length){
-	L[i].style="display:block;";
-	L[i].innerHTML=DTA[parCAT][i];}
-	else{L[i].style="display:none;";}}
-}
+	  let L=document.getElementsByClassName("LL");
+for(i=0;i<L.length;i++){ 	   L[i].style="display:none;";}
+for(e in PRE_FIX[KRUG_o]){	   L[e].style="display:block;";
+  L[e].innerHTML=PRE_FIX[KRUG_o][e];}  }
 
 function SHW_LinkUPDT(A){let a=A.value;
 let b=A.parentElement.parentElement.children[1];
 let OKbtn=A.parentElement.children[1].children[0];
 if(OKname_1(a)){if(OKbtn.style.display!="block"){OKbtn.style.display="block";}
-b.innerHTML=DTA[parCAT][StalazINDEX]+A.value;
+b.innerHTML=PRE_FIX[KRUG_o][StalazINDEX]+A.value;
 }else{if(OKbtn.style.display!="none"){OKbtn.style.display="none";}
 b.innerHTML="unsuported Charakter spoted .not allowed(#,$,<'/)";}}
 
 
-function SETbLOGO(){if(parCAT){
-document.getElementById("Btn_LOGO").classList=F_Logo[parCAT][StalazINDEX];}else{
-document.getElementById("Btn_LOGO").classList=F_Logo[0][0];}}
+function SETbLOGO(o,O){document.getElementById("Btn_LOGO").innerHTML=svg_ASPC[o][O];}
 
-function par(a){StalazINDEX=a;  LOPCI.style="display: none;";
+function par(O){LOPCI.style="display: none;";     StalazINDEX=O;
+document.getElementById("SHW_link").innerHTML=PRE_FIX[KRUG_o][O]+document.getElementById("LINK_txt").value;
+SETbLOGO(KRUG_o,O);}
 
-document.getElementById("SHW_link").innerHTML=DTA[parCAT][StalazINDEX]+document.getElementById("LINK_txt").value;
-SETbLOGO();}
-
-
-function MESTENJE(a,B){
-if(B){
-STATS_linkce=a.parentElement.parentElement.parentElement.children[2].children[0].children[2].children[0].checked;
-LINK_TXT=document.getElementById("LINK_txt").value;
-MyallBase.child("ID/"+SIFRA+"/"+AKK+"/MYLINKS/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
-MyallBase.child("MYLINKS/"+AKK+"/"+R_1+"/"+R_2).set([[STATS_linkce,StalazINDEX],LINK_TXT]);
-
-
-ST_svg();}
-
-a.parentElement.parentElement.parentElement.children[0].click();} // da closne modale
+					function Closnego(){document.getElementsByClassName("close")[0].click();}
+function MESTENJE(){Closnego();
+let A=document.getElementById("StatusLink").checked; ST_svg(A);
+let L=StalazINDEX;
+let T=document.getElementById("LINK_txt").value;
+			
+O_Element[KRUG_o][KRUG_O].setAttribute("Aktivno",A);
+O_Element[KRUG_o][KRUG_O].setAttribute("LINK",L);
+O_Element[KRUG_o][KRUG_O].setAttribute("TxT",T);      let O={"Aktivno":A,"LINK":L,"TxT":T};
+MyallBase.child("MYLINKS/"+AKK+"/"+KRUG_o+"/"+KRUG_O).set(O);
+MyallBase.child("ID/"+SIFRA+"/"+AKK+"/MYLINKS/"+KRUG_o+"/"+KRUG_O).set(O);} 
 
 function STATS(A){let a=A.checked; if(a!=MeM["PROFIL"]["STATUS"]["AKTIV"]){
 MeM["PROFIL"]["STATUS"]["AKTIV"]=a;
@@ -115,17 +111,18 @@ MyallBase.child("MYLINKS/"+AKK+"/PROFIL/STATUS/AKTIV").set(a);}}
 
 function GETaccSTATUS(a){if(a!=SW.checked ){SW.click();}}
 
-function ST_svg(){ 
-if(!parCAT){
-	AR[0][parRUB][1].children[2].innerHTML=svg_ASPC[0][0];
-	AR[0][parRUB][1].children[2].children[0].children[0].innerHTML="https://"+document.getElementById("LINK_txt").value;
+function ST_svg(a){if(a){
+if(KRUG_o=="Activity"){
+O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC["Activity"][0];
+O_Element[KRUG_o][KRUG_O].children[2].children[0].children[0].innerHTML="https://"+document.getElementById("LINK_txt").value;
 	
 }else{
-	AR[parCAT][parRUB][1].children[0].innerHTML=document.getElementById("SHW_link").innerHTML;
-	AR[parCAT][parRUB][1].children[2].innerHTML=svg_ASPC[parCAT][StalazINDEX];}
-}
+O_Element[KRUG_o][KRUG_O].children[0].innerHTML=document.getElementById("SHW_link").innerHTML;
+O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC[KRUG_o][StalazINDEX];}
 
-function puniLokalno(a){ Titliranje(); MeM=a;
+}else{O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC["Activity"][0];}}
+
+function puniLokalno(a){ Titliranje(location.href); MeM=a;
 updZvzda(parseInt(a["PROFIL"]["RANK"]));
 
 CHK_vrf(a["PROFIL"]["REG"]["veri"]);
@@ -138,29 +135,27 @@ document.getElementById("PROFI_pic").src="img/deflat.png";}
 document.getElementById("wew").src=document.getElementById("PROFI_pic").src;
 
 	
-for(i=0;i<4;i++){
-	for(q=0;q<3;q++){
-		AR[i][q][0]=a[proz1[i].toString()][proz2[q].toString()];
-	}
-}
+for(i in O_Element){
+	for(q in a[i]){
+let A=a[i][q]["Aktivno"];
+let L=a[i][q]["LINK"];
+let T=a[i][q]["TxT"];
+
+O_Element[i][q].setAttribute("Aktivno",A);
+O_Element[i][q].setAttribute("LINK",L);
+O_Element[i][q].setAttribute("TxT",T);
+
+
+if(A){if(i=="Activity"){
+	O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
+	O_Element[i][q].children[2].children[0].children[0].innerHTML=PRE_FIX[i][L]+T;
+	}else{
+	O_Element[i][q].children[2].innerHTML=  svg_ASPC[i][L];}
+}else{  O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];}
+
+}}
 GETaccSTATUS(a["PROFIL"]["STATUS"]["AKTIV"]);
 document.getElementById("PRO_STATUS").innerHTML=a["PROFIL"]["STATUS"]["SEY"];
 document.getElementById("PROFIL_status").value=a["PROFIL"]["STATUS"]["SEY"];
-
-
-for(z=0;z<4;z++){
-	for(Z=0;Z<3;Z++){ /// broj na babeelsi
-		
-		if((AR[z][Z][0][0][0])&&(AR[z][Z][0][0][1]!=-1)){
-			if(!z){
-			AR[0][Z][1].children[2].innerHTML=svg_ASPC[0][0];
-			AR[0][Z][1].children[2].children[0].children[0].innerHTML=DTA[0][0]+AR[0][Z][0][1];
-			
-			}else{ Q=AR[z][Z][0][0][1];
-				AR[z][Z][1].children[2].innerHTML=svg_ASPC[z][Q];
-			}
-		}
-	}
-}
 
 }
