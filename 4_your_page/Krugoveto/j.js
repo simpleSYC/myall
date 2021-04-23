@@ -13,32 +13,32 @@ Vue.component("krugceto", {
                             <g class="more-menu" transform="translate(654 229)">
                                 <g class="writing-button" transform="translate(24 120)">
                                     <title> </title>
-                                    <circle onclick="OPND(this);" class="Oval-2-Copy-11" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(1);" class="Oval-2-Copy-11" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
     <g></g>
                                 </g>
                                 <g class="new-button">
                                     <title> </title>
-                                    <circle onclick="OPND(this);"  class="Oval-2-Copy-13" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(0);"  class="Oval-2-Copy-13" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
     <g></g>
                                 </g>
                                 <g class="bin-button" transform="translate(0 240)">
                                     <title> </title>
-                                    <circle onclick="OPND(this);" class="Oval-2-Copy-12" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(2);" class="Oval-2-Copy-12" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
     <g></g>
                                 </g>
                             </g>
                             <g class="home-menu" transform="translate(229 18)">
                                 <g class="portfolio-button" transform="translate(119)">
                                     <title></title>
-                                    <circle onclick="OPND(this);"  class="Oval-2-Copy-4" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(1);"  class="Oval-2-Copy-4" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
     <g></g>
                                 </g>
                                 <g class="testimonials-button" transform="translate(0 23)">
                                     <title></title>
-                                    <circle onclick="OPND(this);"  class="Oval-2-Copy-6" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(0);"  class="Oval-2-Copy-6" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;" fill="#00F7FF" opacity=".6"/>
     <g></g>
                                 </g>
-                                <g onclick="OPND(this);" class="contact-button" transform="translate(239 23)">\
+                                <g onclick="OPND(2);" class="contact-button" transform="translate(239 23)">\
                                     <title> </title>
                                     <circle class="Oval-2-Copy-5" cx="48" cy="48" r="48" style="fill:#5d8ffc;opacity:0.4;"  fill="#00F7FF" opacity=".6"/>
     <g></g>
@@ -64,17 +64,17 @@ Vue.component("krugceto", {
                             <g class="faq-menu" transform="translate(18 229)">
                                 <g class="writing-button" transform="translate(0 120)">
                                     <title> </title>
-                                    <circle  onclick="OPND(this);"  class="Oval-2-Copy-7" style="fill:#5d8ffc;opacity:0.4; transform: translate(5px,-40px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+                                    <circle  onclick="OPND(1);"  class="Oval-2-Copy-7" style="fill:#5d8ffc;opacity:0.4; transform: translate(5px,-40px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
     <g style="transform: translate(-22px,-100px);"></g>
                                 </g>
                                 <g class="reading-button" transform="translate(24)">
                                     <title> </title>
-                                    <circle onclick="OPND(this);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4; transform: translate(60px,-100px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(0);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4; transform: translate(60px,-100px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
     <g style="transform: translate(-45px,-160px);"></g>
                                 </g>
                                 <g class="general-button" transform="translate(24 240)">
                                     <title> </title>
-                                    <circle onclick="OPND(this);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4;transform: translate(70px,110px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
+                                    <circle onclick="OPND(2);"  class="Oval-2-Copy-7"  style="fill:#5d8ffc;opacity:0.4;transform: translate(70px,110px);" cx="48" cy="48" r="48" fill="#00F7FF" opacity=".6"/>
     <g style="transform: translate(-45px,240px);"></g>
                                 </g>
                             </g>
