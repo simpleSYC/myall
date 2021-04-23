@@ -43,7 +43,7 @@ if(A.toString()=="true"){O_Element[i][q].children[1].setAttribute("GOling",l);
 	   O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
 	   }else{
 	   O_Element[i][q].children[2].innerHTML=  svg_ASPC[i][L];}
-}else{ O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];}
+}  else{ O_Element[i][q].remove();}
 
 }}
 
@@ -60,9 +60,7 @@ window.open(TxT_lnk);}
 
 var MDLcontact=document.getElementById("MDL_contact");
 
-function SHWcontact(a){let X=AR[parCAT][a][0][0][1];
-    let TXTETO=DTA[parCAT][X]+"<br><br>"+AR[parCAT][a][0][1];
-
+function SHWcontact(a){let TXTETO=a.getAttribute("GOling");
 MDLcontact.style="display:block;";
 MDLcontact.children[0].children[1].innerHTML=TXTETO;}
 
