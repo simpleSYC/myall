@@ -1,5 +1,5 @@
-$(document).ready(CEKuser,ScrenRedsing);
-
+$(document).ready(CEKuser,ScrenRedsing); 
+      USER="1kinger";
 function CEKuser(){ document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;	
 MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) { let x=document.getElementById("PRO_STATUS");
@@ -37,7 +37,7 @@ let L=W[i][q]["LINK"];
 let T=W[i][q]["TxT"];
 let l=PRE_FIX[i][L]+T;
 console.log(l);
-if(A=="true"){O_Element[i][q].setAttribute("GOling",l);
+if(A.toString()=="true"){O_Element[i][q].children[1].setAttribute("GOling",l);
 	   if(i=="Activity"){
 	   O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
 	   O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
