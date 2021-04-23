@@ -36,8 +36,8 @@ let A=W[i][q]["Aktivno"];
 let L=W[i][q]["LINK"];
 let T=W[i][q]["TxT"];
 let l=PRE_FIX[i][L]+T;
-
-if(A){ O_Element[i][q].setAttribute("GOling",l);
+console.log(l);
+if(A=="true"){O_Element[i][q].setAttribute("GOling",l);
 	   if(i=="Activity"){
 	   O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
 	   O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
