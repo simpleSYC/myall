@@ -1,5 +1,4 @@
-$(document).ready(CEKuser,ScrenRedsing); 
-      USER="1kinger";
+$(document).ready(CEKuser,ScrenRedsing);
 function CEKuser(){ document.getElementById("demo").innerHTML ="https://mylinks.sytes.net/"+USER;	
 MyallBase.child("MYLINKS/"+USER).once("value")
   .then(function(snapshot) { let x=document.getElementById("PRO_STATUS");
