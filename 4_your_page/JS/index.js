@@ -31,19 +31,19 @@ if(V["STATUS"]["AKTIV"]){
 	
 	
 for(i in O_Element){
-	for(q in a[i]){
-let A=a[i][q]["Aktivno"];
-let L=a[i][q]["LINK"];
-let T=a[i][q]["TxT"];
+	for(q in W[i]){
+let A=W[i][q]["Aktivno"];
+let L=W[i][q]["LINK"];
+let T=W[i][q]["TxT"];
 let l=PRE_FIX[i][L]+T;
 
-if(A){ O_Element[i][q].setAttribute("GOling",l)
-	if(i=="Activity"){
-	O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
-	O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
-	}else{
-	O_Element[i][q].children[2].innerHTML=  svg_ASPC[i][L];}
-}else{  O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];}
+if(A){ O_Element[i][q].setAttribute("GOling",l);
+	   if(i=="Activity"){
+	   O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];
+	   O_Element[i][q].children[2].children[0].children[0].innerHTML=l;
+	   }else{
+	   O_Element[i][q].children[2].innerHTML=  svg_ASPC[i][L];}
+}else{ O_Element[i][q].children[2].innerHTML=svg_ASPC["Activity"][0];}
 
 }}
 
