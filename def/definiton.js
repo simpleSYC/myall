@@ -87,4 +87,4 @@ if(a==3){
 	ZZ[0].style="opacity:1;fill:gold;transform:scale(3) translate(-15px,44px);";
 	ZZ[1].style="opacity:1;fill:gold;transform:scale(3) translate(2px,49px);";
 	ZZ[2].style="opacity:1;fill:gold;transform:scale(3) translate(19px,44px);";}}
-function Titliranje(a){document.getElementsByTagName("TITLE")[0].innerHTML="mylinks / "+a.slice(26);}
+function Titliranje(a){document.getElementsByTagName("TITLE")[0].innerHTML="mylinks / "+a;}

@@ -15,7 +15,7 @@ MyallBase.child("MYLINKS/"+USER).once("value")
  });}
   
 
-function puniLokalno(W){ Titliranje(location.href);
+function puniLokalno(W){ Titliranje(location.href.slice(26));
 			   let V=W["PROFIL"];
 	updZvzda(parseInt(V["RANK"]));
 	
