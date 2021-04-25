@@ -122,8 +122,10 @@ O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC[KRUG_o][StalazINDEX];}
 
 }else{O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC["Activity"][0];}}
 
-function puniLokalno(a){ Titliranje(location.href); MeM=a;
-updZvzda(parseInt(a["PROFIL"]["RANK"]));
+function puniLokalno(a){Titliranje(location.href); MeM=a;let Pato="MYLINKS/"+a["PROFIL"]["IME"]+"/PROFIL/RANK";
+MyallBase.child(Pato).once("value").then(function(snapshot){ Pato= snapshot.val();
+updZvzda(Pato);});
+
 
 CHK_vrf(a["PROFIL"]["REG"]["veri"]);
 
