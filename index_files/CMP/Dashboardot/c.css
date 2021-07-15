@@ -1,0 +1,7 @@
+#EX_mylocal,#EX_contact{position: absolute;display: none;
+border-radius: 50%;
+max-width: 15vw;
+max-height: 15vh;}
+
+#EX_mylocal{top: 15%;right: 5%;}
+#EX_contact{bottom: 15%;left: 5%;}

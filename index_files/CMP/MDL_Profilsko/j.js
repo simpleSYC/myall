@@ -17,6 +17,18 @@ Vue.component("mdlsko_profilka", {
 
 <button type="button"  onclick="UPD_PROFILO();" style="width: auto;margin: auto;position: inherit;display: table-caption;" >update</button>
 
+<br>
+<br>
+<br>
+<div id="EKSTENZITE"><link href="index_files/CMP/MDL_Profilsko/EKSTENZITE/c.css" rel="stylesheet">
+<button id="EditEkstenzite"> Edit eksetension </button>
+<ekstenzite/>
+</div>
+
+
+
+
+
   </div>`})
 
 var storeqqee = new Vuex.Store({

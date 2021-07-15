@@ -6,11 +6,16 @@ MyallBase.child(USERdef).once("value")
 .then(function(snapshot) {
 let CekDATA = snapshot.val();
 
-if(CekDATA!=undefined){AKK=CekDATA["AKK"];let W=UserskataData(CekDATA[AKK]); puniLokalno(W);  Turi_ACT_email(CekDATA["email"]);
-document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net<br>/" + AKK;}
-else{ADDni_novUSER(a);}
+if(CekDATA!=undefined){AKK=CekDATA["AKK"];let W=UserskataData(CekDATA[AKK]);   puniLokalno(W);  Turi_ACT_email(CekDATA["email"],CekDATA["REG"]["veri"]);
+document.getElementById("user_para").innerHTML = "https://mylinks.sytes.net/<br><span style='font-size: 17px;font-weight: bold;position: relative;z-index: 1;'>"+ AKK+"</span>";}
+else{ADDni_novUSER(a);
+
+}
+
 });	 
 }
+
+
 
 function UserskataData(a){let R=a["MYLINKS"];return R;}
 
@@ -78,10 +83,10 @@ var errorMessage = error.message;
 // ...
 }); setTimeout(SND_vrf,3000);
 
-}else{
-if(Par[0]!=true){TXTO="heyy dude take other username..";}else
-if(Par[1]!=true){TXTO="this email is unvaeble for sign up..";}else
-      {TXTO="paswort to short,, dude comone think somthink long";}
+}else{  let TXTO;
+if(!Par[0]){TXTO="heyy dude take other username..";}else
+if(!Par[1]){TXTO="this email is unvaeble for sign up..";}else
+           {TXTO="paswort to short,, dude comone think somthink long";}
 ErorINFO.innerHTML=TXTO;}}
 
 

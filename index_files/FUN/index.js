@@ -20,6 +20,8 @@ function UPD_PROFILO(){
 // se updejtnuva datata so LOKALNITE promeni
 /// ako se uploadne slika na sajtot i pritisne update , togas da se turi na firabaze
 /// ako ne da ne je uploadnuva istata slika
+
+UPD_EKSTENZIJA(MeM["PROFIL"]["SETINGS"]);
 promSTATUS(MeM["PROFIL"]["STATUS"]);
 promeniTUKA(MeM["PROFIL"]["FOTO"]["Fime"]);
 
@@ -124,14 +126,12 @@ O_Element[KRUG_o][KRUG_O].children[2].innerHTML=svg_ASPC[KRUG_o][StalazINDEX];}
 
 function puniLokalno(a){Titliranje(AKK); MeM=a;let Pato="MYLINKS/"+a["PROFIL"]["IME"]+"/PROFIL/RANK";
 MyallBase.child(Pato).once("value").then(function(snapshot){ Pato= snapshot.val();
-updZvzda(Pato);});
+updZvzda(Pato);});//// da se stave takvo rulsce za  ako ne e isto da ne pusta u svvoj REG takvo !! vazno ke da e ova
 
+Ekstenzite(a["PROFIL"]["SETINGS"]);
 
-CHK_vrf(a["PROFIL"]["REG"]["veri"]);
-
-let fotoLINK=a["PROFIL"]["FOTO"]["Flink"];
- if(fotoLINK){
-document.getElementById("PROFI_pic").src=fotoLINK;}else{
+if(a["PROFIL"]["FOTO"]["Flink"]){
+document.getElementById("PROFI_pic").src=a["PROFIL"]["FOTO"]["Flink"];}else{
 document.getElementById("PROFI_pic").src="img/deflat.png";}
 
 document.getElementById("wew").src=document.getElementById("PROFI_pic").src;
@@ -161,3 +161,44 @@ document.getElementById("PRO_STATUS").innerHTML=a["PROFIL"]["STATUS"]["SEY"];
 document.getElementById("PROFIL_status").value=a["PROFIL"]["STATUS"]["SEY"];
 
 }
+
+
+function Ekstenzite(a){let N=0;
+let EXL={
+"FOTO":document.getElementsByClassName("EKX_log"),
+"TOGEL":document.getElementsByClassName("EX_togel")}
+
+let EXtrnzite={
+"MYLOCAL":[document.getElementById("EX_mylocal"),"img/EKX/_.png"],
+"CONTACT":[document.getElementById("EX_contact"),"img/EKX/$.png"]
+//"MYLOCAL":document.getElementById("EX_mylocal"),
+//"MYLOCAL":document.getElementById("EX_mylocal")
+};
+for(i in a){
+	
+			EXL["FOTO"][N].src=EXtrnzite[i][1];
+if(a[i])
+{			EXL["TOGEL"][N].checked=true;
+	
+ EXtrnzite[i][0].style.display="block";EXtrnzite[i][0].src=EXtrnzite[i][1];}else
+{EXtrnzite[i][0].style.display="none"; EXL["TOGEL"][N].checked=false;} N=N+1;}
+
+if(a["CONTACT"]){
+document.getElementById("txt_contacto").value=a["CONTACT"];}else{
+document.getElementById("txt_contacto").value="";}
+
+};
+
+function UPD_EKSTENZIJA(M){let o=false;
+if(document.getElementsByClassName("EX_togel")[1].checked){
+	if(document.getElementById("txt_contacto").value){o=document.getElementById("txt_contacto").value;}}
+	
+let O={
+"MYLOCAL":document.getElementsByClassName("EX_togel")[0].checked,
+"CONTACT":o}; let a=O;
+
+if(a!=M){MeM["PROFIL"]["SETINGS"]=a;
+Ekstenzite(O);
+
+MyallBase.child("ID/"+SIFRA+"/"+AKK+"/MYLINKS/PROFIL/SETINGS").set(O);
+MyallBase.child("MYLINKS/"+AKK+"/PROFIL/SETINGS").set(O);}}

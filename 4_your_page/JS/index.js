@@ -25,6 +25,7 @@ let fotoLINK=V["FOTO"]["Flink"];
          else{document.getElementById("PROFI_pic").src="../img/deflat.png";}
 
 
+		 Ekstenzite(V["SETINGS"]);
 
 if(V["STATUS"]["AKTIV"]){
 	
@@ -77,3 +78,22 @@ document.getElementById("PRO_STATUS").style="font-size:16px;position:absolute;z-
 document.getElementById("PRO_STATUS").style="position:absolute;z-index:1;display:table-caption;text-align:center;left: 20%;width:60%;"}
 
 }
+
+
+
+
+
+function Ekstenzite(a){let EXtrnzite={
+"MYLOCAL":{"O":document.getElementById("EX_mylocal"),"F":"img/EKX/_.png","U":"https://mylocal.sytes.net/"},
+"CONTACT":{"O":document.getElementById("EX_contact"),"F":"img/EKX/$.png","U":"https://google.com/"}};
+for(i in a){if(a[i]){EXtrnzite[i]["O"].style.display="block";EXtrnzite[i].src=EXtrnzite[i]["F"];}
+else{EXtrnzite[i]["O"].remove();}}
+	
+
+if(a["MYLOCAL"]){EXtrnzite["MYLOCAL"]["O"].addEventListener("click",function(){
+window.open(EXtrnzite["MYLOCAL"]["U"]+USER)});}
+
+if(a["CONTACT"]){EXtrnzite["CONTACT"]["O"].addEventListener("click",function(){
+window.open(EXtrnzite["MYLOCAL"]["U"]+a["CONTACT"])});}
+
+};

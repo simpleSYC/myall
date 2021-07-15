@@ -6,21 +6,24 @@ var ErorINFO=document.getElementById("ErorTXT");
 var SW=document.getElementsByClassName("switch")[0].children[0];
 var p0,p1,p2;var Par=[p0,p1,p2]; for(i=0;i<3;i++){Par[i]=false;}
 
-function Imenik (a){b="https://mylinks.sytes.net/";if(a.length>0){d="";}else{d="1kinger";}
+function Imenik (a){let b="https://mylinks.sytes.net/";if(a.length>0){d="";}else{d="1kinger";}
 			document.getElementById("TitLINK").innerHTML=b+d+a;
 if(a.length<4){ErorINFO.innerHTML="Username must be longer than 3 charakters";}
 else{CEK_singupUSERNAME(a);}}
 
-function CKMail(A){if(A.length>4){let a=A.slice(0,A.length-4);Par[1]=false;if(OKname(a)){snd2ckM(a);}
+function ProceduraZamena(A){let R="";
+for(i in A){if(A[i]=="."){R=R+",";}else{R=R+A[i];}}return R;}
+
+function CKMail(a){if(a.length>2){Par[1]=false;if(OKname(a)){let S=ProceduraZamena(a);  snd2ckM(S);}
 else{ErorINFO.innerHTML="Unsuported email type";}}else{ErorINFO.innerHTML="";}}
 
-function snd2ckM(a){MyallBase.child("REG@/LINKS/email/"+a).once("value").then(function(snapshot){
+function snd2ckM(a){MyallBase.child("REG@/email/"+a).once("value").then(function(snapshot){
 let B_data = snapshot.val();if(B_data){MAIL_FREE(false);}else{MAIL_FREE(true);}});}
 
 function CEK_singupUSERNAME(a){Par[0]=false;if(OKname(a)){snd2ckU(a);}
-else{ErorINFO.innerHTML="los karakter";}}
+else{ErorINFO.innerHTML="Unsuported character";}}
 
-function snd2ckU(a){MyallBase.child("REG@/LINKS/user/"+a).once("value").then(function(snapshot){
+function snd2ckU(a){MyallBase.child("REG@/user/"+a).once("value").then(function(snapshot){
 let B_data = snapshot.val();if(B_data){USER_FREE(false);}else{USER_FREE(true);}});}
 
 function USER_FREE(a){if(a)     {ErorINFO.innerHTML="";Par[0]=true;}else{ErorINFO.innerHTML="this username is alredy taken";    Par[0]=false;}}
@@ -35,7 +38,7 @@ window.open(txt);}
 
 
 function OKname(a){
-    if((a.includes("/"))||(a.includes("#"))||(a.includes("."))||
+    if((a.includes("/"))||(a.includes("#"))||//(a.includes("."))||
        (a.includes(","))||(a.includes("`"))||(a.includes("|"))||
        (a.includes("'"))||(a.includes('"'))||(a.includes(" "))||
        (a.includes("["))||(a.includes("]"))||(a.includes("%")))
@@ -48,14 +51,13 @@ function OKname_1(a){
     {return false;}else{return true;}}
 
 
-function Turi_ACT_email(a){document.getElementById("usr_email").innerHTML="( "+a+".com )";}
-function CHK_vrf(Status_ver){  var user = firebase.auth().currentUser;
+function Turi_ACT_email(a,b){document.getElementById("usr_email").innerHTML="( "+a+" )";
+         CHK_vrf(b);}
+function CHK_vrf(a){  var user = firebase.auth().currentUser;
                                 var BTN_ver=document.getElementById("re_snd_email"); BTN_ver.style="width: auto;";
- if(Status_ver){
+ if(a){
 	 // da se trgne resend button
 BTN_ver.style.display="none";
-BTN_ver.onclick=function(){};
-BTN_ver.innerHTML="";
 document.getElementById("E_status").innerHTML="verifyed";
  }else{
 BTN_ver.style.display="inline-block";
@@ -65,12 +67,11 @@ document.getElementById("E_status").innerHTML="unverified";}
  
  
 if(user.emailVerified) {
-if(!Status_ver){MyallBase.child("ID/"+SIFRA+"/"+AKK+"/MYLINKS/PROFIL/REG/veri").set(true);}}
+if(!a){MyallBase.child("ID/"+SIFRA+"/REG/veri").set(true);}}
 }
 
-
-function ADDni_novUSER(u){let UID=u.uid;
-let em4=u.email.slice(0,u.email.length-4);
+function ADDni_novUSER(u){let UID=u.uid; let EML=u.email;
+let emailStingo=ProceduraZamena(EML);
 let USR_NME=document.getElementById("username_field").value;
 
 let BLANKO_4_WEB={
@@ -78,10 +79,9 @@ let BLANKO_4_WEB={
     "Activity":"","Contact":"","Peyment":"","Social":"",
     "PROFIL":{ "FOTO":{ "Fime":"", "Flink":false },
     "RANK":0,
-    "SETINGS":{ "S0":"11", "S1":"32" },
+    "SETINGS":{ "MYLOCAL":false, "CONTACT":false },
     "STATUS":{ "AKTIV":true, "SEY":"" },
-    "IME":USR_NME,
-    "REG":{"veri":0}}},
+    "IME":USR_NME}},
 "MYLOCAL":{
     "JBS":{
     	0:{TITLE:false,IMG:{F_ime:false,F_src:false},JBS_STATUS:false,JBS_DESC:false},
@@ -92,26 +92,19 @@ let BLANKO_4_WEB={
     "PROFIL":{"G_MAPS":{STATUS:false,Loc:{NAME:false,KOD:false,FULL:false}},
     "FOTO":{ "Fime":"", "Flink":false },
     "RANK":0,
-    "SETINGS":{ MYlinks:false },
+    "CONTACTO":{"MYlinks":false,"CONTACT_ME":""},
+    "SETINGS":{ "S1":false },
     "STATUS":{ "AKTIV":false, "SEY":"" },
-    "IME":USR_NME,
-    "REG":{"veri":0}}}};
-                                       let BLANKO_4_PRIVAT=BLANKO_4_WEB;
-MyallBase.child("ID/"+UID+"/"+USR_NME).set(BLANKO_4_PRIVAT);
-
-BLANKO_4_WEB["MYLINKS"]["PROFIL"]["IME"]=null;
-BLANKO_4_WEB["MYLINKS"]["PROFIL"]["REG"]["veri"]=null;
-
-BLANKO_4_WEB["MYLOCAL"]["PROFIL"]["IME"]=null;
-BLANKO_4_WEB["MYLOCAL"]["PROFIL"]["REG"]["veri"]=null;
-                                                
-MyallBase.child("ID/"+UID+"/email").set(em4); 
+    "IME":USR_NME}}};             let R={"veri":0};
+MyallBase.child("ID/"+UID+"/REG").set(R); 
+MyallBase.child("ID/"+UID+"/email").set(EML); 
 MyallBase.child("ID/"+UID+"/AKK").set(USR_NME);
-    
+
+MyallBase.child("ID/"+UID+"/"+USR_NME).set(BLANKO_4_WEB);
 MyallBase.child("MYLINKS/"+USR_NME).set(BLANKO_4_WEB["MYLINKS"]);
 MyallBase.child("MYLOCAL/"+USR_NME).set(BLANKO_4_WEB["MYLOCAL"]);
 
-MyallBase.child("REG@/LINKS/email/"+em4).set(true);
-MyallBase.child("REG@/LINKS/user/"+USR_NME).set(true);
+MyallBase.child("REG@/email/"+emailStingo).set(true);
+MyallBase.child("REG@/user/"+USR_NME).set(true);
     
 setTimeout(function(){KOJeOVOJ(u);},1000);}
