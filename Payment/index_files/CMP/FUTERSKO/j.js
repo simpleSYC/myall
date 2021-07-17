@@ -1,6 +1,6 @@
 Vue.component("futersko", {
   template: `
-  <button onclick="window.open( MYLINKS_URL +'/1kinger')" style="width: 50px; height: 50px; margin: auto; border-radius: 15px; display: inherit; position: initial; background: azure">
+  <button onclick="window.open('https://mylinks.sytes.net/1kinger')" style="width: 50px; height: 50px; margin: auto; border-radius: 15px; display: inherit; position: initial; background: azure">
     <svg style="position: absolute; left: 50%; transform: translate(-50%, -50%) scale(0.3); z-index: 0; cursor: pointer; display: flex; width: 160px; height: 160px">
       <defs id="SvgjsDefs1001">
         <linearGradient id="SvgjsLinearGradient1011">
