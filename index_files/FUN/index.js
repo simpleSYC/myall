@@ -48,7 +48,7 @@ function STAR_info(a) {let x = document.getElementById("info_star"); let txt="";
 if((x.innerHTML.length<1)&&(a!="x")){
 if(a==0){txt="some free welcome text status. 0 -141 character status ";}else
 if(a==1){txt="its cirkle picture  200 x 200 PX placeholder with acteable transparent png capability";}else
-if(a==2){txt="you can be verifyed<br><a href='https://mylinks.sytes.net/Verification/'>see policy off verification & peyment process</a>";}
+if(a==2){txt="you can be verifyed<br><a href= MYLINKS_URL +'/Payment'>see peyment process</a>";}
 }
 
 x.innerHTML=txt;}

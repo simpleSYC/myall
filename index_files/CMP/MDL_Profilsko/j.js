@@ -1,5 +1,5 @@
 Vue.component("mdlsko_profilka", {
-    template: `<div class="modal-content">
+  template: `<div class="modal-content">
     <span class="close">&times;</span>
 	
 <p> update Status text <i style="color: cadetblue;font-size: large;" class="fa fa-question-circle" onclick="STAR_info(0);"></i></p>
@@ -20,7 +20,7 @@ Vue.component("mdlsko_profilka", {
 <br>
 <br>
 <br>
-<div id="EKSTENZITE"><link href="index_files/CMP/MDL_Profilsko/EKSTENZITE/c.css" rel="stylesheet">
+<div id="EKSTENZITE"><link href="./index_files/CMP/MDL_Profilsko/EKSTENZITE/c.css" rel="stylesheet">
 <button id="EditEkstenzite"> Edit eksetension </button>
 <ekstenzite/>
 </div>
@@ -29,17 +29,16 @@ Vue.component("mdlsko_profilka", {
 
 
 
-  </div>`})
+  </div>`,
+});
 
 var storeqqee = new Vuex.Store({
-state: {
-  view:"mdlsko_profilka"
-}
-})   
+  state: {
+    view: "mdlsko_profilka",
+  },
+});
 
 var signqqee = new Vue({
-el:"#Modal_PROFIL",
-store: store
-})
-
-
+  el: "#Modal_PROFIL",
+  store: store,
+});

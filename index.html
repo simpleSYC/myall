@@ -1,56 +1,72 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>mylinks</title><link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>        
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.2/vuex.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mylinks</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.2/vuex.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-<link rel="stylesheet" href="index_files/SYT/style.css"/>
-<link rel="stylesheet" href="index_files/CMP/KrugovetoGrafika/NVG/css/style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./index_files/SYT/style.css" />
+    <link rel="stylesheet" href="./index_files/CMP/KrugovetoGrafika/NVG/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
 
-<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
-</head><body>
-<div id="login_div" class="main-div"><link href="index_files/CMP/Loginskoto/c.css" rel="stylesheet">
-<logerinskoto/>
-</div><script src="index_files/CMP/Loginskoto/j.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div id="login_div" class="main-div">
+      <link href="./index_files/CMP/Loginskoto/c.css" rel="stylesheet" />
+      <logerinskoto />
+    </div>
+    <script src="./index_files/CMP/Loginskoto/j.js" type="text/javascript"></script>
 
-<div id="user_div" class="loggedin-div" style="display:contents; width: 100%; z-index: 3; position: relative;">
- 
-<div id="KrugovetoGraficki" class="containerX"><link href="index_files/CMP/KrugovetoGrafika/c.css" rel="stylesheet">
-<img id="PROFI_pic" style="position:absolute;border-radius:50%;max-width: 19vw;max-height: 19vh;"/>
-<krugoveto/>
-</div><script src="index_files/CMP/KrugovetoGrafika/j.js" type="text/javascript"></script>
- 
-<div id="DashBoardot"><link href="index_files/CMP/Dashboardot/c.css" rel="stylesheet">
- <dsko/>
-</div><script src="index_files/CMP/Dashboardot/j.js" type="text/javascript"></script>
+    <div id="user_div" class="loggedin-div" style="display: contents; width: 100%; z-index: 3; position: relative">
+      <div id="KrugovetoGraficki" class="containerX">
+        <link href="./index_files/CMP/KrugovetoGrafika/c.css" rel="stylesheet" />
+        <img id="PROFI_pic" style="position: absolute; border-radius: 50%; max-width: 19vw; max-height: 19vh" />
+        <krugoveto />
+      </div>
+      <script src="./index_files/CMP/KrugovetoGrafika/j.js" type="text/javascript"></script>
 
-<div id="myModal" class="modal"><link href="index_files/CMP/MDL_Krugceto/c.css" rel="stylesheet">
- <mdl_krugceto/>
-</div><script src="index_files/CMP/MDL_Krugceto/j.js" type="text/javascript"></script>
+      <div id="DashBoardot">
+        <link href="./index_files/CMP/Dashboardot/c.css" rel="stylesheet" />
+        <dsko />
+      </div>
+      <script src="./index_files/CMP/Dashboardot/j.js" type="text/javascript"></script>
 
-<div id="Modal_PROFIL" class="modal"><link href="index_files/CMP/MDL_Profilsko/c.css" rel="stylesheet">
-<mdlsko_profilka/>
-</div><script src="index_files/CMP/MDL_Profilsko/j.js" type="text/javascript"></script>
+      <div id="myModal" class="modal">
+        <link href="./index_files/CMP/MDL_Krugceto/c.css" rel="stylesheet" />
+        <mdl_krugceto />
+      </div>
+      <script src="./index_files/CMP/MDL_Krugceto/j.js" type="text/javascript"></script>
 
-</div>
-<script src="index_files/CMP/MDL_Profilsko/EKSTENZITE/j.js" type="text/javascript"></script>
+      <div id="Modal_PROFIL" class="modal">
+        <link href="./index_files/CMP/MDL_Profilsko/c.css" rel="stylesheet" />
+        <mdlsko_profilka />
+      </div>
+      <script src="./index_files/CMP/MDL_Profilsko/j.js" type="text/javascript"></script>
+    </div>
+    <script src="./index_files/CMP/MDL_Profilsko/EKSTENZITE/j.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
-<script type="text/javascript" src='def/f.js'></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script type="text/javascript" src="def/f.js"></script>
 
-<script type="text/javascript" src='def/definiton.js'></script>
-<script type="text/javascript" src='index_files/FUN/DEF.js'></script>
+    <script type="text/javascript" src="def/definiton.js"></script>
+    <script type="text/javascript" src="index_files/FUN/DEF.js"></script>
 
-<script type="text/javascript" src='index_files/FUN/SYS.js'></script>
-<script type="text/javascript" src="index_files/SYT/j.js"></script>
+    <script type="text/javascript" src="index_files/FUN/SYS.js"></script>
+    <script type="text/javascript" src="./index_files/SYT/j.js"></script>
 
-<script type="text/javascript" src="index_files/firebase/Standart/j.js"></script>
-<script type="text/javascript" src="index_files/firebase/Extra/j.js"></script>
+    <script type="text/javascript" src="./index_files/firebase/Standart/j.js"></script>
+    <script type="text/javascript" src="./index_files/firebase/Extra/j.js"></script>
 
-<script type="text/javascript" src="index_files/FUN/index.js"></script>
-<script type="text/javascript" src='index_files/CMP/KrugovetoGrafika/NVG/js/scripts.js'></script></body></html>
+    <script type="text/javascript" src="./index_files/FUN/index.js"></script>
+    <script type="text/javascript" src="index_files/CMP/KrugovetoGrafika/NVG/js/scripts.js"></script>
+  </body>
+</html>

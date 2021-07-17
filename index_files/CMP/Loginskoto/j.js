@@ -1,5 +1,5 @@
 Vue.component("logerinskoto", {
-    template: `<div>
+  template: `<div>
     
    <h3 id="TiTle" style="text-align:center;position: relative;" >Welcome to mylinks </h3>
    <img src="img/MYlinks.png" style="display: block;border-radius:45px;margin-left: auto;margin-right: auto;width: 73%;margin-top:-50px;max-width: 600px;" >
@@ -15,7 +15,7 @@ Vue.component("logerinskoto", {
    </div>
      
    <div id="Sup" style="display:none;">
-    <p id="TitLINK" class="TITlink">https://mylinks.sytes.net/1kinger</p>
+    <p id="TitLINK" class="TITlink"></p>
      <input type="text" placeholder="1kinger" id="username_field" oninput="Imenik(this.value);" />
        <input type="email" placeholder="Email..." id="email_field_2" oninput="CKMail(this.value);"  />
      <input type="password" placeholder="Password..." id="password_field_2" oninput="PAS_L(this.value);" />
@@ -25,21 +25,25 @@ Vue.component("logerinskoto", {
    </div>
   </div>
 
-</div>`})
-var store="";
+</div>`,
+});
+var store = "";
 var storeqqee = new Vuex.Store({
-state: {
-  view:"logerinskoto"
-}
-})   
+  state: {
+    view: "logerinskoto",
+  },
+});
 
 var signqqee = new Vue({
-el:"#login_div",
-store: store
-})
+  el: "#login_div",
+  store: store,
+});
 ///////////// da se stave reset pass
 
 var input = document.getElementsByTagName("input")[1];
-input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {event.preventDefault();
-  document.getElementsByTagName("button")[0].click();}}); 
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementsByTagName("button")[0].click();
+  }
+});
